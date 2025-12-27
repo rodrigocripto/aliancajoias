@@ -20,7 +20,7 @@ const features = [
   },
   {
     icon: Clock,
-    title: '+15 Anos de Tradição',
+    title: '+30 Anos de Tradição',
     description: 'Experiência consolidada em criar joias que contam histórias.',
   },
   {

@@ -33,7 +33,7 @@ export default function HeroSection({ onCtaClick }) {
             >
               <span className="w-2 h-2 bg-[#D4AF37] rounded-full animate-pulse" />
               <span className="text-sm font-medium text-[#B8960C] tracking-wide uppercase">
-                Joalheria Artesanal
+                Joalheria Aliança Joias
               </span>
             </motion.div>
 
