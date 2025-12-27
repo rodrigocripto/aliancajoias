@@ -150,7 +150,7 @@ export default function HeroSection({ onCtaClick }) {
               >
                 <div className="text-center">
                   <span className="text-2xl">🏆</span>
-                  <p className="text-xs text-[#4A4A4A] mt-1">+15 Anos</p>
+                  <p className="text-xs text-[#4A4A4A] mt-1">+30 Anos</p>
                 </div>
               </motion.div>
             </div>
