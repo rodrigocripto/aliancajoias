@@ -10,7 +10,7 @@ const depoimentos = [
     cidade: 'Cuiabá, MT',
     texto: 'A experiência foi incrível do início ao fim. O atendimento personalizado fez toda a diferença. Nossas alianças ficaram exatamente como sonhamos!',
     estrelas: 5,
-    imagem: 'https://images.unsplash.com/photo-1621784166258-c72e472e1e2f?w=200&q=80',
+    imagem: 'https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?w=200&q=80',
   },
   {
     id: 2,
@@ -18,7 +18,7 @@ const depoimentos = [
     cidade: 'Várzea Grande, MT',
     texto: 'Qualidade impecável! O ouro 18k é realmente diferente. Estamos casados há 3 anos e as alianças continuam perfeitas.',
     estrelas: 5,
-    imagem: 'https://images.unsplash.com/photo-1583939003579-730e3918a45a?w=200&q=80',
+    imagem: 'https://images.unsplash.com/photo-1445019980597-93fa8acb246c?w=200&q=80',
   },
   {
     id: 3,
@@ -26,7 +26,7 @@ const depoimentos = [
     cidade: 'Cuiabá, MT',
     texto: 'A gravação interna ficou linda! O detalhe do diamante tornou nossa aliança única. Super recomendamos!',
     estrelas: 5,
-    imagem: 'https://images.unsplash.com/photo-1591604466107-ec97de577aff?w=200&q=80',
+    imagem: 'https://images.unsplash.com/photo-1522673607200-164d1b6ce486?w=200&q=80',
   },
   {
     id: 4,
@@ -34,7 +34,7 @@ const depoimentos = [
     cidade: 'Rondonópolis, MT',
     texto: 'Fizemos as alianças personalizadas e o resultado superou todas as expectativas. Profissionais de verdade!',
     estrelas: 5,
-    imagem: 'https://images.unsplash.com/photo-1519741497674-611481863552?w=200&q=80',
+    imagem: 'https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?w=200&q=80',
   },
 ];
 
