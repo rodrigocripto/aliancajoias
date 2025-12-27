@@ -56,7 +56,7 @@ export default function ModelosSection() {
   };
 
   return (
-    <section id="modelos" className="py-24 bg-[#FDFBF7]">
+    <section id="modelos" className="py-20 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <motion.div
@@ -67,15 +67,14 @@ export default function ModelosSection() {
           className="text-center max-w-3xl mx-auto mb-16"
         >
           <span className="text-sm font-medium text-[#D4AF37] tracking-widest uppercase">
-            Coleção Exclusiva
+            Coleção Completa
           </span>
           <h2 className="mt-4 text-3xl sm:text-4xl lg:text-5xl font-light text-[#1A1A1A]">
-            Modelos que Inspiram{' '}
-            <span className="font-semibold text-[#D4AF37]">Amor</span>
+            Explore Todos os{' '}
+            <span className="font-semibold text-[#D4AF37]">Modelos</span>
           </h2>
           <p className="mt-6 text-lg text-[#4A4A4A] leading-relaxed">
-            Descubra nossa seleção de alianças em ouro 18k. Cada modelo é uma 
-            obra-prima pensada para celebrar histórias únicas como a sua.
+            Conheça nossa coleção completa de alianças em ouro 18k. Cada modelo é único e pode ser totalmente personalizado.
           </p>
         </motion.div>
 
