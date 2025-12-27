@@ -18,13 +18,6 @@ export default function CTAFinalSection({ onCtaClick }) {
 
       {/* Decorative Elements */}
       <motion.div 
-        animate={{ rotate: 360 }}
-        transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-        className="absolute top-20 left-10 w-32 h-32 rounded-full border border-[#D4AF37]/20 flex items-center justify-center"
-      >
-        <span className="text-4xl">💍</span>
-      </motion.div>
-      <motion.div 
         animate={{ rotate: -360 }}
         transition={{ duration: 25, repeat: Infinity, ease: "linear" }}
         className="absolute bottom-20 right-10 w-48 h-48 rounded-full border border-[#D4AF37]/10 flex items-center justify-center hidden lg:flex"
