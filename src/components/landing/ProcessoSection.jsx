@@ -112,7 +112,7 @@ export default function ProcessoSection() {
             Prazo médio de produção:
           </p>
           <p className="text-2xl font-semibold text-[#D4AF37]">
-            7 a 15 dias úteis
+            2 a 5 dias úteis
           </p>
         </motion.div>
       </div>
