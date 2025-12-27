@@ -90,28 +90,43 @@ export default function ChatbotWidget() {
       {/* Botão Flutuante */}
       <AnimatePresence>
         {!isOpen && (
-          <motion.button
-            initial={{ scale: 0, opacity: 0 }}
-            animate={{ scale: 1, opacity: 1 }}
-            exit={{ scale: 0, opacity: 0 }}
-            transition={{ type: 'spring', stiffness: 200 }}
-            onClick={() => setIsOpen(true)}
-            className="fixed bottom-20 sm:bottom-24 left-4 sm:left-6 z-[9998] flex items-center justify-center w-14 h-14 sm:w-16 sm:h-16 rounded-full bg-gradient-to-r from-[#D4AF37] to-[#C9A227] text-white shadow-lg shadow-[#D4AF37]/30 hover:shadow-xl hover:shadow-[#D4AF37]/40 transition-shadow duration-300 group"
-          >
-            <Sparkles className="w-7 h-7 group-hover:scale-110 transition-transform" />
-            
-            {/* Badge de "Novo" */}
-            <div className="absolute -top-1 -right-1 w-5 h-5 bg-red-500 rounded-full flex items-center justify-center text-xs font-bold animate-pulse">
-              <span className="text-white text-[10px]">AI</span>
-            </div>
-
-            {/* Pulse Animation */}
+          <div className="fixed bottom-20 sm:bottom-24 left-4 sm:left-6 z-[9998] flex items-center gap-3">
+            {/* Label com animação */}
             <motion.div
-              animate={{ scale: [1, 1.5, 1], opacity: [0.5, 0, 0.5] }}
-              transition={{ duration: 2, repeat: Infinity, ease: 'easeInOut' }}
-              className="absolute inset-0 rounded-full bg-[#D4AF37] -z-10"
-            />
-          </motion.button>
+              initial={{ opacity: 0, x: -10 }}
+              animate={{ opacity: 1, x: 0 }}
+              exit={{ opacity: 0, x: -10 }}
+              transition={{ delay: 1, duration: 0.5 }}
+              className="hidden sm:flex items-center bg-white rounded-full px-4 py-2 shadow-lg border border-[#D4AF37]/20"
+            >
+              <span className="text-sm font-medium text-[#1A1A1A]">
+                💬 Encontre sua Aliança Ideal
+              </span>
+            </motion.div>
+
+            <motion.button
+              initial={{ scale: 0, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0, opacity: 0 }}
+              transition={{ type: 'spring', stiffness: 200 }}
+              onClick={() => setIsOpen(true)}
+              className="flex items-center justify-center w-14 h-14 sm:w-16 sm:h-16 rounded-full bg-gradient-to-r from-[#D4AF37] to-[#C9A227] text-white shadow-lg shadow-[#D4AF37]/30 hover:shadow-xl hover:shadow-[#D4AF37]/40 transition-shadow duration-300 group"
+            >
+              <Sparkles className="w-7 h-7 group-hover:scale-110 transition-transform" />
+              
+              {/* Badge de "Novo" */}
+              <div className="absolute -top-1 -right-1 w-5 h-5 bg-red-500 rounded-full flex items-center justify-center text-xs font-bold animate-pulse">
+                <span className="text-white text-[10px]">AI</span>
+              </div>
+
+              {/* Pulse Animation */}
+              <motion.div
+                animate={{ scale: [1, 1.5, 1], opacity: [0.5, 0, 0.5] }}
+                transition={{ duration: 2, repeat: Infinity, ease: 'easeInOut' }}
+                className="absolute inset-0 rounded-full bg-[#D4AF37] -z-10"
+              />
+            </motion.button>
+          </div>
         )}
       </AnimatePresence>
 
