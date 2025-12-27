@@ -67,10 +67,12 @@ export default function HeroSection({ onCtaClick }) {
               className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start"
             >
               <Button
-                onClick={onCtaClick}
+                asChild
                 className="bg-gradient-to-r from-[#D4AF37] to-[#C9A227] hover:from-[#C9A227] hover:to-[#B8960C] text-white px-8 py-6 text-lg font-medium rounded-full shadow-lg shadow-[#D4AF37]/30 transition-all duration-300 hover:shadow-xl hover:shadow-[#D4AF37]/40 hover:scale-105"
               >
-                Solicitar Orçamento Personalizado
+                <a href="https://wa.me/5565993122777?text=Olá! Gostaria de solicitar um orçamento personalizado para alianças em ouro 18k." target="_blank" rel="noopener noreferrer">
+                  Solicitar Orçamento Personalizado
+                </a>
               </Button>
               <Button
                 variant="outline"
