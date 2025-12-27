@@ -1,0 +1,235 @@
+import React, { useState, useEffect, useRef } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { MessageCircle, X, Send, Loader2, Sparkles } from 'lucide-react';
+import { Button } from '@/components/ui/button';
+import { Input } from '@/components/ui/input';
+import { base44 } from '@/api/base44Client';
+import ReactMarkdown from 'react-markdown';
+
+export default function ChatbotWidget() {
+  const [isOpen, setIsOpen] = useState(false);
+  const [messages, setMessages] = useState([]);
+  const [inputValue, setInputValue] = useState('');
+  const [isLoading, setIsLoading] = useState(false);
+  const [conversation, setConversation] = useState(null);
+  const messagesEndRef = useRef(null);
+
+  const scrollToBottom = () => {
+    messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
+  };
+
+  useEffect(() => {
+    scrollToBottom();
+  }, [messages]);
+
+  useEffect(() => {
+    if (isOpen && !conversation) {
+      initConversation();
+    }
+  }, [isOpen]);
+
+  useEffect(() => {
+    if (!conversation) return;
+
+    const unsubscribe = base44.agents.subscribeToConversation(conversation.id, (data) => {
+      setMessages(data.messages || []);
+      setIsLoading(false);
+    });
+
+    return () => unsubscribe();
+  }, [conversation]);
+
+  const initConversation = async () => {
+    try {
+      const conv = await base44.agents.createConversation({
+        agent_name: 'atendimento_aliancas',
+        metadata: {
+          name: 'Consulta sobre Alianças',
+          source: 'website'
+        }
+      });
+      setConversation(conv);
+      
+      // Mensagem de boas-vindas
+      await base44.agents.addMessage(conv, {
+        role: 'user',
+        content: 'Olá!'
+      });
+    } catch (error) {
+      console.error('Erro ao iniciar conversa:', error);
+    }
+  };
+
+  const handleSendMessage = async () => {
+    if (!inputValue.trim() || !conversation || isLoading) return;
+
+    const userMessage = inputValue.trim();
+    setInputValue('');
+    setIsLoading(true);
+
+    try {
+      await base44.agents.addMessage(conversation, {
+        role: 'user',
+        content: userMessage
+      });
+    } catch (error) {
+      console.error('Erro ao enviar mensagem:', error);
+      setIsLoading(false);
+    }
+  };
+
+  const handleKeyPress = (e) => {
+    if (e.key === 'Enter' && !e.shiftKey) {
+      e.preventDefault();
+      handleSendMessage();
+    }
+  };
+
+  return (
+    <>
+      {/* Botão Flutuante */}
+      <AnimatePresence>
+        {!isOpen && (
+          <motion.button
+            initial={{ scale: 0, opacity: 0 }}
+            animate={{ scale: 1, opacity: 1 }}
+            exit={{ scale: 0, opacity: 0 }}
+            transition={{ type: 'spring', stiffness: 200 }}
+            onClick={() => setIsOpen(true)}
+            className="fixed bottom-20 sm:bottom-24 left-4 sm:left-6 z-[9998] flex items-center justify-center w-14 h-14 sm:w-16 sm:h-16 rounded-full bg-gradient-to-r from-[#D4AF37] to-[#C9A227] text-white shadow-lg shadow-[#D4AF37]/30 hover:shadow-xl hover:shadow-[#D4AF37]/40 transition-shadow duration-300 group"
+          >
+            <Sparkles className="w-7 h-7 group-hover:scale-110 transition-transform" />
+            
+            {/* Badge de "Novo" */}
+            <div className="absolute -top-1 -right-1 w-5 h-5 bg-red-500 rounded-full flex items-center justify-center text-xs font-bold animate-pulse">
+              <span className="text-white text-[10px]">AI</span>
+            </div>
+
+            {/* Pulse Animation */}
+            <motion.div
+              animate={{ scale: [1, 1.5, 1], opacity: [0.5, 0, 0.5] }}
+              transition={{ duration: 2, repeat: Infinity, ease: 'easeInOut' }}
+              className="absolute inset-0 rounded-full bg-[#D4AF37] -z-10"
+            />
+          </motion.button>
+        )}
+      </AnimatePresence>
+
+      {/* Janela do Chat */}
+      <AnimatePresence>
+        {isOpen && (
+          <motion.div
+            initial={{ opacity: 0, y: 20, scale: 0.95 }}
+            animate={{ opacity: 1, y: 0, scale: 1 }}
+            exit={{ opacity: 0, y: 20, scale: 0.95 }}
+            transition={{ type: 'spring', stiffness: 300, damping: 30 }}
+            className="fixed bottom-4 left-4 sm:bottom-6 sm:left-6 z-[9998] w-[calc(100vw-2rem)] sm:w-96 h-[600px] max-h-[calc(100vh-2rem)] bg-white rounded-3xl shadow-2xl flex flex-col overflow-hidden border border-[#D4AF37]/20"
+          >
+            {/* Header */}
+            <div className="bg-gradient-to-r from-[#D4AF37] to-[#C9A227] p-4 flex items-center justify-between">
+              <div className="flex items-center gap-3">
+                <div className="w-10 h-10 rounded-full bg-white/20 flex items-center justify-center">
+                  <Sparkles className="w-6 h-6 text-white" />
+                </div>
+                <div>
+                  <h3 className="font-semibold text-white">Assistente Virtual</h3>
+                  <p className="text-xs text-white/90">Especialista em Alianças</p>
+                </div>
+              </div>
+              <button
+                onClick={() => setIsOpen(false)}
+                className="w-8 h-8 rounded-full bg-white/20 hover:bg-white/30 flex items-center justify-center transition-colors"
+              >
+                <X className="w-5 h-5 text-white" />
+              </button>
+            </div>
+
+            {/* Messages */}
+            <div className="flex-1 overflow-y-auto p-4 space-y-4 bg-gray-50">
+              {messages.map((message, index) => (
+                <div
+                  key={index}
+                  className={`flex gap-2 ${message.role === 'user' ? 'justify-end' : 'justify-start'}`}
+                >
+                  {message.role === 'assistant' && (
+                    <div className="w-8 h-8 rounded-full bg-gradient-to-br from-[#D4AF37] to-[#C9A227] flex items-center justify-center flex-shrink-0 mt-1">
+                      <Sparkles className="w-4 h-4 text-white" />
+                    </div>
+                  )}
+                  <div
+                    className={`max-w-[80%] rounded-2xl px-4 py-2.5 ${
+                      message.role === 'user'
+                        ? 'bg-[#D4AF37] text-white'
+                        : 'bg-white text-gray-800 shadow-sm border border-gray-100'
+                    }`}
+                  >
+                    {message.role === 'user' ? (
+                      <p className="text-sm leading-relaxed">{message.content}</p>
+                    ) : (
+                      <ReactMarkdown
+                        className="text-sm prose prose-sm max-w-none [&>*:first-child]:mt-0 [&>*:last-child]:mb-0 [&_p]:leading-relaxed [&_strong]:text-[#D4AF37] [&_strong]:font-semibold"
+                        components={{
+                          p: ({ children }) => <p className="mb-2 last:mb-0">{children}</p>,
+                          ul: ({ children }) => <ul className="ml-4 mb-2 list-disc">{children}</ul>,
+                          ol: ({ children }) => <ol className="ml-4 mb-2 list-decimal">{children}</ol>,
+                          li: ({ children }) => <li className="mb-1">{children}</li>,
+                        }}
+                      >
+                        {message.content}
+                      </ReactMarkdown>
+                    )}
+                  </div>
+                </div>
+              ))}
+              
+              {isLoading && (
+                <div className="flex gap-2 justify-start">
+                  <div className="w-8 h-8 rounded-full bg-gradient-to-br from-[#D4AF37] to-[#C9A227] flex items-center justify-center flex-shrink-0">
+                    <Sparkles className="w-4 h-4 text-white" />
+                  </div>
+                  <div className="bg-white rounded-2xl px-4 py-3 shadow-sm border border-gray-100">
+                    <div className="flex gap-1">
+                      <div className="w-2 h-2 bg-gray-400 rounded-full animate-bounce" style={{ animationDelay: '0ms' }} />
+                      <div className="w-2 h-2 bg-gray-400 rounded-full animate-bounce" style={{ animationDelay: '150ms' }} />
+                      <div className="w-2 h-2 bg-gray-400 rounded-full animate-bounce" style={{ animationDelay: '300ms' }} />
+                    </div>
+                  </div>
+                </div>
+              )}
+              
+              <div ref={messagesEndRef} />
+            </div>
+
+            {/* Input */}
+            <div className="p-4 bg-white border-t border-gray-100">
+              <div className="flex gap-2">
+                <Input
+                  value={inputValue}
+                  onChange={(e) => setInputValue(e.target.value)}
+                  onKeyPress={handleKeyPress}
+                  placeholder="Digite sua mensagem..."
+                  disabled={isLoading}
+                  className="flex-1 rounded-full border-gray-200 focus:border-[#D4AF37] focus:ring-[#D4AF37]"
+                />
+                <Button
+                  onClick={handleSendMessage}
+                  disabled={!inputValue.trim() || isLoading}
+                  className="rounded-full w-12 h-12 p-0 bg-gradient-to-r from-[#D4AF37] to-[#C9A227] hover:from-[#C9A227] hover:to-[#B8960C] disabled:opacity-50"
+                >
+                  {isLoading ? (
+                    <Loader2 className="w-5 h-5 animate-spin" />
+                  ) : (
+                    <Send className="w-5 h-5" />
+                  )}
+                </Button>
+              </div>
+              <p className="text-xs text-gray-400 mt-2 text-center">
+                Powered by AI • Respostas em segundos
+              </p>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </>
+  );
+}
