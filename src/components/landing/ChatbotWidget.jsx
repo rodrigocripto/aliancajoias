@@ -245,25 +245,6 @@ export default function ChatbotWidget() {
 
             {/* Input */}
             <div className="p-4 bg-white border-t border-gray-100">
-              {messages.length > 2 && (
-                <Button
-                  onClick={handleSendSummary}
-                  disabled={isSending}
-                  className="w-full mb-3 rounded-full bg-green-600 hover:bg-green-700 text-white font-medium"
-                >
-                  {isSending ? (
-                    <>
-                      <Loader2 className="w-4 h-4 mr-2 animate-spin" />
-                      Enviando...
-                    </>
-                  ) : (
-                    <>
-                      <Mail className="w-4 h-4 mr-2" />
-                      Enviar Resumo para a Loja
-                    </>
-                  )}
-                </Button>
-              )}
               <div className="flex gap-2">
                 <Input
                   value={inputValue}
