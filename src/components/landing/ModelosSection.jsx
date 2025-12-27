@@ -20,9 +20,9 @@ const modelos = [
   },
   {
     id: 3,
-    nome: 'Diamante Solitário',
-    descricao: 'O brilho do diamante realça a nobreza do ouro 18k. Uma declaração de amor extraordinária.',
-    imagem: 'https://images.unsplash.com/photo-1602751584552-8ba73aad10e1?w=600&q=80',
+    nome: 'Cravejada Luxury',
+    descricao: 'Sofisticação máxima com pedras cravejadas e detalhes torcidos em ouro branco. O equilíbrio perfeito entre brilho e elegância para casais que não abrem mão do luxo.',
+    imagem: 'https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/694ef32b4b63ebef73cd51c8/3baa6ee1a_CpiadeFOTO3.jpg',
     destaque: 'Premium',
   },
   {
