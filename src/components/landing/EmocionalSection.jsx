@@ -92,7 +92,7 @@ export default function EmocionalSection() {
             </div>
 
             {/* Emotional Points */}
-            <div className="mt-10 grid grid-cols-2 gap-6">
+            <div className="mt-10 grid grid-cols-2 gap-4 sm:gap-6">
               {[
                 { emoji: '💕', text: 'Amor Infinito' },
                 { emoji: '🤝', text: 'Compromisso' },
@@ -105,10 +105,10 @@ export default function EmocionalSection() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: 0.2 + index * 0.1, duration: 0.5 }}
-                  className="flex items-center gap-3 p-4 rounded-xl bg-white/5 border border-white/10"
+                  className="flex items-center gap-2 sm:gap-3 p-3 sm:p-4 rounded-xl bg-white/5 border border-white/10"
                 >
-                  <span className="text-2xl">{item.emoji}</span>
-                  <span className="text-white font-medium">{item.text}</span>
+                  <span className="text-xl sm:text-2xl flex-shrink-0">{item.emoji}</span>
+                  <span className="text-white font-medium text-sm sm:text-base">{item.text}</span>
                 </motion.div>
               ))}
             </div>
