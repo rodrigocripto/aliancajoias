@@ -9,7 +9,7 @@ export default function FooterSection() {
           {/* Brand */}
           <div className="lg:col-span-2">
             <h3 className="text-2xl font-light text-white mb-4">
-              <span className="font-semibold text-[#D4AF37]">Joalheria</span> Artesanal
+              <span className="font-semibold text-[#D4AF37]">Joalheria</span> Aliança Joias
             </h3>
             <p className="text-gray-400 leading-relaxed mb-6 max-w-md">
               Especialistas em alianças em ouro 18k, unindo tradição artesanal 
@@ -98,7 +98,7 @@ export default function FooterSection() {
         {/* Bottom */}
         <div className="mt-12 pt-8 border-t border-white/10 flex flex-col sm:flex-row justify-between items-center gap-4">
           <p className="text-sm text-gray-500">
-            © {new Date().getFullYear()} Joalheria Artesanal. Todos os direitos reservados.
+            © {new Date().getFullYear()} Joalheria Aliança Joias. Todos os direitos reservados.
           </p>
           <p className="text-sm text-gray-500">
             Feito com <span className="text-[#D4AF37]">♥</span> para casais apaixonados
