@@ -1,10 +1,11 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { MessageCircle, X, Send, Loader2, Sparkles } from 'lucide-react';
+import { MessageCircle, X, Send, Loader2, Sparkles, Mail, CheckCircle2 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { base44 } from '@/api/base44Client';
 import ReactMarkdown from 'react-markdown';
+import { toast } from 'sonner';
 
 export default function ChatbotWidget() {
   const [isOpen, setIsOpen] = useState(false);
@@ -12,6 +13,7 @@ export default function ChatbotWidget() {
   const [inputValue, setInputValue] = useState('');
   const [isLoading, setIsLoading] = useState(false);
   const [conversation, setConversation] = useState(null);
+  const [isSending, setIsSending] = useState(false);
   const messagesEndRef = useRef(null);
 
   const scrollToBottom = () => {
@@ -82,6 +84,47 @@ export default function ChatbotWidget() {
     if (e.key === 'Enter' && !e.shiftKey) {
       e.preventDefault();
       handleSendMessage();
+    }
+  };
+
+  const handleSendSummary = async () => {
+    if (!conversation || messages.length === 0) return;
+
+    setIsSending(true);
+    try {
+      // Formatar resumo da conversa
+      let resumo = '📋 RESUMO DA CONVERSA - CHATBOT\n\n';
+      resumo += `🕐 Data: ${new Date().toLocaleString('pt-BR')}\n`;
+      resumo += `💬 Total de mensagens: ${messages.length}\n\n`;
+      resumo += '--- CONVERSA COMPLETA ---\n\n';
+      
+      messages.forEach((msg, index) => {
+        const role = msg.role === 'user' ? '👤 Cliente' : '🤖 Assistente';
+        resumo += `${role}:\n${msg.content}\n\n`;
+      });
+
+      // Enviar por email
+      await base44.integrations.Core.SendEmail({
+        from_name: 'Chatbot - Site Aliança Joias',
+        to: 'aliancajoiasmarket@gmail.com',
+        subject: '🤖 Novo Lead do Chatbot - Site',
+        body: resumo
+      });
+
+      toast.success('Resumo enviado! Nossa equipe entrará em contato em breve.', {
+        duration: 5000
+      });
+
+      // Fechar chat após 2 segundos
+      setTimeout(() => {
+        setIsOpen(false);
+      }, 2000);
+
+    } catch (error) {
+      console.error('Erro ao enviar resumo:', error);
+      toast.error('Erro ao enviar. Tente novamente ou entre em contato direto.');
+    } finally {
+      setIsSending(false);
     }
   };
 
@@ -202,6 +245,25 @@ export default function ChatbotWidget() {
 
             {/* Input */}
             <div className="p-4 bg-white border-t border-gray-100">
+              {messages.length > 2 && (
+                <Button
+                  onClick={handleSendSummary}
+                  disabled={isSending}
+                  className="w-full mb-3 rounded-full bg-green-600 hover:bg-green-700 text-white font-medium"
+                >
+                  {isSending ? (
+                    <>
+                      <Loader2 className="w-4 h-4 mr-2 animate-spin" />
+                      Enviando...
+                    </>
+                  ) : (
+                    <>
+                      <Mail className="w-4 h-4 mr-2" />
+                      Enviar Resumo para a Loja
+                    </>
+                  )}
+                </Button>
+              )}
               <div className="flex gap-2">
                 <Input
                   value={inputValue}
