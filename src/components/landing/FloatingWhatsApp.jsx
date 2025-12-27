@@ -6,7 +6,7 @@ export default function FloatingWhatsApp() {
   const [showTooltip, setShowTooltip] = useState(false);
 
   return (
-    <div className="fixed bottom-6 right-6 z-50">
+    <div className="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 z-[9999]">
       <AnimatePresence>
         {showTooltip && (
           <motion.div
@@ -42,7 +42,8 @@ export default function FloatingWhatsApp() {
         whileTap={{ scale: 0.95 }}
         onMouseEnter={() => setShowTooltip(true)}
         onMouseLeave={() => setShowTooltip(false)}
-        className="flex items-center justify-center w-16 h-16 rounded-full bg-[#25D366] text-white shadow-lg shadow-[#25D366]/30 hover:shadow-xl hover:shadow-[#25D366]/40 transition-shadow duration-300"
+        onClick={() => setShowTooltip(false)}
+        className="flex items-center justify-center w-14 h-14 sm:w-16 sm:h-16 rounded-full bg-[#25D366] text-white shadow-lg shadow-[#25D366]/30 hover:shadow-xl hover:shadow-[#25D366]/40 transition-shadow duration-300"
       >
         <MessageCircle className="w-7 h-7" />
       </motion.a>
