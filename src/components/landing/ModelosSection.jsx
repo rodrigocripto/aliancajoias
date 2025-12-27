@@ -43,7 +43,7 @@ const modelos = [
     id: 6,
     nome: 'Personalizada',
     descricao: 'Desenhe sua própria aliança. Cada detalhe sob medida para tornar seu momento ainda mais especial.',
-    imagem: 'https://images.unsplash.com/photo-1573408301185-9146fe634ad0?w=600&q=80',
+    imagem: 'https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/694ef32b4b63ebef73cd51c8/65717288d_CpiadeFOTO2.jpg',
     destaque: 'Sob Medida',
   },
 ];
