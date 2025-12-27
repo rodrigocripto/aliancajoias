@@ -95,8 +95,8 @@ export default function PersonalizacaoSection() {
               {/* Main Image */}
               <div className="aspect-square rounded-3xl overflow-hidden shadow-2xl">
                 <img
-                  src="https://images.unsplash.com/photo-1519225421980-715cb0215aed?w=800&q=80"
-                  alt="Casal de noivos trocando alianças"
+                  src="https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/694ef32b4b63ebef73cd51c8/92e0943fa_pedido_de_casamento_surpresa_emocionante_em_holambra_-_natalia_e_caue-34.jpg"
+                  alt="Casal feliz mostrando alianças após pedido de casamento"
                   className="w-full h-full object-cover"
                 />
               </div>
