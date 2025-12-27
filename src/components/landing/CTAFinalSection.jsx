@@ -17,8 +17,20 @@ export default function CTAFinalSection({ onCtaClick }) {
       </div>
 
       {/* Decorative Elements */}
-      <div className="absolute top-20 left-10 w-32 h-32 rounded-full border border-[#D4AF37]/20" />
-      <div className="absolute bottom-20 right-10 w-48 h-48 rounded-full border border-[#D4AF37]/10" />
+      <motion.div 
+        animate={{ rotate: 360 }}
+        transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+        className="absolute top-20 left-10 w-32 h-32 rounded-full border border-[#D4AF37]/20 flex items-center justify-center"
+      >
+        <span className="text-4xl">💍</span>
+      </motion.div>
+      <motion.div 
+        animate={{ rotate: -360 }}
+        transition={{ duration: 25, repeat: Infinity, ease: "linear" }}
+        className="absolute bottom-20 right-10 w-48 h-48 rounded-full border border-[#D4AF37]/10 flex items-center justify-center"
+      >
+        <span className="text-5xl">✨</span>
+      </motion.div>
 
       <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <motion.div
