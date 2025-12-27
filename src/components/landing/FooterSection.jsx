@@ -17,13 +17,17 @@ export default function FooterSection() {
             </p>
             <div className="flex gap-4">
               <a
-                href="#"
+                href="https://www.instagram.com/aliancajoias.oficial"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-[#D4AF37]/20 transition-colors duration-300"
               >
                 <Instagram className="w-5 h-5 text-gray-400 hover:text-[#D4AF37]" />
               </a>
               <a
-                href="#"
+                href="https://www.facebook.com/aliancajoias.oficial"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-[#D4AF37]/20 transition-colors duration-300"
               >
                 <Facebook className="w-5 h-5 text-gray-400 hover:text-[#D4AF37]" />
@@ -36,18 +40,18 @@ export default function FooterSection() {
             <h4 className="font-semibold text-white mb-6">Contato</h4>
             <div className="space-y-4">
               <a
-                href="tel:+5565999999999"
+                href="tel:+5565993122777"
                 className="flex items-center gap-3 text-gray-400 hover:text-[#D4AF37] transition-colors duration-300"
               >
                 <Phone className="w-5 h-5" />
-                <span>(65) 99999-9999</span>
+                <span>(65) 99312-2777</span>
               </a>
               <a
-                href="mailto:contato@joalheria.com"
+                href="mailto:aliancajoiasmarket@gmail.com"
                 className="flex items-center gap-3 text-gray-400 hover:text-[#D4AF37] transition-colors duration-300"
               >
                 <Mail className="w-5 h-5" />
-                <span>contato@joalheria.com</span>
+                <span>aliancajoiasmarket@gmail.com</span>
               </a>
               <div className="flex items-start gap-3 text-gray-400">
                 <MapPin className="w-5 h-5 flex-shrink-0 mt-0.5" />

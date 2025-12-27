@@ -63,7 +63,7 @@ export default function CTAFinalSection({ onCtaClick }) {
           {/* Contact Options */}
           <div className="flex flex-wrap items-center justify-center gap-8 text-gray-300">
             <a
-              href="https://wa.me/5565999999999"
+              href="https://wa.me/5565993122777"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-2 hover:text-[#D4AF37] transition-colors duration-300"
@@ -73,11 +73,11 @@ export default function CTAFinalSection({ onCtaClick }) {
             </a>
             <div className="w-px h-6 bg-white/20 hidden sm:block" />
             <a
-              href="tel:+5565999999999"
+              href="tel:+5565993122777"
               className="flex items-center gap-2 hover:text-[#D4AF37] transition-colors duration-300"
             >
               <Phone className="w-5 h-5" />
-              <span>(65) 99999-9999</span>
+              <span>(65) 99312-2777</span>
             </a>
           </div>
 

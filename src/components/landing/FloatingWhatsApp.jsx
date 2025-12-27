@@ -32,7 +32,7 @@ export default function FloatingWhatsApp() {
       </AnimatePresence>
 
       <motion.a
-        href="https://wa.me/5565999999999?text=Olá! Gostaria de saber mais sobre as alianças em ouro 18k."
+        href="https://wa.me/5565993122777?text=Olá! Gostaria de saber mais sobre as alianças em ouro 18k."
         target="_blank"
         rel="noopener noreferrer"
         initial={{ scale: 0 }}
