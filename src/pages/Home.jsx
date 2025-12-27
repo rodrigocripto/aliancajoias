@@ -43,9 +43,7 @@ export default function Home() {
         modeloSelecionado={modeloSelecionado}
       />
       
-      <div className="block">
-        <FloatingWhatsApp />
-      </div>
+      <FloatingWhatsApp />
     </div>
   );
 }
