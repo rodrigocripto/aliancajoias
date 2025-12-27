@@ -95,8 +95,8 @@ export default function PersonalizacaoSection() {
               {/* Main Image */}
               <div className="aspect-square rounded-3xl overflow-hidden shadow-2xl">
                 <img
-                  src="https://images.unsplash.com/photo-1617038260897-41a1f14a8ca0?w=800&q=80"
-                  alt="Personalização de alianças"
+                  src="https://images.unsplash.com/photo-1606800052052-a08af7148866?w=800&q=80"
+                  alt="Casal feliz com alianças personalizadas"
                   className="w-full h-full object-cover"
                 />
               </div>
@@ -125,11 +125,11 @@ export default function PersonalizacaoSection() {
               >
                 <div className="flex items-center gap-3">
                   <div className="w-10 h-10 rounded-full bg-[#D4AF37]/10 flex items-center justify-center">
-                    <span className="text-lg">💎</span>
+                    <span className="text-lg">💍</span>
                   </div>
                   <div>
-                    <p className="font-semibold text-[#1A1A1A] text-sm">Diamante</p>
-                    <p className="text-xs text-[#4A4A4A]">0.10ct Incluído</p>
+                    <p className="font-semibold text-[#1A1A1A] text-sm">Seu Momento</p>
+                    <p className="text-xs text-[#4A4A4A]">Aliança dos Sonhos</p>
                   </div>
                 </div>
               </motion.div>
