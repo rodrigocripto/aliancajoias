@@ -124,9 +124,10 @@ export default function HeroSection({ onCtaClick }) {
               {/* Main Image Container */}
               <div className="absolute inset-8 rounded-full overflow-hidden bg-gradient-to-br from-[#F5E6C8] to-[#E8D5A3] shadow-2xl">
                 <img
-                  src="https://images.unsplash.com/photo-1515377905703-c4788e51af15?w=800&q=80"
+                  src="https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/694ef32b4b63ebef73cd51c8/09dbba98e_CpiadeFOTO3.jpg"
                   alt="Alianças em Ouro 18k"
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-cover object-center"
+                  style={{ objectPosition: '50% 45%' }}
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#D4AF37]/20 to-transparent" />
               </div>
