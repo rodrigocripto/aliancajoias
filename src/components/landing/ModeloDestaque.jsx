@@ -4,14 +4,17 @@ import { Button } from '@/components/ui/button';
 import { ArrowRight, Sparkles } from 'lucide-react';
 
 export default function ModeloDestaque({ modelo, invertido = false }) {
+  const modeloId = `modelo-${modelo.id}`;
+  const modeloUrl = `${window.location.origin}${window.location.pathname}#${modeloId}`;
+  
   const handleWhatsAppClick = () => {
-    const mensagem = `Olá! Tenho interesse no modelo *${modelo.nome}*. Gostaria de mais informações e um orçamento personalizado.`;
+    const mensagem = `Olá! Tenho interesse no modelo *${modelo.nome}*. Gostaria de mais informações e um orçamento personalizado.\n\nVer modelo: ${modeloUrl}`;
     const whatsappUrl = `https://wa.me/5565993122777?text=${encodeURIComponent(mensagem)}`;
     window.open(whatsappUrl, '_blank');
   };
 
   return (
-    <section className="py-16 bg-white">
+    <section id={modeloId} className="py-16 bg-white scroll-mt-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className={`grid lg:grid-cols-2 gap-12 items-center ${invertido ? 'lg:flex-row-reverse' : ''}`}>
           {/* Imagem */}

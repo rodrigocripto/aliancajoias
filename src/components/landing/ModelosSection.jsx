@@ -49,8 +49,10 @@ const modelos = [
 ];
 
 export default function ModelosSection() {
-  const handleWhatsAppClick = (modeloNome) => {
-    const mensagem = `Olá! Tenho interesse no modelo *${modeloNome}*. Gostaria de mais informações e um orçamento personalizado.`;
+  const handleWhatsAppClick = (modelo) => {
+    const modeloId = `modelo-${modelo.id}`;
+    const modeloUrl = `${window.location.origin}${window.location.pathname}#${modeloId}`;
+    const mensagem = `Olá! Tenho interesse no modelo *${modelo.nome}*. Gostaria de mais informações e um orçamento personalizado.\n\nVer modelo: ${modeloUrl}`;
     const whatsappUrl = `https://wa.me/5565993122777?text=${encodeURIComponent(mensagem)}`;
     window.open(whatsappUrl, '_blank');
   };
@@ -83,11 +85,12 @@ export default function ModelosSection() {
           {modelos.map((modelo, index) => (
             <motion.div
               key={modelo.id}
+              id={`modelo-${modelo.id}`}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
-              className="group"
+              className="group scroll-mt-20"
             >
               <div className="relative bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 border border-[#D4AF37]/10">
                 {/* Badge */}
@@ -117,7 +120,7 @@ export default function ModelosSection() {
                     {modelo.descricao}
                   </p>
                   <Button
-                    onClick={() => handleWhatsAppClick(modelo.nome)}
+                    onClick={() => handleWhatsAppClick(modelo)}
                     className="w-full bg-[#1A1A1A] hover:bg-[#D4AF37] text-white py-5 rounded-full font-medium transition-all duration-300 group/btn"
                   >
                     <span>Quero Este Modelo</span>
