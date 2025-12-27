@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 
 export default function EmocionalSection() {
   return (
-    <section className="relative py-24 overflow-hidden">
+    <section className="relative py-24 overflow-hidden w-full">
       {/* Background */}
       <div className="absolute inset-0 bg-gradient-to-br from-[#1A1A1A] via-[#2A2A2A] to-[#1A1A1A]" />
       
@@ -60,7 +60,7 @@ export default function EmocionalSection() {
               Mais que uma Joia
             </span>
 
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-light text-white leading-tight mb-8">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-light text-white leading-tight mb-8" translate="no">
               O Início de uma
               <span className="block font-semibold text-[#D4AF37] mt-2">
                 História de Amor

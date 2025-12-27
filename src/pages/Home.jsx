@@ -26,7 +26,7 @@ export default function Home() {
   };
 
   return (
-    <div className="min-h-screen bg-[#FDFBF7]">
+    <div className="min-h-screen bg-[#FDFBF7] overflow-x-hidden">
       <HeroSection onCtaClick={handleCtaClick} />
       <AutoridadeSection />
       <EmocionalSection />
