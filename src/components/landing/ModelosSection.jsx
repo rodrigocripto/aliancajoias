@@ -8,7 +8,7 @@ const modelos = [
     id: 1,
     nome: 'Clássica Polida',
     descricao: 'A elegância atemporal do ouro 18k com acabamento espelhado. Perfeita para quem aprecia a tradição e sofisticação.',
-    imagem: 'https://images.unsplash.com/photo-1605100804763-247f67b3557e?w=600&q=80',
+    imagem: 'https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/694ef32b4b63ebef73cd51c8/63c708746_CpiadeFOTO2.jpg',
     destaque: 'Mais Vendida',
   },
   {
