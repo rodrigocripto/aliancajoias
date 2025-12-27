@@ -95,8 +95,8 @@ export default function PersonalizacaoSection() {
               {/* Main Image */}
               <div className="aspect-square rounded-3xl overflow-hidden shadow-2xl">
                 <img
-                  src="https://images.unsplash.com/photo-1606800052052-a08af7148866?w=800&q=80"
-                  alt="Casal feliz com alianças personalizadas"
+                  src="https://images.unsplash.com/photo-1519225421980-715cb0215aed?w=800&q=80"
+                  alt="Casal de noivos trocando alianças"
                   className="w-full h-full object-cover"
                 />
               </div>
