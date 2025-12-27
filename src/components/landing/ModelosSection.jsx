@@ -48,7 +48,13 @@ const modelos = [
   },
 ];
 
-export default function ModelosSection({ onModeloClick }) {
+export default function ModelosSection() {
+  const handleWhatsAppClick = (modeloNome) => {
+    const mensagem = `Olá! Tenho interesse no modelo *${modeloNome}*. Gostaria de mais informações e um orçamento personalizado.`;
+    const whatsappUrl = `https://wa.me/5565993122777?text=${encodeURIComponent(mensagem)}`;
+    window.open(whatsappUrl, '_blank');
+  };
+
   return (
     <section id="modelos" className="py-24 bg-[#FDFBF7]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -112,7 +118,7 @@ export default function ModelosSection({ onModeloClick }) {
                     {modelo.descricao}
                   </p>
                   <Button
-                    onClick={() => onModeloClick(modelo.nome)}
+                    onClick={() => handleWhatsAppClick(modelo.nome)}
                     className="w-full bg-[#1A1A1A] hover:bg-[#D4AF37] text-white py-5 rounded-full font-medium transition-all duration-300 group/btn"
                   >
                     <span>Quero Este Modelo</span>
