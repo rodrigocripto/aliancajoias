@@ -102,7 +102,7 @@ export default function AutoridadeSection() {
         >
           {[
             { number: '2.500+', label: 'Casais Atendidos' },
-            { number: '15+', label: 'Anos de Experiência' },
+            { number: '30+', label: 'Anos de Experiência' },
             { number: '100%', label: 'Ouro Certificado' },
             { number: '5★', label: 'Avaliação dos Clientes' },
           ].map((stat, index) => (
