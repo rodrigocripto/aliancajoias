@@ -1,5 +1,5 @@
 import React from 'react';
-import { MapPin, Phone, Mail, Instagram, Facebook, Clock } from 'lucide-react';
+import { MapPin, Phone, Mail, Instagram, Facebook, Clock, Youtube } from 'lucide-react';
 
 export default function FooterSection() {
   return (
@@ -32,6 +32,24 @@ export default function FooterSection() {
               >
                 <Facebook className="w-5 h-5 text-gray-400 hover:text-[#D4AF37]" />
               </a>
+              <a
+                href="https://www.tiktok.com/@aliancajoias.oficial"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-[#D4AF37]/20 transition-colors duration-300"
+              >
+                <svg className="w-5 h-5 text-gray-400" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-5.2 1.74 2.89 2.89 0 012.31-4.64 2.93 2.93 0 01.88.13V9.4a6.84 6.84 0 00-1-.05A6.33 6.33 0 005 20.1a6.34 6.34 0 0010.86-4.43v-7a8.16 8.16 0 004.77 1.52v-3.4a4.85 4.85 0 01-1-.1z"/>
+                </svg>
+              </a>
+              <a
+                href="https://www.youtube.com/@AliancaJoias"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-[#D4AF37]/20 transition-colors duration-300"
+              >
+                <Youtube className="w-5 h-5 text-gray-400 hover:text-[#D4AF37]" />
+              </a>
             </div>
           </div>
 
@@ -55,7 +73,7 @@ export default function FooterSection() {
               </a>
               <div className="flex items-start gap-3 text-gray-400">
                 <MapPin className="w-5 h-5 flex-shrink-0 mt-0.5" />
-                <span>Várzea Grande / Cuiabá, MT</span>
+                <span>Av. Sen. Filinto Müller, 1900 - Centro Norte, Várzea Grande - MT, 78110-302</span>
               </div>
             </div>
           </div>
