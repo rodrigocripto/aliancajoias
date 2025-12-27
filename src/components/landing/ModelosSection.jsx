@@ -28,8 +28,8 @@ const modelos = [
   {
     id: 4,
     nome: 'Anatômica Confort',
-    descricao: 'Design ergonômico para conforto diário perfeito. Combina praticidade com elegância refinada.',
-    imagem: 'https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?w=600&q=80',
+    descricao: 'Design côncavo e anatômico que se molda perfeitamente ao dedo. Máximo conforto para uso diário com elegância refinada.',
+    imagem: 'https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/694ef32b4b63ebef73cd51c8/68c6261fe_MODELOCV1632.jpg',
     destaque: 'Conforto',
   },
   {
