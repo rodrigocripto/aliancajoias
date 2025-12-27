@@ -35,8 +35,8 @@ const modelos = [
   {
     id: 5,
     nome: 'Duo Texturizada',
-    descricao: 'Combinação única de acabamentos polido e fosco. Para casais que celebram suas diferenças.',
-    imagem: 'https://images.unsplash.com/photo-1515377905703-c4788e51af15?w=600&q=80',
+    descricao: 'Contraste sofisticado entre acabamento fosco centralizado e frisos laterais polidos. A harmonia perfeita entre texturas para casais que celebram suas diferenças.',
+    imagem: 'https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/694ef32b4b63ebef73cd51c8/60ab96161_CpiadeFOTO2.jpg',
     destaque: 'Exclusiva',
   },
   {
