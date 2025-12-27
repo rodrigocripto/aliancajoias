@@ -13,9 +13,9 @@ const modelos = [
   },
   {
     id: 2,
-    nome: 'Contemporânea Fosca',
-    descricao: 'Acabamento acetinado que traduz modernidade e personalidade. Para casais que buscam originalidade.',
-    imagem: 'https://images.unsplash.com/photo-1611652022419-a9419f74343d?w=600&q=80',
+    nome: 'Reta Chanfrada',
+    descricao: 'Design contemporâneo com quinas chanfradas que criam um visual único e marcante. Linhas retas que simbolizam solidez e modernidade.',
+    imagem: 'https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/694ef32b4b63ebef73cd51c8/2cfa1ba59_CpiadeFOTO3.jpg',
     destaque: 'Tendência',
   },
   {
