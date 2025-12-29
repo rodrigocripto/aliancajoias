@@ -52,20 +52,31 @@ export default function Blog() {
   });
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white">
+    <div className="min-h-screen bg-[#FDFBF7]">
       {/* Hero Section */}
-      <section className="bg-gradient-to-r from-[#D4AF37] to-[#C9A227] text-white py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="relative bg-gradient-to-br from-[#1A1A1A] via-[#2A2A2A] to-[#1A1A1A] text-white py-20 overflow-hidden">
+        {/* Decorações de Fundo */}
+        <div className="absolute inset-0 opacity-5">
+          <div className="absolute top-0 right-0 w-96 h-96 bg-[#D4AF37] rounded-full blur-3xl"></div>
+          <div className="absolute bottom-0 left-0 w-96 h-96 bg-[#D4AF37] rounded-full blur-3xl"></div>
+        </div>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             className="text-center"
           >
+            <div className="inline-block px-4 py-2 rounded-full bg-[#D4AF37]/20 border border-[#D4AF37]/30 text-[#D4AF37] text-sm font-medium mb-6">
+              ✨ Conteúdo Exclusivo
+            </div>
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-light mb-4">
-              Blog <span className="font-semibold">Aliança Joias</span>
+              Blog <span className="font-bold text-[#D4AF37]">Aliança Joias</span>
             </h1>
-            <p className="text-xl text-white/90 max-w-3xl mx-auto mb-8">
-              Dicas, inspirações e guias completos sobre alianças de casamento, noivado e joias exclusivas em Várzea Grande e Cuiabá - MT
+            <p className="text-xl text-white/80 max-w-3xl mx-auto mb-8 leading-relaxed">
+              Guias completos, inspirações e dicas especiais sobre alianças de casamento, noivado e joias em ouro 18k
+            </p>
+            <p className="text-sm text-[#D4AF37] mb-8">
+              📍 Várzea Grande e Cuiabá - MT
             </p>
             
             {/* Search Bar */}
