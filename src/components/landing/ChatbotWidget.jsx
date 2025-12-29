@@ -139,7 +139,7 @@ export default function ChatbotWidget() {
             exit={{ scale: 0, opacity: 0 }}
             transition={{ type: 'spring', stiffness: 200 }}
             onClick={() => setIsOpen(true)}
-            className="fixed bottom-32 left-4 sm:bottom-24 sm:left-6 z-[9998] flex items-center justify-center w-14 h-14 sm:w-16 sm:h-16 rounded-full bg-gradient-to-r from-[#D4AF37] to-[#C9A227] text-white shadow-lg shadow-[#D4AF37]/30 hover:shadow-xl hover:shadow-[#D4AF37]/40 transition-shadow duration-300 group"
+            className="fixed bottom-40 left-4 sm:bottom-32 sm:left-6 z-[9998] flex items-center justify-center w-14 h-14 sm:w-16 sm:h-16 rounded-full bg-gradient-to-r from-[#D4AF37] to-[#C9A227] text-white shadow-lg shadow-[#D4AF37]/30 hover:shadow-xl hover:shadow-[#D4AF37]/40 transition-shadow duration-300 group"
           >
             <Sparkles className="w-7 h-7 group-hover:scale-110 transition-transform" />
             
@@ -166,7 +166,7 @@ export default function ChatbotWidget() {
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 20, scale: 0.95 }}
             transition={{ type: 'spring', stiffness: 300, damping: 30 }}
-            className="fixed bottom-20 left-4 sm:bottom-6 sm:left-6 z-[9998] w-[calc(100vw-2rem)] sm:w-96 h-[calc(100vh-10rem)] sm:h-[600px] max-h-[calc(100vh-10rem)] sm:max-h-[calc(100vh-2rem)] bg-white rounded-3xl shadow-2xl flex flex-col overflow-hidden border border-[#D4AF37]/20"
+            className="fixed bottom-28 left-4 sm:bottom-6 sm:left-6 z-[9998] w-[calc(100vw-2rem)] sm:w-96 h-[calc(100vh-14rem)] sm:h-[600px] max-h-[calc(100vh-14rem)] sm:max-h-[calc(100vh-2rem)] bg-white rounded-3xl shadow-2xl flex flex-col overflow-hidden border border-[#D4AF37]/20"
           >
             {/* Header */}
             <div className="bg-gradient-to-r from-[#D4AF37] to-[#C9A227] p-4 flex items-center justify-between">
