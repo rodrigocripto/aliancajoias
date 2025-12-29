@@ -208,17 +208,17 @@ export default function BlogPost() {
 
           {/* Conteúdo Principal */}
           <div
-            className="prose prose-lg max-w-none
+            className="prose prose-lg max-w-none text-center
               prose-headings:text-center prose-headings:text-[#1A1A1A] prose-headings:font-light
               prose-h2:text-2xl prose-h2:mt-16 prose-h2:mb-8 prose-h2:pb-4 prose-h2:border-b prose-h2:border-[#D4AF37]/30
               prose-h3:text-xl prose-h3:mt-10 prose-h3:mb-6 prose-h3:text-[#D4AF37]
-              prose-p:text-gray-700 prose-p:leading-relaxed prose-p:mb-4 prose-p:text-justify
+              prose-p:text-gray-700 prose-p:leading-relaxed prose-p:mb-4 prose-p:text-center
               prose-a:text-[#D4AF37] prose-a:no-underline hover:prose-a:underline
               prose-strong:text-[#D4AF37] prose-strong:font-semibold
-              prose-ul:my-6 prose-ul:space-y-2 prose-ul:pl-6
-              prose-ol:my-6 prose-ol:space-y-2 prose-ol:pl-6
+              prose-ul:my-6 prose-ul:space-y-2 prose-ul:mx-auto prose-ul:max-w-2xl prose-ul:text-left
+              prose-ol:my-6 prose-ol:space-y-2 prose-ol:mx-auto prose-ol:max-w-2xl prose-ol:text-left
               prose-li:text-gray-700
-              prose-img:rounded-2xl prose-img:shadow-2xl prose-img:my-10"
+              prose-img:rounded-2xl prose-img:shadow-2xl prose-img:my-10 prose-img:mx-auto"
             dangerouslySetInnerHTML={{ __html: post.conteudo }}
           />
 
