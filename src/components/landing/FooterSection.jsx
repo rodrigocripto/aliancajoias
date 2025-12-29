@@ -57,17 +57,19 @@ export default function FooterSection() {
           <div>
             <h4 className="font-semibold text-white mb-6">Links Rápidos</h4>
             <div className="space-y-3">
-              <a href="/#modelos" className="block text-gray-400 hover:text-[#D4AF37] transition-colors duration-300">
-                Modelos
-              </a>
-              <a href="/#processo" className="block text-gray-400 hover:text-[#D4AF37] transition-colors duration-300">
-                Como Funciona
-              </a>
-              <a href="/#depoimentos" className="block text-gray-400 hover:text-[#D4AF37] transition-colors duration-300">
-                Depoimentos
+              <a href="/" className="block text-gray-400 hover:text-[#D4AF37] transition-colors duration-300">
+                Página Inicial
               </a>
               <a href="/Blog" className="block text-gray-400 hover:text-[#D4AF37] transition-colors duration-300">
                 Blog
+              </a>
+              <a 
+                href="https://wa.me/5565993122777?text=Olá! Gostaria de saber mais sobre as alianças." 
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block text-gray-400 hover:text-[#D4AF37] transition-colors duration-300"
+              >
+                Falar no WhatsApp
               </a>
             </div>
           </div>
