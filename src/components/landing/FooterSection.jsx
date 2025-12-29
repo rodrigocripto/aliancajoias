@@ -5,7 +5,7 @@ export default function FooterSection() {
   return (
     <footer className="bg-[#0D0D0D] py-16">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-12">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-12">
           {/* Brand */}
           <div className="lg:col-span-2">
             <h3 className="text-2xl font-light text-white mb-4">
@@ -53,6 +53,25 @@ export default function FooterSection() {
             </div>
           </div>
 
+          {/* Links */}
+          <div>
+            <h4 className="font-semibold text-white mb-6">Links Rápidos</h4>
+            <div className="space-y-3">
+              <a href="#modelos" className="block text-gray-400 hover:text-[#D4AF37] transition-colors duration-300">
+                Modelos
+              </a>
+              <a href="#processo" className="block text-gray-400 hover:text-[#D4AF37] transition-colors duration-300">
+                Como Funciona
+              </a>
+              <a href="#depoimentos" className="block text-gray-400 hover:text-[#D4AF37] transition-colors duration-300">
+                Depoimentos
+              </a>
+              <a href="/Blog" className="block text-gray-400 hover:text-[#D4AF37] transition-colors duration-300">
+                Blog
+              </a>
+            </div>
+          </div>
+
           {/* Contact */}
           <div>
             <h4 className="font-semibold text-white mb-6">Contato</h4>
@@ -79,7 +98,7 @@ export default function FooterSection() {
           </div>
 
           {/* Hours */}
-          <div>
+          <div className="sm:col-span-2 lg:col-span-1">
             <h4 className="font-semibold text-white mb-6">Horário</h4>
             <div className="space-y-3 text-gray-400">
               <div className="flex items-center gap-3">
