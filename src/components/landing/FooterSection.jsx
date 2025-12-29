@@ -57,13 +57,13 @@ export default function FooterSection() {
           <div>
             <h4 className="font-semibold text-white mb-6">Links Rápidos</h4>
             <div className="space-y-3">
-              <a href="#modelos" className="block text-gray-400 hover:text-[#D4AF37] transition-colors duration-300">
+              <a href="/#modelos" className="block text-gray-400 hover:text-[#D4AF37] transition-colors duration-300">
                 Modelos
               </a>
-              <a href="#processo" className="block text-gray-400 hover:text-[#D4AF37] transition-colors duration-300">
+              <a href="/#processo" className="block text-gray-400 hover:text-[#D4AF37] transition-colors duration-300">
                 Como Funciona
               </a>
-              <a href="#depoimentos" className="block text-gray-400 hover:text-[#D4AF37] transition-colors duration-300">
+              <a href="/#depoimentos" className="block text-gray-400 hover:text-[#D4AF37] transition-colors duration-300">
                 Depoimentos
               </a>
               <a href="/Blog" className="block text-gray-400 hover:text-[#D4AF37] transition-colors duration-300">

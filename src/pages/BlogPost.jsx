@@ -89,12 +89,21 @@ export default function BlogPost() {
       {/* Header Elegante */}
       <div className="bg-gradient-to-r from-[#1A1A1A] via-[#2A2A2A] to-[#1A1A1A] text-white py-6">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
-          <Link to={createPageUrl('Blog')}>
-            <Button variant="ghost" className="text-white hover:bg-white/10">
-              <ArrowLeft className="w-4 h-4 mr-2" />
-              Voltar
-            </Button>
-          </Link>
+          <div className="flex items-center gap-3">
+            <Link to={createPageUrl('Home')}>
+              <Button variant="ghost" className="text-white hover:bg-white/10" size="sm">
+                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+                </svg>
+              </Button>
+            </Link>
+            <Link to={createPageUrl('Blog')}>
+              <Button variant="ghost" className="text-white hover:bg-white/10">
+                <ArrowLeft className="w-4 h-4 mr-2" />
+                Blog
+              </Button>
+            </Link>
+          </div>
           <a
             href="https://wa.me/5565993122777?text=Olá! Vi o artigo no blog e gostaria de mais informações."
             target="_blank"
