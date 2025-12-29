@@ -5,7 +5,7 @@ import { useQuery } from '@tanstack/react-query';
 import { Button } from '@/components/ui/button';
 import { Calendar, Eye, ArrowLeft, Tag, Share2 } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import { createPageUrl } from './utils';
+import { createPageUrl } from '../utils';
 import FooterSection from '../components/landing/FooterSection';
 import { toast } from 'sonner';
 
