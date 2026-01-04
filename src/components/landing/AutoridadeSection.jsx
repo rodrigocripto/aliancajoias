@@ -30,8 +30,8 @@ const features = [
   },
   {
     icon: Shield,
-    title: 'Polimento Vitalício',
-    description: 'Polimento gratuito 1x por mês para manter suas alianças sempre brilhantes.',
+    title: 'Polimento Vitalício*',
+    description: 'Polimento gratuito 1x por mês para manter suas alianças sempre brilhantes.\n*Consultar Regulamento da Loja',
   },
 ];
 
