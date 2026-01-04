@@ -172,7 +172,7 @@ export default function DepoimentosSection() {
         >
           <div className="flex items-center gap-2 text-gray-400">
             <Star className="w-5 h-5 text-[#D4AF37] fill-[#D4AF37]" />
-            <span>4.9/5 no Google</span>
+            <span>5 estrelas no Google</span>
           </div>
           <div className="w-px h-6 bg-white/20 hidden sm:block" />
           <div className="text-gray-400">
