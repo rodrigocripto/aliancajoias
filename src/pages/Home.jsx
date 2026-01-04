@@ -78,8 +78,8 @@ export default function Home() {
       <HeroSection onCtaClick={handleCtaClick} />
       <ModeloDestaque modelo={modelos[0]} />
       <AutoridadeSection />
+      <ModeloDestaque modelo={modelos[1]} invertido />
       <EmocionalSection />
-      <ModelosDupla modelos={[modelos[1], modelos[2]]} />
       <PersonalizacaoSection />
       <ModeloDestaque modelo={modelos[3]} invertido />
       <ProcessoSection />
