@@ -136,11 +136,14 @@ export default function HeroSection({ onCtaClick }) {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.8, duration: 0.6 }}
-              className="mt-6 inline-flex items-center gap-3 px-6 py-3 bg-gradient-to-r from-[#D4AF37]/5 via-[#C9A227]/5 to-[#D4AF37]/5 rounded-full border border-[#D4AF37]/20"
+              className="mt-6 inline-flex flex-col sm:flex-row items-center gap-3 px-6 py-4 bg-gradient-to-r from-[#D4AF37]/5 via-[#C9A227]/5 to-[#D4AF37]/5 rounded-full border border-[#D4AF37]/20"
             >
-              <span className="text-[#D4AF37] font-semibold">100+ Modelos</span>
-              <span className="w-1 h-1 rounded-full bg-[#D4AF37]/50" />
-              <span className="text-[#4A4A4A]">Criação Personalizada Sob Medida</span>
+              <div className="flex items-center gap-3">
+                <span className="text-[#D4AF37] font-bold text-base">+100 Modelos Exclusivos</span>
+                <span className="w-1 h-1 rounded-full bg-[#D4AF37]/50" />
+                <span className="text-[#1A1A1A] font-medium">Criação Sob Medida</span>
+              </div>
+              <span className="hidden sm:inline text-[#4A4A4A] text-sm">→ Realize seu sonho hoje</span>
             </motion.div>
           </motion.div>
 
