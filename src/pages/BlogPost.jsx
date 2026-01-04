@@ -32,7 +32,7 @@ export default function BlogPost() {
 
   useEffect(() => {
     if (post) {
-      document.title = `${post.titulo} - Blog Aliança Joias`;
+      document.title = `${post.titulo} | Blog Aliança Joias Várzea Grande MT`;
       
       let metaDescription = document.querySelector('meta[name="description"]');
       if (!metaDescription) {
@@ -41,7 +41,78 @@ export default function BlogPost() {
         document.head.appendChild(metaDescription);
       }
       metaDescription.content = post.meta_description || post.resumo || post.titulo;
+
+      // Canonical URL
+      let canonical = document.querySelector('link[rel="canonical"]');
+      if (!canonical) {
+        canonical = document.createElement('link');
+        canonical.rel = 'canonical';
+        document.head.appendChild(canonical);
+      }
+      canonical.href = window.location.href;
+
+      // Open Graph para compartilhamento
+      const ogTags = [
+        { property: 'og:title', content: post.titulo },
+        { property: 'og:description', content: post.resumo || post.titulo },
+        { property: 'og:type', content: 'article' },
+        { property: 'og:url', content: window.location.href },
+        { property: 'og:image', content: post.imagem_capa }
+      ];
+      
+      ogTags.forEach(tag => {
+        let metaTag = document.querySelector(`meta[property="${tag.property}"]`);
+        if (!metaTag) {
+          metaTag = document.createElement('meta');
+          metaTag.setAttribute('property', tag.property);
+          document.head.appendChild(metaTag);
+        }
+        metaTag.content = tag.content;
+      });
+
+      // Article Schema JSON-LD
+      let articleSchema = document.querySelector('script[data-schema="article"]');
+      if (!articleSchema) {
+        articleSchema = document.createElement('script');
+        articleSchema.type = 'application/ld+json';
+        articleSchema.setAttribute('data-schema', 'article');
+        document.head.appendChild(articleSchema);
+      }
+      
+      articleSchema.textContent = JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "headline": post.titulo,
+        "description": post.resumo || post.titulo,
+        "image": post.imagem_capa,
+        "datePublished": post.created_date,
+        "dateModified": post.updated_date,
+        "author": {
+          "@type": "Organization",
+          "name": "Joalheria Aliança Joias"
+        },
+        "publisher": {
+          "@type": "Organization",
+          "name": "Joalheria Aliança Joias",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/694ef32b4b63ebef73cd51c8/63c708746_CpiadeFOTO2.jpg"
+          }
+        },
+        "mainEntityOfPage": {
+          "@type": "WebPage",
+          "@id": window.location.href
+        }
+      });
     }
+
+    return () => {
+      // Cleanup article schema when leaving page
+      const articleSchema = document.querySelector('script[data-schema="article"]');
+      if (articleSchema) {
+        articleSchema.remove();
+      }
+    };
   }, [post]);
 
   const handleShare = () => {
