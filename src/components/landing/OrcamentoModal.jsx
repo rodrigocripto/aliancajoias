@@ -18,7 +18,7 @@ export default function OrcamentoModal({ isOpen, onClose, modeloSelecionado }) {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = React.useCallback(async (e) => {
     e.preventDefault();
     setIsSubmitting(true);
     
@@ -34,11 +34,11 @@ export default function OrcamentoModal({ isOpen, onClose, modeloSelecionado }) {
       setFormData({ nome: '', telefone: '', email: '', modelo: '', mensagem: '' });
       onClose();
     }, 3000);
-  };
+  }, [onClose]);
 
-  const handleChange = (field, value) => {
+  const handleChange = React.useCallback((field, value) => {
     setFormData(prev => ({ ...prev, [field]: value }));
-  };
+  }, []);
 
   React.useEffect(() => {
     if (modeloSelecionado) {

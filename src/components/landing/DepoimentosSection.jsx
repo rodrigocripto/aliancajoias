@@ -41,13 +41,13 @@ const depoimentos = [
 export default function DepoimentosSection() {
   const [currentIndex, setCurrentIndex] = useState(0);
 
-  const nextSlide = () => {
+  const nextSlide = React.useCallback(() => {
     setCurrentIndex((prev) => (prev + 1) % depoimentos.length);
-  };
+  }, []);
 
-  const prevSlide = () => {
+  const prevSlide = React.useCallback(() => {
     setCurrentIndex((prev) => (prev - 1 + depoimentos.length) % depoimentos.length);
-  };
+  }, []);
 
   return (
     <section className="py-24 bg-[#1A1A1A] relative overflow-hidden">

@@ -14,6 +14,7 @@ import OrcamentoModal from '@/components/landing/OrcamentoModal';
 import FloatingWhatsApp from '@/components/landing/FloatingWhatsApp';
 import ChatbotWidget from '@/components/landing/ChatbotWidget';
 
+// Mover modelos para fora do componente para evitar re-criação
 const modelos = [
   {
     id: 1,
@@ -63,15 +64,15 @@ export default function Home() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [modeloSelecionado, setModeloSelecionado] = useState('');
 
-  const handleCtaClick = () => {
+  const handleCtaClick = React.useCallback(() => {
     setModeloSelecionado('');
     setIsModalOpen(true);
-  };
+  }, []);
 
-  const handleModeloClick = (modelo) => {
+  const handleModeloClick = React.useCallback((modelo) => {
     setModeloSelecionado(modelo);
     setIsModalOpen(true);
-  };
+  }, []);
 
   return (
     <div className="min-h-screen bg-[#FDFBF7] overflow-x-hidden">

@@ -16,19 +16,19 @@ export default function ChatbotWidget() {
   const [isSending, setIsSending] = useState(false);
   const messagesEndRef = useRef(null);
 
-  const scrollToBottom = () => {
+  const scrollToBottom = React.useCallback(() => {
     messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
-  };
+  }, []);
 
   useEffect(() => {
     scrollToBottom();
-  }, [messages]);
+  }, [messages, scrollToBottom]);
 
   useEffect(() => {
     if (isOpen && !conversation) {
       initConversation();
     }
-  }, [isOpen]);
+  }, [isOpen, conversation]);
 
   useEffect(() => {
     if (!conversation) return;
