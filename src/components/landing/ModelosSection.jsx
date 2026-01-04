@@ -89,7 +89,7 @@ export default function ModelosSection() {
               transition={{ duration: 0.6, delay: index * 0.1 }}
               className="group"
             >
-              <div className="relative bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 border border-[#D4AF37]/10">
+              <div className="relative bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 border border-[#D4AF37]/10 h-full flex flex-col">
                 {/* Badge */}
                 <div className="absolute top-4 left-4 z-10">
                   <span className="inline-flex items-center gap-1 px-3 py-1.5 rounded-full bg-white/90 backdrop-blur-sm text-xs font-medium text-[#D4AF37] shadow-sm">
@@ -109,11 +109,11 @@ export default function ModelosSection() {
                 </div>
 
                 {/* Content */}
-                <div className="p-6">
+                <div className="p-6 flex flex-col flex-1">
                   <h3 className="text-xl font-semibold text-[#1A1A1A] mb-2 group-hover:text-[#D4AF37] transition-colors duration-300">
                     {modelo.nome}
                   </h3>
-                  <p className="text-[#4A4A4A] text-sm leading-relaxed mb-6">
+                  <p className="text-[#4A4A4A] text-sm leading-relaxed mb-6 flex-1">
                     {modelo.descricao}
                   </p>
                   <Button
