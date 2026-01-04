@@ -31,7 +31,13 @@ const features = [
   {
     icon: Shield,
     title: 'Polimento Vitalício*',
-    description: 'Polimento gratuito 1x por mês para manter suas alianças sempre brilhantes.\n*Consultar Regulamento da Loja',
+    description: (
+      <>
+        Polimento gratuito 1x por mês para manter suas alianças sempre brilhantes.
+        <br /><br />
+        <span className="text-[0.5em] font-bold">*Consultar Regulamento da Loja</span>
+      </>
+    ),
   },
 ];
 
