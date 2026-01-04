@@ -58,5 +58,35 @@ export const postsData = [
     visualizacoes: 756,
     created_date: "2024-12-05T11:20:00.000Z",
     updated_date: "2024-12-05T11:20:00.000Z"
+  },
+  {
+    id: "5",
+    titulo: "Guia Completo para Escolher o Anel Solitário Perfeito",
+    slug: "guia-completo-anel-solitario-perfeito",
+    resumo: "Tudo o que você precisa saber para escolher o anel solitário dos sonhos. Dicas sobre pedras, design e personalização.",
+    conteudo: "<h2>O Anel Solitário</h2><p>O anel solitário é o símbolo máximo do pedido de casamento. Uma única pedra brilhante que representa o amor único e especial entre duas pessoas.</p><h2>Escolhendo a Pedra Central</h2><ul><li><strong>Diamante:</strong> Clássico e atemporal, o diamante é a escolha mais tradicional</li><li><strong>Zircônia:</strong> Opção acessível com brilho excepcional</li><li><strong>Tamanho:</strong> De 0.25 a 1 quilate, escolha conforme seu orçamento</li><li><strong>Lapidação:</strong> Redonda, princesa, oval - cada uma tem seu charme</li></ul><h2>Design do Anel</h2><p>O design deve complementar a pedra central e o estilo pessoal:</p><ul><li>Armação clássica com 4 ou 6 garras</li><li>Aro liso ou com detalhes</li><li>Ouro branco, amarelo ou rose</li></ul><h2>Personalização</h2><p>Em nossa joalheria em Várzea Grande e Cuiabá, criamos anéis solitários sob medida. Escolha a pedra, o design e todos os detalhes para tornar seu anel único e especial.</p>",
+    imagem_capa: "https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/694ef32b4b63ebef73cd51c8/65717288d_CpiadeFOTO2.jpg",
+    categoria: "anel-solitario",
+    tags: ["anel solitário", "pedido de casamento", "diamante", "personalização"],
+    meta_description: "Guia completo para escolher anel solitário - Joalheria Aliança Joias Várzea Grande e Cuiabá MT. Design exclusivo e pedras de qualidade.",
+    publicado: true,
+    visualizacoes: 1420,
+    created_date: "2024-12-18T15:45:00.000Z",
+    updated_date: "2024-12-18T15:45:00.000Z"
+  },
+  {
+    id: "6",
+    titulo: "Aparadores de Aliança: Elegância e Sofisticação",
+    slug: "aparadores-alianca-elegancia-sofisticacao",
+    resumo: "Descubra como os aparadores podem transformar suas alianças, adicionando brilho e estilo único ao seu conjunto.",
+    conteudo: "<h2>O Que São Aparadores?</h2><p>Aparadores são anéis complementares que flanqueiam a aliança de casamento, criando um conjunto sofisticado e elegante. Adicionam brilho e personalidade ao visual.</p><h2>Estilos de Aparadores</h2><ul><li><strong>Cravejados Completos:</strong> Cobertos de pedras para máximo brilho</li><li><strong>Meia Aliança:</strong> Pedras na parte frontal, conforto na parte interna</li><li><strong>Design Trançado:</strong> Entrelaçamento delicado e romântico</li><li><strong>Geométricos:</strong> Linhas modernas e contemporâneas</li></ul><h2>Combinações Perfeitas</h2><p>O segredo está na harmonia:</p><ul><li>Combine metais - ouro amarelo, branco ou rose</li><li>Escolha pedras que complementem sua aliança</li><li>Mantenha a proporção - aparadores não devem ofuscar a aliança</li></ul><h2>Versatilidade</h2><p>Use os aparadores com a aliança em ocasiões especiais ou diariamente. Podem ser usados sozinhos ou como duo, oferecendo múltiplas opções de estilo.</p><h2>Fabricação Personalizada</h2><p>Na Aliança Joias em Várzea Grande, criamos aparadores sob medida que se encaixam perfeitamente com sua aliança existente, garantindo conforto e beleza.</p>",
+    imagem_capa: "https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/694ef32b4b63ebef73cd51c8/2cfa1ba59_CpiadeFOTO3.jpg",
+    categoria: "aparadores",
+    tags: ["aparadores", "alianças", "joias", "estilo"],
+    meta_description: "Aparadores de aliança sob medida - Joalheria Aliança Joias Várzea Grande MT. Elegância e sofisticação para complementar suas alianças.",
+    publicado: true,
+    visualizacoes: 980,
+    created_date: "2024-12-22T10:30:00.000Z",
+    updated_date: "2024-12-22T10:30:00.000Z"
   }
 ];
