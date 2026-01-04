@@ -30,8 +30,8 @@ const features = [
   },
   {
     icon: Shield,
-    title: 'Manutenção Garantida',
-    description: 'Assistência técnica e manutenção das suas alianças sem custo adicional.',
+    title: 'Polimento Vitalício',
+    description: 'Polimento gratuito 1x por mês para manter suas alianças sempre brilhantes.',
   },
 ];
 
