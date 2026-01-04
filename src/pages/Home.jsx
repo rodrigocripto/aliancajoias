@@ -12,7 +12,6 @@ import CTAFinalSection from '@/components/landing/CTAFinalSection';
 import FooterSection from '@/components/landing/FooterSection';
 import OrcamentoModal from '@/components/landing/OrcamentoModal';
 import FloatingWhatsApp from '@/components/landing/FloatingWhatsApp';
-import ChatbotWidget from '@/components/landing/ChatbotWidget';
 
 // Mover modelos para fora do componente para evitar re-criação
 const modelos = [
@@ -98,7 +97,6 @@ export default function Home() {
       />
       
       <FloatingWhatsApp />
-      <ChatbotWidget />
     </div>
   );
 }
