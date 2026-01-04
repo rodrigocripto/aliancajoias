@@ -14,47 +14,14 @@ export default function EmocionalSection() {
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
-          {/* Image Side */}
-          <motion.div
-            initial={{ opacity: 0, x: -50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-            className="relative"
-          >
-            <div className="relative aspect-[4/5] rounded-3xl overflow-hidden">
-              <img
-                src="https://images.unsplash.com/photo-1519741497674-611481863552?w=800&q=80"
-                alt="Casal com alianças"
-                className="w-full h-full object-cover"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#1A1A1A]/60 via-transparent to-transparent" />
-            </div>
-
-            {/* Floating Quote */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.4, duration: 0.6 }}
-              className="absolute -bottom-8 -right-4 sm:right-8 max-w-xs bg-white/95 backdrop-blur-sm rounded-2xl p-6 shadow-2xl"
-            >
-              <div className="text-3xl text-[#D4AF37] mb-2">"</div>
-              <p className="text-[#1A1A1A] italic leading-relaxed">
-                Uma aliança não é apenas uma joia. É a promessa silenciosa que 
-                brilha em cada gesto de amor.
-              </p>
-            </motion.div>
-          </motion.div>
-
+        <div className="flex justify-center">
           {/* Content Side */}
           <motion.div
             initial={{ opacity: 0, x: 50 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="lg:pl-8"
+            className="max-w-4xl text-center"
           >
             <span className="inline-block px-4 py-2 rounded-full bg-[#D4AF37]/20 text-[#D4AF37] text-sm font-medium tracking-wide uppercase mb-6">
               Mais que uma Joia
