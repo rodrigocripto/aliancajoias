@@ -136,14 +136,16 @@ export default function HeroSection({ onCtaClick }) {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.8, duration: 0.6 }}
-              className="mt-6 inline-flex flex-col sm:flex-row items-center gap-3 px-6 py-4 bg-gradient-to-r from-[#D4AF37]/5 via-[#C9A227]/5 to-[#D4AF37]/5 rounded-full border border-[#D4AF37]/20"
+              className="mt-6 text-center lg:text-left"
             >
-              <div className="flex items-center gap-3">
-                <span className="text-[#D4AF37] font-bold text-base">+100 Modelos Exclusivos</span>
-                <span className="w-1 h-1 rounded-full bg-[#D4AF37]/50" />
-                <span className="text-[#1A1A1A] font-medium">Criação Sob Medida</span>
+              <div className="inline-flex flex-col items-center gap-2 px-6 py-4 bg-gradient-to-r from-[#D4AF37]/8 via-[#C9A227]/8 to-[#D4AF37]/8 rounded-2xl border border-[#D4AF37]/30">
+                <div className="flex items-center gap-3 flex-wrap justify-center">
+                  <span className="text-[#D4AF37] font-bold text-lg">+100 Modelos Exclusivos</span>
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#D4AF37]" />
+                  <span className="text-[#1A1A1A] font-semibold text-lg">Criação Sob Medida</span>
+                </div>
+                <span className="text-[#4A4A4A] text-sm font-medium">✨ Transforme seu sonho em realidade</span>
               </div>
-              <span className="hidden sm:inline text-[#4A4A4A] text-sm">→ Realize seu sonho hoje</span>
             </motion.div>
           </motion.div>
 
