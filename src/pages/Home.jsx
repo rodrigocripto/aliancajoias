@@ -79,11 +79,12 @@ export default function Home() {
       <ModeloDestaque modelo={modelos[0]} />
       <AutoridadeSection />
       <ModeloDestaque modelo={modelos[1]} invertido />
-      <EmocionalSection />
       <PersonalizacaoSection />
+      <ModeloDestaque modelo={modelos[5]} />
+      <EmocionalSection />
       <ModeloDestaque modelo={modelos[3]} invertido />
       <ProcessoSection />
-      <ModelosDupla modelos={[modelos[4], modelos[5]]} />
+      <ModelosDupla modelos={[modelos[2], modelos[4]]} />
       <DepoimentosSection />
       <ModelosSection onModeloClick={handleModeloClick} />
       <CTAFinalSection onCtaClick={handleCtaClick} />
