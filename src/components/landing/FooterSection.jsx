@@ -5,7 +5,7 @@ export default function FooterSection() {
   return (
     <footer className="bg-[#0D0D0D] py-16">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-12">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-12">
           {/* Brand */}
           <div className="lg:col-span-2">
             <h3 className="text-2xl font-light text-white mb-4">
@@ -74,47 +74,44 @@ export default function FooterSection() {
             </div>
           </div>
 
-          {/* Contact & Hours */}
-          <div className="sm:col-span-2 lg:col-span-1">
-            {/* Contact */}
-            <div className="mb-8">
-              <h4 className="font-semibold text-white mb-6">Contato</h4>
-              <div className="space-y-4">
-                <a
-                  href="tel:+5565993122777"
-                  className="flex items-center gap-3 text-gray-400 hover:text-[#D4AF37] transition-colors duration-300"
-                >
-                  <Phone className="w-5 h-5" />
-                  <span>(65) 99312-2777</span>
-                </a>
-                <a
-                  href="mailto:aliancajoiasmarket@gmail.com"
-                  className="flex items-center gap-3 text-gray-400 hover:text-[#D4AF37] transition-colors duration-300"
-                >
-                  <Mail className="w-5 h-5" />
-                  <span>aliancajoiasmarket@gmail.com</span>
-                </a>
-                <div className="flex items-start gap-3 text-gray-400">
-                  <MapPin className="w-5 h-5 flex-shrink-0 mt-0.5" />
-                  <span>Av. Sen. Filinto Müller, 1900 - Centro Norte, Várzea Grande - MT, 78110-302</span>
-                </div>
+          {/* Contact */}
+          <div>
+            <h4 className="font-semibold text-white mb-6">Contato</h4>
+            <div className="space-y-4">
+              <a
+                href="tel:+5565993122777"
+                className="flex items-center gap-3 text-gray-400 hover:text-[#D4AF37] transition-colors duration-300"
+              >
+                <Phone className="w-5 h-5" />
+                <span>(65) 99312-2777</span>
+              </a>
+              <a
+                href="mailto:aliancajoiasmarket@gmail.com"
+                className="flex items-center gap-3 text-gray-400 hover:text-[#D4AF37] transition-colors duration-300"
+              >
+                <Mail className="w-5 h-5" />
+                <span>aliancajoiasmarket@gmail.com</span>
+              </a>
+              <div className="flex items-start gap-3 text-gray-400">
+                <MapPin className="w-5 h-5 flex-shrink-0 mt-0.5" />
+                <span>Av. Sen. Filinto Müller, 1900 - Centro Norte, Várzea Grande - MT, 78110-302</span>
               </div>
             </div>
+          </div>
 
-            {/* Hours */}
-            <div>
-              <h4 className="font-semibold text-white mb-6">Horário</h4>
-              <div className="space-y-3 text-gray-400">
-                <div className="flex items-center gap-3">
-                  <Clock className="w-5 h-5 text-[#D4AF37]" />
-                  <span>Atendimento</span>
-                </div>
-                <p>Seg - Sex: 9h às 18h</p>
-                <p>Sábado: 9h às 13h</p>
-                <p className="text-sm text-[#D4AF37]">
-                  Agendamento recomendado
-                </p>
+          {/* Hours */}
+          <div className="sm:col-span-2 lg:col-span-1">
+            <h4 className="font-semibold text-white mb-6">Horário</h4>
+            <div className="space-y-3 text-gray-400">
+              <div className="flex items-center gap-3">
+                <Clock className="w-5 h-5 text-[#D4AF37]" />
+                <span>Atendimento</span>
               </div>
+              <p>Seg - Sex: 9h às 18h</p>
+              <p>Sábado: 9h às 13h</p>
+              <p className="text-sm text-[#D4AF37]">
+                Agendamento recomendado
+              </p>
             </div>
           </div>
         </div>
