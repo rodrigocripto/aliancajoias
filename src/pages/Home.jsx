@@ -76,8 +76,8 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-[#FDFBF7] overflow-x-hidden">
       <HeroSection onCtaClick={handleCtaClick} />
-      <AutoridadeSection />
       <ModeloDestaque modelo={modelos[0]} />
+      <AutoridadeSection />
       <EmocionalSection />
       <ModelosDupla modelos={[modelos[1], modelos[2]]} />
       <PersonalizacaoSection />
