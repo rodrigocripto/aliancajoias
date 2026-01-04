@@ -75,7 +75,7 @@ export default function ProcessoSection() {
                     <div className="w-20 h-20 rounded-2xl bg-white shadow-lg shadow-[#D4AF37]/10 border border-[#D4AF37]/20 flex items-center justify-center mb-6 mx-auto relative z-10">
                       <passo.icon className="w-8 h-8 text-[#D4AF37]" />
                     </div>
-                    <span className="absolute -top-3 -right-3 w-8 h-8 rounded-full bg-[#D4AF37] text-white text-sm font-bold flex items-center justify-center shadow-lg">
+                    <span className="absolute -top-3 -right-3 w-8 h-8 rounded-full bg-[#D4AF37] text-white text-sm font-bold flex items-center justify-center shadow-lg z-20">
                       {passo.numero.slice(-1)}
                     </span>
                   </div>
