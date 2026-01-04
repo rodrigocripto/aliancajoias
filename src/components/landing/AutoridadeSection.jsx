@@ -77,7 +77,7 @@ export default function AutoridadeSection() {
               transition={{ duration: 0.6, delay: index * 0.1 }}
               className="group"
             >
-              <div className="relative p-8 rounded-3xl bg-[#FDFBF7] border border-[#D4AF37]/10 hover:border-[#D4AF37]/30 transition-all duration-500 hover:shadow-xl hover:shadow-[#D4AF37]/5">
+              <div className="relative p-8 rounded-3xl bg-[#FDFBF7] border border-[#D4AF37]/10 hover:border-[#D4AF37]/30 transition-all duration-500 hover:shadow-xl hover:shadow-[#D4AF37]/5 h-full flex flex-col">
                 {/* Icon */}
                 <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-[#D4AF37]/20 to-[#D4AF37]/5 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
                   <feature.icon className="w-7 h-7 text-[#D4AF37]" />
@@ -87,7 +87,7 @@ export default function AutoridadeSection() {
                 <h3 className="text-xl font-semibold text-[#1A1A1A] mb-3">
                   {feature.title}
                 </h3>
-                <p className="text-[#4A4A4A] leading-relaxed">
+                <p className="text-[#4A4A4A] leading-relaxed flex-1">
                   {feature.description}
                 </p>
 
