@@ -180,7 +180,7 @@ export default function DepoimentosSection() {
           </div>
           <div className="w-px h-6 bg-white/20 hidden sm:block" />
           <div className="text-gray-400">
-            98% de satisfação
+            100% de satisfação
           </div>
         </motion.div>
       </div>
