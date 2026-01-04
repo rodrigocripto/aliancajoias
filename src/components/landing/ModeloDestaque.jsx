@@ -25,7 +25,8 @@ export default function ModeloDestaque({ modelo, invertido = false }) {
             <div className="relative aspect-square rounded-3xl overflow-hidden shadow-2xl">
               <img
                 src={modelo.imagem}
-                alt={modelo.nome}
+                alt={`Aliança ${modelo.nome} em ouro 18k certificado - Fabricação própria Várzea Grande MT`}
+                loading="lazy"
                 className="w-full h-full object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent" />
