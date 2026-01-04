@@ -22,7 +22,7 @@ export default function HeroSection({ onCtaClick }) {
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentImageIndex((prev) => (prev + 1) % carouselImages.length);
-    }, 1500);
+    }, 2000);
 
     return () => clearInterval(interval);
   }, []);
