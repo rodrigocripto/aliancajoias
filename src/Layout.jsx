@@ -2,6 +2,18 @@ import React, { useEffect } from 'react';
 
 export default function Layout({ children, currentPageName }) {
   useEffect(() => {
+    // Disable automatic translation
+    document.documentElement.setAttribute('lang', 'pt-BR');
+    document.documentElement.setAttribute('translate', 'no');
+
+    let noTranslate = document.querySelector('meta[name="google"]');
+    if (!noTranslate) {
+      noTranslate = document.createElement('meta');
+      noTranslate.name = 'google';
+      document.head.appendChild(noTranslate);
+    }
+    noTranslate.content = 'notranslate';
+
     // Favicon
     let favicon = document.querySelector('link[rel="icon"]');
     if (!favicon) {
