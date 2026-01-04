@@ -1,13 +1,13 @@
 import Blog from './pages/Blog';
-import BlogPost from './pages/BlogPost';
 import Home from './pages/Home';
+import BlogPost from './pages/BlogPost';
 import __Layout from './Layout.jsx';
 
 
 export const PAGES = {
     "Blog": Blog,
-    "BlogPost": BlogPost,
     "Home": Home,
+    "BlogPost": BlogPost,
 }
 
 export const pagesConfig = {
