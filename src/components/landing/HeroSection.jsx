@@ -1,9 +1,31 @@
-import React from 'react';
-import { motion } from 'framer-motion';
+import React, { useState, useEffect } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 import { Button } from '@/components/ui/button';
 import { ChevronDown } from 'lucide-react';
 
+const carouselImages = [
+  "https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/694ef32b4b63ebef73cd51c8/09dbba98e_CpiadeFOTO3.jpg",
+  "https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/694ef32b4b63ebef73cd51c8/5920f1e7c_FOTO42.jpg",
+  "https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/694ef32b4b63ebef73cd51c8/24b8b389c_CpiadeFOTO3.jpg",
+  "https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/694ef32b4b63ebef73cd51c8/b1170de7f_CpiadeFOTO3.jpg",
+  "https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/694ef32b4b63ebef73cd51c8/336ec9b9e_CpiadeFOTO2.jpg",
+  "https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/694ef32b4b63ebef73cd51c8/65a937b4d_CpiadeFOTO3.jpg",
+  "https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/694ef32b4b63ebef73cd51c8/5fd91be22_CpiadeCpiadeCpiadeac528577-5da3-4403-a670-2a5a6cc24208.jpg",
+  "https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/694ef32b4b63ebef73cd51c8/a9f8d548e_CpiadeFOTO3.jpg",
+  "https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/694ef32b4b63ebef73cd51c8/b20d43345_CpiadeFOTO3.jpg",
+  "https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/694ef32b4b63ebef73cd51c8/723deb426_CpiadeFOTO3.jpg"
+];
+
 export default function HeroSection({ onCtaClick }) {
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentImageIndex((prev) => (prev + 1) % carouselImages.length);
+    }, 1500);
+
+    return () => clearInterval(interval);
+  }, []);
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-[#FDFBF7]">
       {/* Background Pattern */}
@@ -123,14 +145,21 @@ export default function HeroSection({ onCtaClick }) {
               <div className="absolute inset-0 rounded-full border-2 border-[#D4AF37]/20 animate-pulse" />
               <div className="absolute inset-4 rounded-full border border-[#D4AF37]/10" />
               
-              {/* Main Image Container */}
+              {/* Main Image Container - Carousel */}
               <div className="absolute inset-8 rounded-full overflow-hidden bg-gradient-to-br from-[#F5E6C8] to-[#E8D5A3] shadow-2xl">
-                <img
-                  src="https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/694ef32b4b63ebef73cd51c8/09dbba98e_CpiadeFOTO3.jpg"
-                  alt="Alianças em Ouro 18k"
-                  className="w-full h-full object-cover object-center"
-                  style={{ objectPosition: '50% 45%' }}
-                />
+                <AnimatePresence mode="wait">
+                  <motion.img
+                    key={currentImageIndex}
+                    src={carouselImages[currentImageIndex]}
+                    alt="Alianças em Ouro 18k"
+                    className="w-full h-full object-cover object-center"
+                    style={{ objectPosition: '50% 45%' }}
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    exit={{ opacity: 0 }}
+                    transition={{ duration: 0.5 }}
+                  />
+                </AnimatePresence>
                 <div className="absolute inset-0 bg-gradient-to-t from-[#D4AF37]/20 to-transparent" />
               </div>
 
