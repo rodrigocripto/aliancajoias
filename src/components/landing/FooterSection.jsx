@@ -60,7 +60,7 @@ export default function FooterSection() {
               <a href="/" className="block text-gray-400 hover:text-[#D4AF37] transition-colors duration-300">
                 Página Inicial
               </a>
-              <a href="/Blog" className="block text-gray-400 hover:text-[#D4AF37] transition-colors duration-300">
+              <a href="/blog" className="block text-gray-400 hover:text-[#D4AF37] transition-colors duration-300">
                 Blog
               </a>
               <a 

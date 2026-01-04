@@ -1,13 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { base44 } from '@/api/base44Client';
-import { useQuery } from '@tanstack/react-query';
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
 import { Search, Calendar, Eye, ArrowRight, Tag } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { createPageUrl } from '../utils';
 import FooterSection from '../components/landing/FooterSection';
+import postsData from '../content/posts.json';
 
 const categorias = [
   { value: 'all', label: 'Todos os Posts' },
@@ -36,20 +35,26 @@ export default function Blog() {
     metaDescription.content = 'Blog da Aliança Joias em Várzea Grande e Cuiabá - MT. Dicas sobre alianças de casamento, noivado, anéis solitários e aparadores. Guia completo para escolher a joia perfeita.';
   }, []);
 
-  const { data: posts = [], isLoading } = useQuery({
-    queryKey: ['blogPosts'],
-    queryFn: async () => {
-      const allPosts = await base44.entities.BlogPost.filter({ publicado: true }, '-created_date');
-      return allPosts;
-    },
-  });
+  // Carregar posts do JSON local e garantir que é array
+  const [posts, setPosts] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
 
-  const postsFiltrados = posts.filter(post => {
+  useEffect(() => {
+    // Garantir que posts é sempre array
+    const loadedPosts = Array.isArray(postsData) ? postsData : [];
+    // Ordenar por data mais recente
+    const sortedPosts = loadedPosts
+      .filter(post => post.publicado)
+      .sort((a, b) => new Date(b.created_date) - new Date(a.created_date));
+    setPosts(sortedPosts);
+  }, []);
+
+  const postsFiltrados = Array.isArray(posts) ? posts.filter(post => {
     const matchSearch = post.titulo.toLowerCase().includes(searchTerm.toLowerCase()) ||
                        post.resumo?.toLowerCase().includes(searchTerm.toLowerCase());
     const matchCategoria = categoriaFiltro === 'all' || post.categoria === categoriaFiltro;
     return matchSearch && matchCategoria;
-  });
+  }) : [];
 
   return (
     <div className="min-h-screen bg-[#FDFBF7]">
@@ -158,7 +163,7 @@ export default function Blog() {
                   transition={{ delay: index * 0.1 }}
                   className="group"
                 >
-                  <Link to={createPageUrl(`BlogPost?slug=${post.slug}`)}>
+                  <Link to={createPageUrl(`blog-post?slug=${post.slug}`)}>
                     <div className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 border border-gray-100">
                       {/* Imagem */}
                       {post.imagem_capa && (

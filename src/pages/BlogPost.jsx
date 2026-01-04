@@ -1,34 +1,32 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
-import { base44 } from '@/api/base44Client';
-import { useQuery } from '@tanstack/react-query';
 import { Button } from '@/components/ui/button';
 import { Calendar, Eye, ArrowLeft, Tag, Share2 } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { createPageUrl } from '../utils';
 import FooterSection from '../components/landing/FooterSection';
 import { toast } from 'sonner';
+import postsData from '../content/posts.json';
 
 export default function BlogPost() {
   const urlParams = new URLSearchParams(window.location.search);
   const slug = urlParams.get('slug');
+  const [post, setPost] = useState(null);
+  const [isLoading, setIsLoading] = useState(true);
 
-  const { data: post, isLoading } = useQuery({
-    queryKey: ['blogPost', slug],
-    queryFn: async () => {
-      const posts = await base44.entities.BlogPost.filter({ slug, publicado: true });
-      if (posts.length === 0) return null;
-      
-      // Incrementar visualizações
-      const post = posts[0];
-      await base44.entities.BlogPost.update(post.id, {
-        visualizacoes: (post.visualizacoes || 0) + 1
-      });
-      
-      return post;
-    },
-    enabled: !!slug,
-  });
+  useEffect(() => {
+    if (!slug) {
+      setIsLoading(false);
+      return;
+    }
+
+    // Carregar post do JSON local
+    const allPosts = Array.isArray(postsData) ? postsData : [];
+    const foundPost = allPosts.find(p => p.slug === slug && p.publicado);
+    
+    setPost(foundPost || null);
+    setIsLoading(false);
+  }, [slug]);
 
   useEffect(() => {
     if (post) {
@@ -144,7 +142,7 @@ export default function BlogPost() {
       <div className="min-h-screen bg-gray-50 flex items-center justify-center">
         <div className="text-center">
           <h1 className="text-4xl font-bold text-gray-800 mb-4">Post não encontrado</h1>
-          <Link to={createPageUrl('Blog')}>
+          <Link to={createPageUrl('blog')}>
             <Button className="bg-[#D4AF37] hover:bg-[#C9A227]">
               <ArrowLeft className="w-4 h-4 mr-2" />
               Voltar ao Blog
@@ -370,7 +368,7 @@ export default function BlogPost() {
 
           {/* Voltar ao Blog */}
           <div className="mt-16 text-center">
-            <Link to={createPageUrl('Blog')}>
+            <Link to={createPageUrl('blog')}>
               <Button size="lg" variant="outline" className="border-[#D4AF37] text-[#D4AF37] hover:bg-[#D4AF37]/10">
                 <ArrowLeft className="w-4 h-4 mr-2" />
                 Ver Mais Artigos
