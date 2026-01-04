@@ -35,7 +35,7 @@ const features = [
       <>
         Polimento gratuito 1x por mês para manter suas alianças sempre brilhantes.
         <br /><br />
-        <span className="text-[0.5em] font-bold">*Consultar Regulamento da Loja</span>
+        <span className="text-[0.7em] font-bold">*Consultar Regulamento da Loja</span>
       </>
     ),
   },
