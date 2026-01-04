@@ -167,7 +167,8 @@ export default function HeroSection({ onCtaClick }) {
                   <motion.img
                     key={currentImageIndex}
                     src={carouselImages[currentImageIndex]}
-                    alt="Alianças em Ouro 18k"
+                    alt="Alianças de ouro 18k personalizadas Várzea Grande MT - Joalheria Aliança Joias fabricação própria"
+                    loading="eager"
                     className="w-full h-full object-cover object-center"
                     style={{ objectPosition: '50% 45%' }}
                     initial={{ opacity: 0 }}

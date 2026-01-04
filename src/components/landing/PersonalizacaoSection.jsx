@@ -96,7 +96,8 @@ export default function PersonalizacaoSection() {
               <div className="aspect-square rounded-3xl overflow-hidden shadow-2xl">
                 <img
                   src="https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/694ef32b4b63ebef73cd51c8/92e0943fa_pedido_de_casamento_surpresa_emocionante_em_holambra_-_natalia_e_caue-34.jpg"
-                  alt="Casal feliz mostrando alianças após pedido de casamento"
+                  alt="Casal feliz com alianças personalizadas de ouro 18k - Aliança Joias Várzea Grande MT"
+                  loading="lazy"
                   className="w-full h-full object-cover"
                 />
               </div>

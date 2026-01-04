@@ -90,7 +90,8 @@ export default function DepoimentosSection() {
                   <div className="w-24 h-24 sm:w-32 sm:h-32 rounded-full overflow-hidden border-4 border-[#D4AF37]/30">
                     <img
                       src={depoimentos[currentIndex].imagem}
-                      alt={depoimentos[currentIndex].nome}
+                      alt={`Depoimento de ${depoimentos[currentIndex].nome} - Cliente satisfeito Aliança Joias Várzea Grande MT`}
+                      loading="lazy"
                       className="w-full h-full object-cover"
                     />
                   </div>
