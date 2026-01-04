@@ -1,0 +1,62 @@
+export const postsData = [
+  {
+    id: "1",
+    titulo: "Como Escolher a Aliança de Casamento Perfeita",
+    slug: "como-escolher-alianca-casamento-perfeita",
+    resumo: "Guia completo para escolher as alianças ideais para o seu grande dia. Descubra os segredos para encontrar o modelo perfeito.",
+    conteudo: "<h2>A Importância da Escolha</h2><p>A aliança de casamento é o símbolo mais importante do amor eterno. Por isso, escolher o modelo certo requer atenção a detalhes importantes.</p><h2>Principais Critérios</h2><ul><li><strong>Material:</strong> Ouro 18k oferece durabilidade e beleza incomparável</li><li><strong>Largura:</strong> Escolha entre 3mm a 8mm conforme seu estilo</li><li><strong>Acabamento:</strong> Polido, fosco ou misto - cada um tem sua personalidade</li><li><strong>Conforto:</strong> Perfil anatômico garante uso diário confortável</li></ul><h2>Ouro 18k: A Melhor Escolha</h2><p>O ouro 18k (750) é o material mais nobre para alianças. Com 75% de ouro puro, oferece:</p><ul><li>Durabilidade superior</li><li>Brilho duradouro</li><li>Hipoalergênico</li><li>Valorização com o tempo</li></ul><h2>Personalização</h2><p>Em nossa joalheria em Várzea Grande e Cuiabá, oferecemos personalização completa: gravações, pedras preciosas, e acabamentos exclusivos. Cada detalhe é pensado para tornar suas alianças únicas.</p>",
+    imagem_capa: "https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/694ef32b4b63ebef73cd51c8/63c708746_CpiadeFOTO2.jpg",
+    categoria: "casamento",
+    tags: ["alianças", "casamento", "ouro 18k", "dicas"],
+    meta_description: "Guia completo para escolher alianças de casamento em ouro 18k. Dicas profissionais da Joalheria Aliança Joias em Várzea Grande e Cuiabá MT.",
+    publicado: true,
+    visualizacoes: 1250,
+    created_date: "2024-12-15T10:00:00.000Z",
+    updated_date: "2024-12-15T10:00:00.000Z"
+  },
+  {
+    id: "2",
+    titulo: "Tendências em Alianças de Noivado 2025",
+    slug: "tendencias-aliancas-noivado-2025",
+    resumo: "Descubra as principais tendências em alianças de noivado para 2025. Designs modernos e clássicos que estão conquistando casais.",
+    conteudo: "<h2>Tendências que Dominam 2025</h2><p>O ano de 2025 traz uma mistura perfeita entre tradição e modernidade nas alianças de noivado.</p><h2>Designs em Alta</h2><ul><li><strong>Minimalismo Elegante:</strong> Linhas simples e refinadas</li><li><strong>Texturas Contrastantes:</strong> Combinação de acabamentos polidos e foscos</li><li><strong>Pedras Discretas:</strong> Pequenos diamantes ou zircônias incrustadas</li><li><strong>Perfis Anatômicos:</strong> Conforto sem abrir mão do estilo</li></ul><h2>Personalização em Destaque</h2><p>Casais buscam cada vez mais exclusividade. Gravações com datas especiais, iniciais e até mensagens secretas no interior das alianças são tendências fortes.</p><h2>Ouro Amarelo Retorna</h2><p>Após anos de domínio do ouro branco e rose, o ouro amarelo clássico está de volta com força total, especialmente em designs modernos que equilibram tradição e contemporaneidade.</p>",
+    imagem_capa: "https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/694ef32b4b63ebef73cd51c8/60ab96161_CpiadeFOTO2.jpg",
+    categoria: "noivado",
+    tags: ["noivado", "tendências", "2025", "design"],
+    meta_description: "Tendências em alianças de noivado 2025 - Joalheria Aliança Joias Várzea Grande e Cuiabá MT. Conheça os modelos mais procurados.",
+    publicado: true,
+    visualizacoes: 890,
+    created_date: "2024-12-20T14:30:00.000Z",
+    updated_date: "2024-12-20T14:30:00.000Z"
+  },
+  {
+    id: "3",
+    titulo: "Diferença entre Ouro 18k, 14k e 10k",
+    slug: "diferenca-ouro-18k-14k-10k",
+    resumo: "Entenda as diferenças entre as quilatagens do ouro e por que o 18k é a melhor escolha para suas alianças.",
+    conteudo: "<h2>O Que São Quilates?</h2><p>Quilate (K) mede a pureza do ouro. Quanto maior o número, mais ouro puro na liga.</p><h2>Comparação Detalhada</h2><h3>Ouro 18k (750)</h3><ul><li>75% de ouro puro</li><li>Durabilidade excelente</li><li>Brilho intenso e duradouro</li><li>Ideal para uso diário</li><li>Melhor custo-benefício</li></ul><h3>Ouro 14k (585)</h3><ul><li>58,5% de ouro puro</li><li>Mais resistente a riscos</li><li>Cor menos intensa</li><li>Preço mais acessível</li></ul><h3>Ouro 10k (417)</h3><ul><li>41,7% de ouro puro</li><li>Muito resistente</li><li>Cor mais pálida</li><li>Menor valor de revenda</li></ul><h2>Por Que Escolher 18k?</h2><p>O ouro 18k é o padrão brasileiro e mundial para joias finas. Oferece o equilíbrio perfeito entre pureza, beleza e durabilidade. É a escolha ideal para alianças que durarão para sempre.</p>",
+    imagem_capa: "https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/694ef32b4b63ebef73cd51c8/3baa6ee1a_CpiadeFOTO3.jpg",
+    categoria: "aliancas",
+    tags: ["ouro 18k", "quilatagem", "guia", "qualidade"],
+    meta_description: "Entenda a diferença entre ouro 18k, 14k e 10k. Guia completo sobre quilatagem - Aliança Joias Várzea Grande MT.",
+    publicado: true,
+    visualizacoes: 2100,
+    created_date: "2024-12-10T09:15:00.000Z",
+    updated_date: "2024-12-10T09:15:00.000Z"
+  },
+  {
+    id: "4",
+    titulo: "Cuidados Essenciais com suas Alianças de Ouro",
+    slug: "cuidados-essenciais-aliancas-ouro",
+    resumo: "Aprenda como manter suas alianças sempre bonitas e brilhantes. Dicas de limpeza e conservação.",
+    conteudo: "<h2>Limpeza Regular</h2><p>Para manter o brilho das suas alianças, limpe-as regularmente com água morna, detergente neutro e escova macia.</p><h2>Armazenamento Correto</h2><ul><li>Guarde em local seco e arejado</li><li>Use caixinhas individuais para evitar arranhões</li><li>Evite contato com outras joias</li></ul><h2>O Que Evitar</h2><ul><li>Contato com produtos químicos (cloro, perfumes)</li><li>Usar durante atividades físicas intensas</li><li>Exposição prolongada ao sol</li></ul><h2>Manutenção Profissional</h2><p>Traga suas alianças para nossa joalheria em Várzea Grande a cada 6 meses para polimento e revisão profissional.</p>",
+    imagem_capa: "https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/694ef32b4b63ebef73cd51c8/68c6261fe_MODELOCV1632.jpg",
+    categoria: "aliancas",
+    tags: ["cuidados", "manutenção", "limpeza", "conservação"],
+    meta_description: "Guia completo de cuidados com alianças de ouro 18k - Joalheria Aliança Joias Várzea Grande MT.",
+    publicado: true,
+    visualizacoes: 756,
+    created_date: "2024-12-05T11:20:00.000Z",
+    updated_date: "2024-12-05T11:20:00.000Z"
+  }
+];

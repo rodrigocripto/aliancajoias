@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 import { createPageUrl } from '../utils';
 import FooterSection from '../components/landing/FooterSection';
 import { toast } from 'sonner';
-import postsData from '../content/posts.json';
+import { postsData } from '../components/data/posts';
 
 export default function BlogPost() {
   const urlParams = new URLSearchParams(window.location.search);

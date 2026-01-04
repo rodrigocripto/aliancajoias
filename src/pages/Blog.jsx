@@ -6,7 +6,7 @@ import { Search, Calendar, Eye, ArrowRight, Tag } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { createPageUrl } from '../utils';
 import FooterSection from '../components/landing/FooterSection';
-import postsData from '../content/posts.json';
+import { postsData } from '../components/data/posts';
 
 const categorias = [
   { value: 'all', label: 'Todos os Posts' },
