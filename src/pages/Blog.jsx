@@ -164,7 +164,7 @@ export default function Blog() {
                       {post.imagem_capa && (
                         <div className="relative aspect-video overflow-hidden">
                           <img
-                            src={post.imagem_capa}
+                            src={post.imagem_capa || 'https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/694ef32b4b63ebef73cd51c8/b5f342bc2_WhatsAppImage2025-06-05at135450.jpg'}
                             alt={post.titulo}
                             className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                           />
