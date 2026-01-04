@@ -30,8 +30,8 @@ const features = [
   },
   {
     icon: Shield,
-    title: 'Garantia Vitalícia',
-    description: 'Sua aliança protegida para sempre, assim como seu amor.',
+    title: 'Manutenção Garantida',
+    description: 'Assistência técnica e manutenção das suas alianças sem custo adicional.',
   },
 ];
 
