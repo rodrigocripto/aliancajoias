@@ -166,7 +166,7 @@ export default function BlogPost() {
                 </svg>
               </Button>
             </Link>
-            <Link to={createPageUrl('Blog')}>
+            <Link to={createPageUrl('blog')}>
               <Button variant="ghost" className="text-white hover:bg-white/10">
                 <ArrowLeft className="w-4 h-4 mr-2" />
                 Blog
