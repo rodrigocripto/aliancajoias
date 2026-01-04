@@ -197,7 +197,7 @@ export default function HeroSection({ onCtaClick }) {
                 className="absolute -bottom-4 left-8 bg-white rounded-2xl shadow-xl p-4"
               >
                 <div className="text-center">
-                  <span className="text-2xl">⭕</span>
+                  <span className="text-2xl">✨</span>
                   <p className="text-xs text-[#4A4A4A] mt-1 leading-tight">
                     <span className="font-semibold">+100</span><br/>Modelos
                   </p>
