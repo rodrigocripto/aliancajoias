@@ -142,7 +142,7 @@ export default function BlogPost() {
       <div className="min-h-screen bg-gray-50 flex items-center justify-center">
         <div className="text-center">
           <h1 className="text-4xl font-bold text-gray-800 mb-4">Post não encontrado</h1>
-          <Link to={createPageUrl('Blog')}>
+          <Link to={createPageUrl('blog')}>
             <Button className="bg-[#D4AF37] hover:bg-[#C9A227]">
               <ArrowLeft className="w-4 h-4 mr-2" />
               Voltar ao Blog
@@ -166,7 +166,7 @@ export default function BlogPost() {
                 </svg>
               </Button>
             </Link>
-            <Link to={createPageUrl('Blog')}>
+            <Link to={createPageUrl('blog')}>
               <Button variant="ghost" className="text-white hover:bg-white/10">
                 <ArrowLeft className="w-4 h-4 mr-2" />
                 Blog
@@ -368,7 +368,7 @@ export default function BlogPost() {
 
           {/* Voltar ao Blog */}
           <div className="mt-16 text-center">
-            <Link to={createPageUrl('Blog')}>
+            <Link to={createPageUrl('blog')}>
               <Button size="lg" variant="outline" className="border-[#D4AF37] text-[#D4AF37] hover:bg-[#D4AF37]/10">
                 <ArrowLeft className="w-4 h-4 mr-2" />
                 Ver Mais Artigos
