@@ -24,7 +24,7 @@ export default function Layout({ children, currentPageName }) {
     favicon.href = 'data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><text y=".9em" font-size="90">💍</text></svg>';
 
     // SEO Meta Tags - Local SEO Otimizado
-    const pageTitle = 'Alianças de Ouro 18k Várzea Grande MT | Joalheria Aliança Joias Cuiabá';
+    const pageTitle = 'Alianças Ouro 18k | Cuiabá | Várzea Grande';
     document.title = pageTitle;
 
     // Remove any Base44 branding from title
