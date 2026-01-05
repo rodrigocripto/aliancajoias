@@ -163,7 +163,7 @@ export default function Blog() {
                   transition={{ delay: index * 0.1 }}
                   className="group"
                 >
-                  <Link to={createPageUrl(`blog-post?slug=${post.slug}`)}>
+                  <Link to={createPageUrl(`BlogPost?slug=${post.slug}`)}>
                     <div className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 border border-gray-100">
                       {/* Imagem */}
                       {post.imagem_capa && (

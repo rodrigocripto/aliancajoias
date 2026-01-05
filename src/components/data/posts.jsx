@@ -1,5 +1,20 @@
 export const postsData = [
   {
+    id: "7",
+    titulo: "O Momento Certo para Dar Aliança de Namoro",
+    slug: "momento-certo-alianca-namoro",
+    resumo: "Descubra quando é o momento ideal para presentear seu amor com uma aliança de namoro e fortalecer ainda mais o relacionamento.",
+    conteudo: "<h2>Aliança de Namoro: Símbolo de Compromisso</h2><p>A aliança de namoro representa o compromisso e a seriedade do relacionamento. É um símbolo de que vocês estão construindo algo especial juntos.</p><h2>Quando Dar a Aliança de Namoro?</h2><ul><li><strong>Após 6 meses a 1 ano:</strong> Quando o relacionamento já está consolidado</li><li><strong>Data especial:</strong> Aniversário de namoro ou data significativa para o casal</li><li><strong>Quando há certeza:</strong> Não há regra rígida, o importante é que ambos se sintam prontos</li></ul><h2>Escolhendo o Modelo</h2><p>Alianças de namoro costumam ser mais simples que as de noivado:</p><ul><li>Ouro 18k em modelos clássicos</li><li>Acabamento polido ou fosco</li><li>Largura mais fina (3mm a 5mm)</li><li>Possibilidade de gravação interna</li></ul><h2>A Importância do Gesto</h2><p>Mais que a aliança em si, o gesto de presentear representa o desejo de oficializar e valorizar o relacionamento. É um passo importante na jornada do casal.</p><h2>Na Aliança Joias</h2><p>Em nossa joalheria em Várzea Grande e Cuiabá, oferecemos modelos especiais para namoro, com preços acessíveis e qualidade garantida em ouro 18k certificado.</p>",
+    imagem_capa: "https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/694ef32b4b63ebef73cd51c8/60ab96161_CpiadeFOTO2.jpg",
+    categoria: "namoro",
+    tags: ["namoro", "relacionamento", "compromisso", "aliança de namoro"],
+    meta_description: "Quando dar aliança de namoro? Guia completo - Joalheria Aliança Joias Várzea Grande e Cuiabá MT.",
+    publicado: true,
+    visualizacoes: 645,
+    created_date: "2024-12-28T16:20:00.000Z",
+    updated_date: "2024-12-28T16:20:00.000Z"
+  },
+  {
     id: "1",
     titulo: "Como Escolher a Aliança de Casamento Perfeita",
     slug: "como-escolher-alianca-casamento-perfeita",
