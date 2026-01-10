@@ -189,13 +189,8 @@ export default function HeroSection({ onCtaClick }) {
                       <svg className="w-full h-full" viewBox="0 0 700 700">
                         <defs>
                           <path id="curveTop1" d="M 135,350 A 215,215 0 0,1 565,350" fill="none" />
-                          <linearGradient id="goldGradient" x1="0%" y1="0%" x2="100%" y2="0%">
-                            <stop offset="0%" stopColor="#D4AF37" />
-                            <stop offset="50%" stopColor="#FFD700" />
-                            <stop offset="100%" stopColor="#D4AF37" />
-                          </linearGradient>
                         </defs>
-                        <text className="font-bold" style={{ fontSize: '24px', letterSpacing: '3px', fill: 'url(#goldGradient)', paintOrder: 'stroke fill' }}>
+                        <text className="font-bold" style={{ fontSize: '24px', letterSpacing: '3px', fill: '#FF6B00', stroke: '#FFA500', strokeWidth: '0.5px' }}>
                           <textPath href="#curveTop1" startOffset="50%" textAnchor="middle">
                             A PARTIR DE R$ 700,00 O GRAMA
                           </textPath>
@@ -293,13 +288,8 @@ export default function HeroSection({ onCtaClick }) {
                       <svg className="w-full h-full" viewBox="0 0 700 700">
                         <defs>
                           <path id="curveBottom2" d="M 120,350 A 230,230 0 0,0 580,350" fill="none" />
-                          <linearGradient id="goldGradient2" x1="0%" y1="0%" x2="100%" y2="0%">
-                            <stop offset="0%" stopColor="#D4AF37" />
-                            <stop offset="50%" stopColor="#FFD700" />
-                            <stop offset="100%" stopColor="#D4AF37" />
-                          </linearGradient>
                         </defs>
-                        <text className="font-bold" style={{ fontSize: '24px', letterSpacing: '3px', fill: 'url(#goldGradient2)', paintOrder: 'stroke fill' }}>
+                        <text className="font-bold" style={{ fontSize: '24px', letterSpacing: '3px', fill: '#FF6B00', stroke: '#FFA500', strokeWidth: '0.5px' }}>
                           <textPath href="#curveBottom2" startOffset="50%" textAnchor="middle">
                             A PARTIR DE R$ 700,00 O GRAMA
                           </textPath>
