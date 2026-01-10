@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import HeroSection from '@/components/landing/HeroSection';
+import FallingHearts from '@/components/FallingHearts';
 import AutoridadeSection from '@/components/landing/AutoridadeSection';
 import EmocionalSection from '@/components/landing/EmocionalSection';
 import ModelosSection from '@/components/landing/ModelosSection';
@@ -75,6 +76,7 @@ export default function Home() {
 
   return (
     <div className="min-h-screen bg-[#FDFBF7] overflow-x-hidden">
+      <FallingHearts />
       <HeroSection onCtaClick={handleCtaClick} />
       <ModeloDestaque modelo={modelos[0]} />
       <AutoridadeSection />
