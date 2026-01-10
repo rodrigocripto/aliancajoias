@@ -158,10 +158,10 @@ export default function HeroSection({ onCtaClick }) {
           >
             <div className="relative aspect-square max-w-lg mx-auto">
               {/* Texto Curvado Superior - Fora do Círculo */}
-              <div className="absolute -inset-20 sm:-inset-28 md:-inset-32 pointer-events-none z-20">
+              <div className="absolute -inset-20 sm:-inset-24 md:-inset-26 pointer-events-none z-20">
                 <svg className="w-full h-full" viewBox="0 0 700 700">
                   <defs>
-                    <path id="curveTop" d="M 120,350 A 230,230 0 0,1 580,350" fill="none" />
+                    <path id="curveTop" d="M 150,350 A 200,200 0 0,1 550,350" fill="none" />
                   </defs>
                   <text className="fill-[#D4AF37] font-bold" style={{ fontSize: '24px', letterSpacing: '3px' }}>
                     <textPath href="#curveTop" startOffset="50%" textAnchor="middle">
