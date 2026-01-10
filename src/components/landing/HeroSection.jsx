@@ -157,22 +157,32 @@ export default function HeroSection({ onCtaClick }) {
             className="relative order-1 lg:order-2"
           >
             <div className="relative aspect-square max-w-lg mx-auto">
-              {/* Preço Superior */}
-              <div className="absolute -top-6 left-1/2 -translate-x-1/2 z-20">
-                <div className="bg-[#D4AF37] text-white px-6 py-2.5 rounded-full shadow-xl">
-                  <p className="text-sm sm:text-base font-bold whitespace-nowrap">
-                    A partir de R$ 700,00 o Grama
-                  </p>
-                </div>
+              {/* Texto Curvado Superior */}
+              <div className="absolute inset-0 pointer-events-none z-20">
+                <svg className="w-full h-full" viewBox="0 0 400 400">
+                  <defs>
+                    <path id="curveTop" d="M 50,200 A 150,150 0 0,1 350,200" fill="none" />
+                  </defs>
+                  <text className="fill-[#D4AF37] font-bold" style={{ fontSize: '18px', letterSpacing: '2px' }}>
+                    <textPath href="#curveTop" startOffset="50%" textAnchor="middle">
+                      A PARTIR DE R$ 700,00 O GRAMA
+                    </textPath>
+                  </text>
+                </svg>
               </div>
 
-              {/* Condição de Pagamento Inferior */}
-              <div className="absolute -bottom-6 left-1/2 -translate-x-1/2 z-20">
-                <div className="bg-white text-[#1A1A1A] px-6 py-2.5 rounded-full shadow-xl border-2 border-[#D4AF37]">
-                  <p className="text-sm sm:text-base font-bold whitespace-nowrap">
-                    Em até 10x sem juros nos Cartões
-                  </p>
-                </div>
+              {/* Texto Curvado Inferior */}
+              <div className="absolute inset-0 pointer-events-none z-20">
+                <svg className="w-full h-full" viewBox="0 0 400 400">
+                  <defs>
+                    <path id="curveBottom" d="M 50,200 A 150,150 0 0,0 350,200" fill="none" />
+                  </defs>
+                  <text className="fill-[#1A1A1A] font-bold" style={{ fontSize: '18px', letterSpacing: '2px' }}>
+                    <textPath href="#curveBottom" startOffset="50%" textAnchor="middle">
+                      EM ATÉ 10X SEM JUROS NOS CARTÕES
+                    </textPath>
+                  </text>
+                </svg>
               </div>
 
               {/* Decorative Ring */}
