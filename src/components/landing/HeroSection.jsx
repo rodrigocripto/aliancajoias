@@ -157,6 +157,24 @@ export default function HeroSection({ onCtaClick }) {
             className="relative order-1 lg:order-2"
           >
             <div className="relative aspect-square max-w-lg mx-auto">
+              {/* Preço Superior */}
+              <div className="absolute -top-6 left-1/2 -translate-x-1/2 z-20">
+                <div className="bg-[#D4AF37] text-white px-6 py-2.5 rounded-full shadow-xl">
+                  <p className="text-sm sm:text-base font-bold whitespace-nowrap">
+                    A partir de R$ 700,00 o Grama
+                  </p>
+                </div>
+              </div>
+
+              {/* Condição de Pagamento Inferior */}
+              <div className="absolute -bottom-6 left-1/2 -translate-x-1/2 z-20">
+                <div className="bg-white text-[#1A1A1A] px-6 py-2.5 rounded-full shadow-xl border-2 border-[#D4AF37]">
+                  <p className="text-sm sm:text-base font-bold whitespace-nowrap">
+                    Em até 10x sem juros nos Cartões
+                  </p>
+                </div>
+              </div>
+
               {/* Decorative Ring */}
               <div className="absolute inset-0 rounded-full border-2 border-[#D4AF37]/20 animate-pulse" />
               <div className="absolute inset-4 rounded-full border border-[#D4AF37]/10" />
