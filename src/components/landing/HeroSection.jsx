@@ -31,7 +31,7 @@ export default function HeroSection({ onCtaClick }) {
   useEffect(() => {
     const textInterval = setInterval(() => {
       setTextPosition((prev) => !prev);
-    }, 4000);
+    }, 6000);
 
     return () => clearInterval(textInterval);
   }, []);
