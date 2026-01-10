@@ -158,32 +158,64 @@ export default function HeroSection({ onCtaClick }) {
           >
             <div className="relative aspect-square max-w-lg mx-auto">
               {/* Texto Curvado Superior - Fora do Círculo */}
-              <div className="absolute -inset-20 sm:-inset-24 md:-inset-28 pointer-events-none z-20">
+              <motion.div 
+                className="absolute -inset-20 sm:-inset-24 md:-inset-28 pointer-events-none z-20"
+                animate={{ 
+                  scale: [1, 1.05, 1],
+                  filter: [
+                    "drop-shadow(0 0 8px rgba(212, 175, 55, 0.6))",
+                    "drop-shadow(0 0 16px rgba(212, 175, 55, 0.9))",
+                    "drop-shadow(0 0 8px rgba(212, 175, 55, 0.6))"
+                  ]
+                }}
+                transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+              >
                 <svg className="w-full h-full" viewBox="0 0 700 700">
                   <defs>
                     <path id="curveTop" d="M 135,350 A 215,215 0 0,1 565,350" fill="none" />
+                    <linearGradient id="goldGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                      <stop offset="0%" stopColor="#D4AF37" />
+                      <stop offset="50%" stopColor="#FFD700" />
+                      <stop offset="100%" stopColor="#D4AF37" />
+                    </linearGradient>
                   </defs>
-                  <text className="fill-[#D4AF37] font-bold" style={{ fontSize: '24px', letterSpacing: '3px' }}>
+                  <text className="font-bold" style={{ fontSize: '24px', letterSpacing: '3px', fill: 'url(#goldGradient)' }}>
                     <textPath href="#curveTop" startOffset="50%" textAnchor="middle">
                       A PARTIR DE R$ 700,00 O GRAMA
                     </textPath>
                   </text>
                 </svg>
-              </div>
+              </motion.div>
 
               {/* Texto Curvado Inferior - Fora do Círculo */}
-              <div className="absolute -inset-20 sm:-inset-28 md:-inset-32 pointer-events-none z-20">
+              <motion.div 
+                className="absolute -inset-20 sm:-inset-28 md:-inset-32 pointer-events-none z-20"
+                animate={{ 
+                  scale: [1, 1.05, 1],
+                  filter: [
+                    "drop-shadow(0 0 6px rgba(26, 26, 26, 0.4))",
+                    "drop-shadow(0 0 12px rgba(26, 26, 26, 0.7))",
+                    "drop-shadow(0 0 6px rgba(26, 26, 26, 0.4))"
+                  ]
+                }}
+                transition={{ duration: 2.5, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
+              >
                 <svg className="w-full h-full" viewBox="0 0 700 700">
                   <defs>
                     <path id="curveBottom" d="M 120,350 A 230,230 0 0,0 580,350" fill="none" />
+                    <linearGradient id="darkGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                      <stop offset="0%" stopColor="#1A1A1A" />
+                      <stop offset="50%" stopColor="#2D2D2D" />
+                      <stop offset="100%" stopColor="#1A1A1A" />
+                    </linearGradient>
                   </defs>
-                  <text className="fill-[#1A1A1A] font-bold" style={{ fontSize: '24px', letterSpacing: '3px' }}>
+                  <text className="font-bold" style={{ fontSize: '24px', letterSpacing: '3px', fill: 'url(#darkGradient)' }}>
                     <textPath href="#curveBottom" startOffset="50%" textAnchor="middle">
                       EM ATÉ 10X SEM JUROS NOS CARTÕES
                     </textPath>
                   </text>
                 </svg>
-              </div>
+              </motion.div>
 
               {/* Decorative Ring */}
               <div className="absolute inset-0 rounded-full border-2 border-[#D4AF37]/20 animate-pulse" />
