@@ -212,7 +212,7 @@ export default function HeroSection({ onCtaClick }) {
               <motion.div
                 animate={{ y: [0, -10, 0] }}
                 transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
-                className="absolute top-4 right-4 md:-top-4 md:right-8 bg-white rounded-2xl shadow-xl p-4 z-10"
+                className="absolute top-2 right-4 md:-top-4 md:right-8 bg-white rounded-2xl shadow-xl p-4 z-10"
               >
                 <div className="text-center">
                   <span className="text-2xl">💎</span>
@@ -223,7 +223,7 @@ export default function HeroSection({ onCtaClick }) {
               <motion.div
                 animate={{ y: [0, 10, 0] }}
                 transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-                className="absolute bottom-4 left-4 md:-bottom-4 md:left-8 bg-white rounded-2xl shadow-xl p-4 z-10"
+                className="absolute bottom-6 left-4 md:-bottom-4 md:left-8 bg-white rounded-2xl shadow-xl p-4 z-10"
               >
                 <div className="text-center">
                   <span className="text-2xl">✨</span>
