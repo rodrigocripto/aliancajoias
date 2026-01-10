@@ -184,7 +184,7 @@ export default function HeroSection({ onCtaClick }) {
                         ]
                       }}
                       exit={{ opacity: 0, y: 30 }}
-                      transition={{ duration: 0.8, scale: { duration: 2, repeat: Infinity, ease: "easeInOut" } }}
+                      transition={{ duration: 0.8, scale: { duration: 3, repeat: Infinity, ease: "easeInOut" } }}
                     >
                       <svg className="w-full h-full" viewBox="0 0 700 700">
                         <defs>
@@ -213,7 +213,7 @@ export default function HeroSection({ onCtaClick }) {
                         ]
                       }}
                       exit={{ opacity: 0, y: -30 }}
-                      transition={{ duration: 0.8, scale: { duration: 2.5, repeat: Infinity, ease: "easeInOut", delay: 0.5 } }}
+                      transition={{ duration: 0.8, scale: { duration: 3.5, repeat: Infinity, ease: "easeInOut", delay: 0.5 } }}
                     >
                       <svg className="w-full h-full" viewBox="0 0 700 700">
                         <defs>
@@ -249,7 +249,7 @@ export default function HeroSection({ onCtaClick }) {
                         ]
                       }}
                       exit={{ opacity: 0, y: 30 }}
-                      transition={{ duration: 0.8, scale: { duration: 2.5, repeat: Infinity, ease: "easeInOut", delay: 0.5 } }}
+                      transition={{ duration: 0.8, scale: { duration: 3.5, repeat: Infinity, ease: "easeInOut", delay: 0.5 } }}
                     >
                       <svg className="w-full h-full" viewBox="0 0 700 700">
                         <defs>
@@ -283,7 +283,7 @@ export default function HeroSection({ onCtaClick }) {
                         ]
                       }}
                       exit={{ opacity: 0, y: -30 }}
-                      transition={{ duration: 0.8, scale: { duration: 2, repeat: Infinity, ease: "easeInOut" } }}
+                      transition={{ duration: 0.8, scale: { duration: 3, repeat: Infinity, ease: "easeInOut" } }}
                     >
                       <svg className="w-full h-full" viewBox="0 0 700 700">
                         <defs>
