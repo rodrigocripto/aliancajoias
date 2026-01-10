@@ -158,12 +158,12 @@ export default function HeroSection({ onCtaClick }) {
           >
             <div className="relative aspect-square max-w-lg mx-auto">
               {/* Texto Curvado Superior - Fora do Círculo */}
-              <div className="absolute -inset-12 pointer-events-none z-20">
-                <svg className="w-full h-full" viewBox="0 0 500 500">
+              <div className="absolute -inset-16 sm:-inset-20 pointer-events-none z-20">
+                <svg className="w-full h-full" viewBox="0 0 600 600">
                   <defs>
-                    <path id="curveTop" d="M 80,250 A 170,170 0 0,1 420,250" fill="none" />
+                    <path id="curveTop" d="M 100,300 A 200,200 0 0,1 500,300" fill="none" />
                   </defs>
-                  <text className="fill-[#D4AF37] font-bold" style={{ fontSize: '20px', letterSpacing: '3px' }}>
+                  <text className="fill-[#D4AF37] font-bold" style={{ fontSize: '22px', letterSpacing: '3px' }}>
                     <textPath href="#curveTop" startOffset="50%" textAnchor="middle">
                       A PARTIR DE R$ 700,00 O GRAMA
                     </textPath>
@@ -172,12 +172,12 @@ export default function HeroSection({ onCtaClick }) {
               </div>
 
               {/* Texto Curvado Inferior - Fora do Círculo */}
-              <div className="absolute -inset-12 pointer-events-none z-20">
-                <svg className="w-full h-full" viewBox="0 0 500 500">
+              <div className="absolute -inset-16 sm:-inset-20 pointer-events-none z-20">
+                <svg className="w-full h-full" viewBox="0 0 600 600">
                   <defs>
-                    <path id="curveBottom" d="M 80,250 A 170,170 0 0,0 420,250" fill="none" />
+                    <path id="curveBottom" d="M 100,300 A 200,200 0 0,0 500,300" fill="none" />
                   </defs>
-                  <text className="fill-[#1A1A1A] font-bold" style={{ fontSize: '20px', letterSpacing: '3px' }}>
+                  <text className="fill-[#1A1A1A] font-bold" style={{ fontSize: '22px', letterSpacing: '3px' }}>
                     <textPath href="#curveBottom" startOffset="50%" textAnchor="middle">
                       EM ATÉ 10X SEM JUROS NOS CARTÕES
                     </textPath>
