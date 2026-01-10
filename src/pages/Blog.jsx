@@ -6,6 +6,7 @@ import { Search, Calendar, Eye, ArrowRight, Tag } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { createPageUrl } from '../utils';
 import FooterSection from '../components/landing/FooterSection';
+import FallingHearts from '../components/FallingHearts';
 import { postsData } from '../components/data/posts';
 
 const categorias = [
@@ -58,6 +59,7 @@ export default function Blog() {
 
   return (
     <div className="min-h-screen bg-[#FDFBF7]">
+      <FallingHearts />
       {/* Hero Section */}
       <section className="relative bg-gradient-to-br from-[#1A1A1A] via-[#2A2A2A] to-[#1A1A1A] text-white py-20 overflow-hidden">
         {/* Decorações de Fundo */}
