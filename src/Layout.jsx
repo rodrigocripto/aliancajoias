@@ -167,25 +167,6 @@ export default function Layout({ children, currentPageName }) {
           "name": "Cuiabá"
         }
       ],
-      "hasOfferCatalog": {
-        "@type": "OfferCatalog",
-        "name": "Alianças de Ouro 18k",
-        "itemListElement": [
-          {
-            "@type": "Offer",
-            "itemOffered": {
-              "@type": "Product",
-              "name": "Alianças de Ouro 18k Personalizadas",
-              "description": "Alianças em ouro 18k certificado com fabricação própria"
-            }
-          }
-        ]
-      },
-      "aggregateRating": {
-        "@type": "AggregateRating",
-        "ratingValue": "5",
-        "reviewCount": "500"
-      },
       "founder": "Aliança Joias",
       "foundingDate": "1993",
       "slogan": "O Símbolo do Seu Amor Eterno"
