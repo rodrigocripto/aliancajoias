@@ -176,11 +176,11 @@ export default function HeroSection({ onCtaClick }) {
                       animate={{ 
                         opacity: 1,
                         y: 0,
-                        scale: [1, 1.05, 1],
+                        scale: [1, 1.03, 1],
                         filter: [
-                          "drop-shadow(0 0 8px rgba(212, 175, 55, 0.6))",
-                          "drop-shadow(0 0 16px rgba(212, 175, 55, 0.9))",
-                          "drop-shadow(0 0 8px rgba(212, 175, 55, 0.6))"
+                          "drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3))",
+                          "drop-shadow(0 4px 8px rgba(212, 175, 55, 0.4))",
+                          "drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3))"
                         ]
                       }}
                       exit={{ opacity: 0, y: 30 }}
@@ -195,7 +195,7 @@ export default function HeroSection({ onCtaClick }) {
                             <stop offset="100%" stopColor="#D4AF37" />
                           </linearGradient>
                         </defs>
-                        <text className="font-bold" style={{ fontSize: '24px', letterSpacing: '3px', fill: 'url(#goldGradient)' }}>
+                        <text className="font-bold" style={{ fontSize: '24px', letterSpacing: '3px', fill: 'url(#goldGradient)', paintOrder: 'stroke fill' }}>
                           <textPath href="#curveTop1" startOffset="50%" textAnchor="middle">
                             A PARTIR DE R$ 700,00 O GRAMA
                           </textPath>
@@ -280,11 +280,11 @@ export default function HeroSection({ onCtaClick }) {
                       animate={{ 
                         opacity: 1,
                         y: 0,
-                        scale: [1, 1.05, 1],
+                        scale: [1, 1.03, 1],
                         filter: [
-                          "drop-shadow(0 0 8px rgba(212, 175, 55, 0.6))",
-                          "drop-shadow(0 0 16px rgba(212, 175, 55, 0.9))",
-                          "drop-shadow(0 0 8px rgba(212, 175, 55, 0.6))"
+                          "drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3))",
+                          "drop-shadow(0 4px 8px rgba(212, 175, 55, 0.4))",
+                          "drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3))"
                         ]
                       }}
                       exit={{ opacity: 0, y: -30 }}
@@ -299,7 +299,7 @@ export default function HeroSection({ onCtaClick }) {
                             <stop offset="100%" stopColor="#D4AF37" />
                           </linearGradient>
                         </defs>
-                        <text className="font-bold" style={{ fontSize: '24px', letterSpacing: '3px', fill: 'url(#goldGradient2)' }}>
+                        <text className="font-bold" style={{ fontSize: '24px', letterSpacing: '3px', fill: 'url(#goldGradient2)', paintOrder: 'stroke fill' }}>
                           <textPath href="#curveBottom2" startOffset="50%" textAnchor="middle">
                             A PARTIR DE R$ 700,00 O GRAMA
                           </textPath>
