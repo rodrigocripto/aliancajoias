@@ -54,6 +54,7 @@ const diferenciais = [
 
 export default function SobreNos() {
   useEffect(() => {
+    window.scrollTo(0, 0);
     document.title = 'Sobre Nós - Joalheria Aliança Joias | +30 Anos de Tradição em Várzea Grande MT';
     
     let metaDescription = document.querySelector('meta[name="description"]');
