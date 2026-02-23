@@ -51,6 +51,8 @@ import Blog from './pages/Blog';
 import Home from './pages/Home';
 import SobreNos from './pages/SobreNos';
 import blogPost from './pages/blog-post';
+import Catalogo from './pages/Catalogo';
+import Modelo from './pages/Modelo';
 import __Layout from './Layout.jsx';
 
 
@@ -59,6 +61,8 @@ export const PAGES = {
     "Home": Home,
     "SobreNos": SobreNos,
     "blog-post": blogPost,
+    "Catalogo": Catalogo,
+    "Modelo": Modelo,
 }
 
 export const pagesConfig = {
