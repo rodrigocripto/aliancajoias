@@ -90,7 +90,7 @@ export default function Catalogo() {
   return (
     <div className="min-h-screen bg-[#FDFBF7]">
       {/* Hero Section */}
-      <section className="relative py-20 bg-gradient-to-br from-[#1A1A1A] to-[#2D2D2D]">
+      <section className="relative py-8 bg-gradient-to-br from-[#1A1A1A] to-[#2D2D2D]">
         <div className="absolute inset-0 opacity-10">
           <div className="absolute inset-0" style={{
             backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23D4AF37' fill-opacity='1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
@@ -101,7 +101,7 @@ export default function Catalogo() {
           <motion.span
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            className="text-sm font-medium text-[#D4AF37] tracking-widest uppercase"
+            className="text-xs font-medium text-[#D4AF37] tracking-widest uppercase"
           >
             Coleção Completa
           </motion.span>
@@ -109,7 +109,7 @@ export default function Catalogo() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.1 }}
-            className="mt-4 text-3xl sm:text-4xl lg:text-5xl font-light text-white"
+            className="mt-2 text-2xl sm:text-3xl font-light text-white"
           >
             Explore Todos os <span className="font-semibold text-[#D4AF37]">Modelos</span>
           </motion.h1>
@@ -117,7 +117,7 @@ export default function Catalogo() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 }}
-            className="mt-6 text-lg text-gray-300 max-w-2xl mx-auto leading-relaxed"
+            className="mt-3 text-sm text-gray-300 max-w-xl mx-auto"
           >
             Conheça nossa coleção completa de alianças em ouro 18k. Cada modelo é único e pode ser totalmente personalizado.
           </motion.p>
@@ -125,39 +125,36 @@ export default function Catalogo() {
       </section>
 
       {/* Filtros */}
-      <section className="py-8 border-b border-gray-200">
+      <section className="py-4 border-b border-gray-200 sticky top-0 bg-[#FDFBF7] z-30">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col md:flex-row gap-4 items-center justify-between">
-            <div className="relative w-full md:w-96">
-              <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400" />
+          <div className="flex flex-col gap-3">
+            <div className="relative w-full max-w-md mx-auto">
+              <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400" />
               <Input
                 placeholder="Buscar modelos..."
                 value={busca}
                 onChange={(e) => setBusca(e.target.value)}
-                className="pl-10"
+                className="pl-9 h-9 text-sm"
               />
             </div>
 
-            <div className="flex gap-4 flex-wrap justify-center items-center">
+            <div className="flex gap-2 flex-wrap justify-center items-center">
               {categorias.map(cat => (
                 <button
                   key={cat.valor}
                   onClick={() => setCategoriaFiltro(cat.valor)}
-                  className="flex flex-col items-center gap-2 group"
+                  className="flex flex-col items-center gap-1 group"
                 >
                   <div className={`
-                    relative w-20 h-20 rounded-full flex items-center justify-center text-2xl
+                    relative w-14 h-14 rounded-full flex items-center justify-center text-lg
                     transition-all duration-300 transform
                     ${categoriaFiltro === cat.valor 
-                      ? 'bg-gradient-to-br from-[#D4AF37] via-[#F4D03F] to-[#D4AF37] shadow-xl shadow-[#D4AF37]/40 scale-110 rotate-180' 
-                      : 'bg-gradient-to-br from-white to-gray-50 border-4 border-gray-200 group-hover:border-[#D4AF37] group-hover:scale-105 group-hover:shadow-lg'
+                      ? 'bg-gradient-to-br from-[#D4AF37] via-[#F4D03F] to-[#D4AF37] shadow-lg shadow-[#D4AF37]/30 scale-105 rotate-180' 
+                      : 'bg-gradient-to-br from-white to-gray-50 border-2 border-gray-200 group-hover:border-[#D4AF37] group-hover:scale-105'
                     }
                   `}>
                     {categoriaFiltro === cat.valor && (
-                      <>
-                        <span className="absolute inset-2 rounded-full border-2 border-white/40 animate-pulse" />
-                        <span className="absolute inset-4 rounded-full border border-white/30" />
-                      </>
+                      <span className="absolute inset-2 rounded-full border border-white/40 animate-pulse" />
                     )}
                     <span className={`relative ${categoriaFiltro === cat.valor ? 'rotate-180' : ''} transition-transform duration-300`}>
                       {cat.valor === 'todas' && '✨'}
@@ -170,7 +167,7 @@ export default function Catalogo() {
                     </span>
                   </div>
                   <span className={`
-                    text-xs font-medium transition-colors duration-300
+                    text-[10px] font-medium transition-colors duration-300
                     ${categoriaFiltro === cat.valor 
                       ? 'text-[#D4AF37] font-semibold' 
                       : 'text-gray-600 group-hover:text-[#D4AF37]'
@@ -181,16 +178,16 @@ export default function Catalogo() {
                 </button>
               ))}
             </div>
-          </div>
 
-          <div className="mt-4 text-center text-sm text-gray-600">
-            {modelosFiltrados.length} {modelosFiltrados.length === 1 ? 'modelo encontrado' : 'modelos encontrados'}
+            <div className="text-center text-xs text-gray-500">
+              {modelosFiltrados.length} {modelosFiltrados.length === 1 ? 'modelo' : 'modelos'}
+            </div>
           </div>
         </div>
       </section>
 
       {/* Grid de Modelos */}
-      <section className="py-16">
+      <section className="py-6">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {modelosFiltrados.length === 0 ? (
             <div className="text-center py-20">
