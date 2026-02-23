@@ -138,30 +138,44 @@ export default function Catalogo() {
               />
             </div>
 
-            <div className="flex gap-3 flex-wrap justify-center">
+            <div className="flex gap-4 flex-wrap justify-center items-center">
               {categorias.map(cat => (
                 <button
                   key={cat.valor}
                   onClick={() => setCategoriaFiltro(cat.valor)}
-                  className={`
-                    relative px-6 py-3 rounded-full font-medium text-sm transition-all duration-300
-                    ${categoriaFiltro === cat.valor 
-                      ? 'bg-gradient-to-r from-[#D4AF37] to-[#F4D03F] text-white shadow-lg shadow-[#D4AF37]/30 scale-105' 
-                      : 'bg-white text-gray-700 border-2 border-gray-200 hover:border-[#D4AF37] hover:text-[#D4AF37] hover:shadow-md'
-                    }
-                  `}
+                  className="flex flex-col items-center gap-2 group"
                 >
-                  {categoriaFiltro === cat.valor && (
-                    <span className="absolute inset-0 rounded-full bg-gradient-to-r from-[#D4AF37] to-[#F4D03F] opacity-20 animate-pulse" />
-                  )}
-                  <span className="relative flex items-center gap-2">
-                    {cat.valor === 'todas' && '✨'}
-                    {cat.valor === 'classicas' && '💍'}
-                    {cat.valor === 'tradicionais' && '👑'}
-                    {cat.valor === 'quadradas' && '⬜'}
-                    {cat.valor === 'trabalhadas' && '💎'}
-                    {cat.valor === 'com-pedras' && '💠'}
-                    {cat.valor === 'personalizadas' && '⭐'}
+                  <div className={`
+                    relative w-20 h-20 rounded-full flex items-center justify-center text-2xl
+                    transition-all duration-300 transform
+                    ${categoriaFiltro === cat.valor 
+                      ? 'bg-gradient-to-br from-[#D4AF37] via-[#F4D03F] to-[#D4AF37] shadow-xl shadow-[#D4AF37]/40 scale-110 rotate-180' 
+                      : 'bg-gradient-to-br from-white to-gray-50 border-4 border-gray-200 group-hover:border-[#D4AF37] group-hover:scale-105 group-hover:shadow-lg'
+                    }
+                  `}>
+                    {categoriaFiltro === cat.valor && (
+                      <>
+                        <span className="absolute inset-2 rounded-full border-2 border-white/40 animate-pulse" />
+                        <span className="absolute inset-4 rounded-full border border-white/30" />
+                      </>
+                    )}
+                    <span className={`relative ${categoriaFiltro === cat.valor ? 'rotate-180' : ''} transition-transform duration-300`}>
+                      {cat.valor === 'todas' && '✨'}
+                      {cat.valor === 'classicas' && '💍'}
+                      {cat.valor === 'tradicionais' && '👑'}
+                      {cat.valor === 'quadradas' && '⬜'}
+                      {cat.valor === 'trabalhadas' && '💎'}
+                      {cat.valor === 'com-pedras' && '💠'}
+                      {cat.valor === 'personalizadas' && '⭐'}
+                    </span>
+                  </div>
+                  <span className={`
+                    text-xs font-medium transition-colors duration-300
+                    ${categoriaFiltro === cat.valor 
+                      ? 'text-[#D4AF37] font-semibold' 
+                      : 'text-gray-600 group-hover:text-[#D4AF37]'
+                    }
+                  `}>
                     {cat.label}
                   </span>
                 </button>
