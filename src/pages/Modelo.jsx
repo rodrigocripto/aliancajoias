@@ -242,7 +242,9 @@ export default function Modelo() {
                   <div className="flex items-start justify-between">
                     <div>
                       <p className="font-semibold text-[#1A1A1A]">💳 Cartão de Crédito</p>
-                      <p className="text-sm text-gray-600 mt-1">Parcele em até 12x sem juros</p>
+                      <p className="text-sm text-gray-600 mt-1">
+                        Parcele em até 12x de R$ {formatarPreco((parseFloat(calcularPrecoTotal()) / 12).toFixed(2))}
+                      </p>
                     </div>
                     {formaPagamento === 'cartao' && (
                       <span className="text-[#D4AF37] text-xl">✓</span>
