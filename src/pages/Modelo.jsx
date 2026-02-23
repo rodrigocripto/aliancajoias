@@ -19,6 +19,7 @@ export default function Modelo() {
   const [nome1, setNome1] = useState('');
   const [nome2, setNome2] = useState('');
   const [imagemAtual, setImagemAtual] = useState(0);
+  const [formaPagamento, setFormaPagamento] = useState('');
 
   const urlParams = new URLSearchParams(window.location.search);
   const slug = urlParams.get('slug');
@@ -67,7 +68,13 @@ export default function Modelo() {
   const calcularPrecoTotal = () => {
     const precoBase = modelo.peso_base_gramas * precoGrama;
     const precoUnitario = precoBase + (modelo.custo_producao_adicional || 0);
-    return (precoUnitario * quantidade).toFixed(2);
+    const precoTotal = precoUnitario * quantidade;
+    
+    if (formaPagamento === 'pix') {
+      return (precoTotal * 0.95).toFixed(2); // 5% desconto
+    }
+    
+    return precoTotal.toFixed(2);
   };
 
   const calcularPrecoUnitario = () => {
@@ -76,6 +83,8 @@ export default function Modelo() {
   };
 
   const handleWhatsApp = () => {
+    const imagemPrincipal = imagens[imagemAtual];
+    
     let mensagem = `Olá! Tenho interesse no modelo *${modelo.nome}*\n\n`;
     
     mensagem += `📊 *Detalhes do Pedido:*\n`;
@@ -97,7 +106,20 @@ export default function Modelo() {
       mensagem += `• Nome 2 para gravação: ${nome2}\n`;
     }
     
-    mensagem += `\n💰 *Valor Total:* R$ ${calcularPrecoTotal()}\n`;
+    mensagem += `\n💳 *Forma de Pagamento:* `;
+    if (formaPagamento === 'cartao') {
+      mensagem += `Cartão em até 12x sem juros\n`;
+    } else if (formaPagamento === 'pix') {
+      mensagem += `PIX com 5% de desconto\n`;
+    }
+    
+    mensagem += `\n💰 *Valor Total:* R$ ${calcularPrecoTotal()}`;
+    if (formaPagamento === 'pix') {
+      mensagem += ` (com 5% de desconto)`;
+    }
+    mensagem += `\n`;
+    
+    mensagem += `\n📷 *Foto do Modelo:* ${imagemPrincipal}\n`;
     mensagem += `\nGostaria de mais informações e finalizar o pedido!`;
     
     const whatsappUrl = `https://wa.me/5565993122777?text=${encodeURIComponent(mensagem)}`;
@@ -107,6 +129,7 @@ export default function Modelo() {
   const podeEnviar = () => {
     if (!tamanho1) return false;
     if (quantidade === 2 && !tamanho2) return false;
+    if (!formaPagamento) return false;
     return true;
   };
 
@@ -189,9 +212,11 @@ export default function Modelo() {
               <p className="text-sm text-gray-600">
                 Preço unitário: R$ {calcularPrecoUnitario()} | Base: {modelo.peso_base_gramas}g | R$ {precoGrama}/g
               </p>
-              <p className="text-xs text-gray-500 mt-2">
-                💳 Parcele em até 12x sem juros nos cartões
-              </p>
+              {formaPagamento === 'pix' && (
+                <p className="text-sm text-green-600 font-semibold mt-2">
+                  ✓ 5% de desconto aplicado no PIX
+                </p>
+              )}
             </div>
 
             {/* Quantidade */}
@@ -254,6 +279,52 @@ export default function Modelo() {
               </div>
             </div>
 
+            {/* Forma de Pagamento */}
+            <div className="space-y-3">
+              <Label className="text-base font-semibold">Forma de Pagamento</Label>
+              <div className="grid gap-3">
+                <button
+                  type="button"
+                  onClick={() => setFormaPagamento('cartao')}
+                  className={`p-4 rounded-xl border-2 text-left transition-all ${
+                    formaPagamento === 'cartao'
+                      ? 'border-[#D4AF37] bg-[#D4AF37]/5'
+                      : 'border-gray-200 hover:border-[#D4AF37]/50'
+                  }`}
+                >
+                  <div className="flex items-start justify-between">
+                    <div>
+                      <p className="font-semibold text-[#1A1A1A]">💳 Cartão de Crédito</p>
+                      <p className="text-sm text-gray-600 mt-1">Parcele em até 12x sem juros</p>
+                    </div>
+                    {formaPagamento === 'cartao' && (
+                      <span className="text-[#D4AF37] text-xl">✓</span>
+                    )}
+                  </div>
+                </button>
+
+                <button
+                  type="button"
+                  onClick={() => setFormaPagamento('pix')}
+                  className={`p-4 rounded-xl border-2 text-left transition-all ${
+                    formaPagamento === 'pix'
+                      ? 'border-green-500 bg-green-50'
+                      : 'border-gray-200 hover:border-green-500/50'
+                  }`}
+                >
+                  <div className="flex items-start justify-between">
+                    <div>
+                      <p className="font-semibold text-[#1A1A1A]">🔑 PIX</p>
+                      <p className="text-sm text-green-600 font-semibold mt-1">5% de desconto à vista</p>
+                    </div>
+                    {formaPagamento === 'pix' && (
+                      <span className="text-green-600 text-xl">✓</span>
+                    )}
+                  </div>
+                </button>
+              </div>
+            </div>
+
             {/* Gravação de Nomes */}
             <div className="space-y-3">
               <Label className="text-base font-semibold">Gravação (Opcional)</Label>
@@ -300,7 +371,9 @@ export default function Modelo() {
 
             {!podeEnviar() && (
               <p className="text-sm text-red-600 text-center">
-                Por favor, selecione o(s) tamanho(s) antes de continuar
+                {!tamanho1 || (quantidade === 2 && !tamanho2)
+                  ? 'Por favor, selecione o(s) tamanho(s) antes de continuar'
+                  : 'Por favor, selecione a forma de pagamento'}
               </p>
             )}
 
