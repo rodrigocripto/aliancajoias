@@ -93,9 +93,6 @@ export default function Modelo() {
   const handleWhatsApp = () => {
     const imagemPrincipal = imagens[imagemAtual];
     
-    // Enviar a imagem primeiro em mensagem separada
-    const mensagemImagem = imagemPrincipal;
-    
     let mensagem = `Olá! Tenho interesse no modelo *${modelo.nome}*\n\n`;
     
     mensagem += `📊 *Detalhes do Pedido:*\n`;
@@ -130,17 +127,11 @@ export default function Modelo() {
       mensagem += ` (com 5% de desconto)`;
     }
     
-    mensagem += `\n\nGostaria de mais informações e finalizar o pedido!`;
+    mensagem += `\n\nGostaria de mais informações e finalizar o pedido!\n\n`;
+    mensagem += `${imagemPrincipal}`;
     
-    // Abrir WhatsApp com a imagem primeiro
-    const whatsappUrlImagem = `https://wa.me/5565993122777?text=${encodeURIComponent(mensagemImagem)}`;
-    window.open(whatsappUrlImagem, '_blank');
-    
-    // Aguardar 1 segundo e abrir com a mensagem completa
-    setTimeout(() => {
-      const whatsappUrl = `https://wa.me/5565993122777?text=${encodeURIComponent(mensagem)}`;
-      window.open(whatsappUrl, '_blank');
-    }, 1000);
+    const whatsappUrl = `https://wa.me/5565993122777?text=${encodeURIComponent(mensagem)}`;
+    window.open(whatsappUrl, '_blank');
   };
 
   const podeEnviar = () => {
