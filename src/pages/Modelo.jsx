@@ -226,6 +226,52 @@ export default function Modelo() {
               )}
             </div>
 
+            {/* Forma de Pagamento */}
+            <div className="space-y-3">
+              <Label className="text-base font-semibold">Forma de Pagamento</Label>
+              <div className="grid gap-3">
+                <button
+                  type="button"
+                  onClick={() => setFormaPagamento('cartao')}
+                  className={`p-4 rounded-xl border-2 text-left transition-all ${
+                    formaPagamento === 'cartao'
+                      ? 'border-[#D4AF37] bg-[#D4AF37]/5'
+                      : 'border-gray-200 hover:border-[#D4AF37]/50'
+                  }`}
+                >
+                  <div className="flex items-start justify-between">
+                    <div>
+                      <p className="font-semibold text-[#1A1A1A]">💳 Cartão de Crédito</p>
+                      <p className="text-sm text-gray-600 mt-1">Parcele em até 12x sem juros</p>
+                    </div>
+                    {formaPagamento === 'cartao' && (
+                      <span className="text-[#D4AF37] text-xl">✓</span>
+                    )}
+                  </div>
+                </button>
+
+                <button
+                  type="button"
+                  onClick={() => setFormaPagamento('pix')}
+                  className={`p-4 rounded-xl border-2 text-left transition-all ${
+                    formaPagamento === 'pix'
+                      ? 'border-green-500 bg-green-50'
+                      : 'border-gray-200 hover:border-green-500/50'
+                  }`}
+                >
+                  <div className="flex items-start justify-between">
+                    <div>
+                      <p className="font-semibold text-[#1A1A1A]">🔑 PIX</p>
+                      <p className="text-sm text-green-600 font-semibold mt-1">5% de desconto à vista</p>
+                    </div>
+                    {formaPagamento === 'pix' && (
+                      <span className="text-green-600 text-xl">✓</span>
+                    )}
+                  </div>
+                </button>
+              </div>
+            </div>
+
             {/* Quantidade */}
             <div className="space-y-3">
               <Label className="text-base font-semibold">Quantidade</Label>
@@ -283,52 +329,6 @@ export default function Modelo() {
                     </select>
                   </div>
                 )}
-              </div>
-            </div>
-
-            {/* Forma de Pagamento */}
-            <div className="space-y-3">
-              <Label className="text-base font-semibold">Forma de Pagamento</Label>
-              <div className="grid gap-3">
-                <button
-                  type="button"
-                  onClick={() => setFormaPagamento('cartao')}
-                  className={`p-4 rounded-xl border-2 text-left transition-all ${
-                    formaPagamento === 'cartao'
-                      ? 'border-[#D4AF37] bg-[#D4AF37]/5'
-                      : 'border-gray-200 hover:border-[#D4AF37]/50'
-                  }`}
-                >
-                  <div className="flex items-start justify-between">
-                    <div>
-                      <p className="font-semibold text-[#1A1A1A]">💳 Cartão de Crédito</p>
-                      <p className="text-sm text-gray-600 mt-1">Parcele em até 12x sem juros</p>
-                    </div>
-                    {formaPagamento === 'cartao' && (
-                      <span className="text-[#D4AF37] text-xl">✓</span>
-                    )}
-                  </div>
-                </button>
-
-                <button
-                  type="button"
-                  onClick={() => setFormaPagamento('pix')}
-                  className={`p-4 rounded-xl border-2 text-left transition-all ${
-                    formaPagamento === 'pix'
-                      ? 'border-green-500 bg-green-50'
-                      : 'border-gray-200 hover:border-green-500/50'
-                  }`}
-                >
-                  <div className="flex items-start justify-between">
-                    <div>
-                      <p className="font-semibold text-[#1A1A1A]">🔑 PIX</p>
-                      <p className="text-sm text-green-600 font-semibold mt-1">5% de desconto à vista</p>
-                    </div>
-                    {formaPagamento === 'pix' && (
-                      <span className="text-green-600 text-xl">✓</span>
-                    )}
-                  </div>
-                </button>
               </div>
             </div>
 
