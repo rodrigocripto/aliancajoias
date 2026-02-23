@@ -138,16 +138,33 @@ export default function Catalogo() {
               />
             </div>
 
-            <div className="flex gap-2 flex-wrap justify-center">
+            <div className="flex gap-3 flex-wrap justify-center">
               {categorias.map(cat => (
-                <Button
+                <button
                   key={cat.valor}
-                  variant={categoriaFiltro === cat.valor ? 'default' : 'outline'}
                   onClick={() => setCategoriaFiltro(cat.valor)}
-                  className={categoriaFiltro === cat.valor ? 'bg-[#D4AF37] hover:bg-[#C9A227]' : ''}
+                  className={`
+                    relative px-6 py-3 rounded-full font-medium text-sm transition-all duration-300
+                    ${categoriaFiltro === cat.valor 
+                      ? 'bg-gradient-to-r from-[#D4AF37] to-[#F4D03F] text-white shadow-lg shadow-[#D4AF37]/30 scale-105' 
+                      : 'bg-white text-gray-700 border-2 border-gray-200 hover:border-[#D4AF37] hover:text-[#D4AF37] hover:shadow-md'
+                    }
+                  `}
                 >
-                  {cat.label}
-                </Button>
+                  {categoriaFiltro === cat.valor && (
+                    <span className="absolute inset-0 rounded-full bg-gradient-to-r from-[#D4AF37] to-[#F4D03F] opacity-20 animate-pulse" />
+                  )}
+                  <span className="relative flex items-center gap-2">
+                    {cat.valor === 'todas' && '✨'}
+                    {cat.valor === 'classicas' && '💍'}
+                    {cat.valor === 'tradicionais' && '👑'}
+                    {cat.valor === 'quadradas' && '⬜'}
+                    {cat.valor === 'trabalhadas' && '💎'}
+                    {cat.valor === 'com-pedras' && '💠'}
+                    {cat.valor === 'personalizadas' && '⭐'}
+                    {cat.label}
+                  </span>
+                </button>
               ))}
             </div>
           </div>
