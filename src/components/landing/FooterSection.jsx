@@ -1,5 +1,7 @@
 import React from 'react';
 import { MapPin, Phone, Mail, Instagram, Facebook, Clock, Youtube } from 'lucide-react';
+import { Link } from 'react-router-dom';
+import { createPageUrl } from '../utils';
 
 export default function FooterSection() {
   return (
@@ -57,12 +59,15 @@ export default function FooterSection() {
           <div>
             <h4 className="font-semibold text-white mb-6">Links Rápidos</h4>
             <div className="space-y-3">
-              <a href="/" className="block text-gray-400 hover:text-[#D4AF37] transition-colors duration-300">
+              <Link to={createPageUrl('Home')} className="block text-gray-400 hover:text-[#D4AF37] transition-colors duration-300">
                 Página Inicial
-              </a>
-              <a href="/blog" className="block text-gray-400 hover:text-[#D4AF37] transition-colors duration-300">
+              </Link>
+              <Link to={createPageUrl('SobreNos')} className="block text-gray-400 hover:text-[#D4AF37] transition-colors duration-300">
+                Sobre Nós
+              </Link>
+              <Link to={createPageUrl('Blog')} className="block text-gray-400 hover:text-[#D4AF37] transition-colors duration-300">
                 Blog
-              </a>
+              </Link>
               <a 
                 href="https://wa.me/5565993122777?text=Olá! Gostaria de saber mais sobre as alianças." 
                 target="_blank"
