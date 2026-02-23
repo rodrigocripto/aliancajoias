@@ -93,7 +93,9 @@ export default function Modelo() {
   const handleWhatsApp = () => {
     const imagemPrincipal = imagens[imagemAtual];
     
-    let mensagem = `Olá! Tenho interesse no modelo *${modelo.nome}*\n\n`;
+    let mensagem = `${imagemPrincipal}\n\n`;
+    
+    mensagem += `Olá! Tenho interesse no modelo *${modelo.nome}*\n\n`;
     
     mensagem += `📊 *Detalhes do Pedido:*\n`;
     mensagem += `• Quantidade: ${quantidade} ${quantidade === 1 ? 'aliança' : 'alianças (par)'}\n`;
@@ -126,10 +128,8 @@ export default function Modelo() {
     if (formaPagamento === 'pix') {
       mensagem += ` (com 5% de desconto)`;
     }
-    mensagem += `\n`;
     
-    mensagem += `\nGostaria de mais informações e finalizar o pedido!\n\n`;
-    mensagem += `📷 *Veja a foto do modelo:*\n${imagemPrincipal}`;
+    mensagem += `\n\nGostaria de mais informações e finalizar o pedido!`;
     
     const whatsappUrl = `https://wa.me/5565993122777?text=${encodeURIComponent(mensagem)}`;
     window.open(whatsappUrl, '_blank');
