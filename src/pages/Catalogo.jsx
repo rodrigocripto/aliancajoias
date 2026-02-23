@@ -91,20 +91,28 @@ export default function Catalogo() {
         </div>
 
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <motion.span
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            className="text-sm font-medium text-[#D4AF37] tracking-widest uppercase"
+          >
+            Coleção Completa
+          </motion.span>
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            className="text-4xl sm:text-5xl font-light text-white mb-4"
+            transition={{ delay: 0.1 }}
+            className="mt-4 text-3xl sm:text-4xl lg:text-5xl font-light text-white"
           >
-            Nosso <span className="font-semibold text-[#D4AF37]">Catálogo</span>
+            Explore Todos os <span className="font-semibold text-[#D4AF37]">Modelos</span>
           </motion.h1>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.1 }}
-            className="text-lg text-gray-300 max-w-2xl mx-auto"
+            transition={{ delay: 0.2 }}
+            className="mt-6 text-lg text-gray-300 max-w-2xl mx-auto leading-relaxed"
           >
-            Explore nossa coleção completa de alianças em ouro 18k com fabricação própria
+            Conheça nossa coleção completa de alianças em ouro 18k. Cada modelo é único e pode ser totalmente personalizado.
           </motion.p>
         </div>
       </section>

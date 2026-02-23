@@ -86,7 +86,6 @@ export default function Home() {
       <ProcessoSection />
       <ModelosDupla modelos={[modelos[2], modelos[4]]} />
       <DepoimentosSection />
-      <ModelosSection onModeloClick={handleModeloClick} />
       <CTAFinalSection onCtaClick={handleCtaClick} />
       <FooterSection />
       
