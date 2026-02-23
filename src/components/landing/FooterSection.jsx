@@ -62,6 +62,9 @@ export default function FooterSection() {
               <Link to={createPageUrl('Home')} className="block text-gray-400 hover:text-[#D4AF37] transition-colors duration-300">
                 Página Inicial
               </Link>
+              <Link to={createPageUrl('Catalogo')} className="block text-gray-400 hover:text-[#D4AF37] transition-colors duration-300">
+                Catálogo
+              </Link>
               <Link to={createPageUrl('SobreNos')} className="block text-gray-400 hover:text-[#D4AF37] transition-colors duration-300">
                 Sobre Nós
               </Link>
