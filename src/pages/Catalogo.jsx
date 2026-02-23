@@ -19,6 +19,13 @@ const categorias = [
   { valor: 'personalizadas', label: 'Personalizadas' }
 ];
 
+const formatarPreco = (valor) => {
+  return parseFloat(valor).toLocaleString('pt-BR', {
+    minimumFractionDigits: 2,
+    maximumFractionDigits: 2
+  });
+};
+
 export default function Catalogo() {
   const [busca, setBusca] = useState('');
   const [categoriaFiltro, setCategoriaFiltro] = useState('todas');
@@ -203,7 +210,7 @@ export default function Catalogo() {
                           <div>
                             <p className="text-xs text-gray-500">A partir de</p>
                             <p className="text-xl font-bold text-[#D4AF37]">
-                              R$ {calcularPreco(modelo)}
+                              R$ {formatarPreco(calcularPreco(modelo))}
                             </p>
                           </div>
                           <Button 

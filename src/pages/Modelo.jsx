@@ -12,6 +12,13 @@ import FooterSection from '../components/landing/FooterSection';
 
 const tamanhos = Array.from({ length: 27 }, (_, i) => i + 10); // 10 a 36
 
+const formatarPreco = (valor) => {
+  return parseFloat(valor).toLocaleString('pt-BR', {
+    minimumFractionDigits: 2,
+    maximumFractionDigits: 2
+  });
+};
+
 export default function Modelo() {
   const [quantidade, setQuantidade] = useState(2);
   const [tamanho1, setTamanho1] = useState('');
@@ -203,14 +210,14 @@ export default function Modelo() {
             <div className="bg-gradient-to-br from-[#D4AF37]/10 to-[#C9A227]/10 rounded-2xl p-6 border border-[#D4AF37]/30">
               <div className="flex items-baseline gap-2 mb-2">
                 <span className="text-3xl font-bold text-[#1A1A1A]">
-                  R$ {calcularPrecoTotal()}
+                  R$ {formatarPreco(calcularPrecoTotal())}
                 </span>
                 <span className="text-sm text-gray-600">
                   ({quantidade} {quantidade === 1 ? 'aliança' : 'alianças'})
                 </span>
               </div>
               <p className="text-sm text-gray-600">
-                Preço unitário: R$ {calcularPrecoUnitario()} | Base: {modelo.peso_base_gramas}g | R$ {precoGrama}/g
+                Preço unitário: R$ {formatarPreco(calcularPrecoUnitario())} | Base: {modelo.peso_base_gramas}g | R$ {formatarPreco(precoGrama)}/g
               </p>
               {formaPagamento === 'pix' && (
                 <p className="text-sm text-green-600 font-semibold mt-2">
