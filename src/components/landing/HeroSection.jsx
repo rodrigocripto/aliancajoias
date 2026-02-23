@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Button } from '@/components/ui/button';
 import { ChevronDown } from 'lucide-react';
+import { Link } from 'react-router-dom';
+import { createPageUrl } from '@/utils';
 
 const carouselImages = [
   "https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/694ef32b4b63ebef73cd51c8/09dbba98e_CpiadeFOTO3.jpg",
@@ -106,11 +108,13 @@ export default function HeroSection({ onCtaClick }) {
                 </a>
               </Button>
               <Button
+                asChild
                 variant="outline"
                 className="border-2 border-[#D4AF37]/30 text-[#1A1A1A] px-8 py-6 text-lg font-medium rounded-full hover:bg-[#D4AF37]/5 hover:border-[#D4AF37]/50 transition-all duration-300"
-                onClick={() => document.getElementById('modelos')?.scrollIntoView({ behavior: 'smooth' })}
               >
-                Ver Modelos
+                <Link to={createPageUrl('Catalogo')}>
+                  Ver Catálogo Completo
+                </Link>
               </Button>
             </motion.div>
 
