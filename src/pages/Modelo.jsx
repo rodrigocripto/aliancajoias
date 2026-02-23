@@ -27,6 +27,7 @@ export default function Modelo() {
   const [nome2, setNome2] = useState('');
   const [imagemAtual, setImagemAtual] = useState(0);
   const [formaPagamento, setFormaPagamento] = useState('');
+  const [parcelasEscolhidas, setParcelasEscolhidas] = useState(null);
 
   const urlParams = new URLSearchParams(window.location.search);
   const slug = urlParams.get('slug');
@@ -115,7 +116,8 @@ export default function Modelo() {
     
     mensagem += `\n💳 *Forma de Pagamento:* `;
     if (formaPagamento === 'cartao') {
-      mensagem += `Cartão em até 12x sem juros\n`;
+      const valorParcela = (parseFloat(calcularPrecoTotal()) / parcelasEscolhidas).toFixed(2);
+      mensagem += `Cartão em ${parcelasEscolhidas}x de R$ ${formatarPreco(valorParcela)} sem juros\n`;
     } else if (formaPagamento === 'pix') {
       mensagem += `PIX com 5% de desconto\n`;
     }
@@ -137,6 +139,7 @@ export default function Modelo() {
     if (!tamanho1) return false;
     if (quantidade === 2 && !tamanho2) return false;
     if (!formaPagamento) return false;
+    if (formaPagamento === 'cartao' && !parcelasEscolhidas) return false;
     return true;
   };
 
@@ -232,7 +235,10 @@ export default function Modelo() {
               <div className="grid gap-3">
                 <button
                   type="button"
-                  onClick={() => setFormaPagamento('cartao')}
+                  onClick={() => {
+                    setFormaPagamento('cartao');
+                    setParcelasEscolhidas(null);
+                  }}
                   className={`p-4 rounded-xl border-2 text-left transition-all ${
                     formaPagamento === 'cartao'
                       ? 'border-[#D4AF37] bg-[#D4AF37]/5'
@@ -243,7 +249,7 @@ export default function Modelo() {
                     <div>
                       <p className="font-semibold text-[#1A1A1A]">💳 Cartão de Crédito</p>
                       <p className="text-sm text-gray-600 mt-1">
-                        Parcele em até 12x de R$ {formatarPreco((parseFloat(calcularPrecoTotal()) / 12).toFixed(2))}
+                        Parcele em até 12x sem juros
                       </p>
                     </div>
                     {formaPagamento === 'cartao' && (
@@ -252,9 +258,43 @@ export default function Modelo() {
                   </div>
                 </button>
 
+                {formaPagamento === 'cartao' && (
+                  <motion.div
+                    initial={{ opacity: 0, height: 0 }}
+                    animate={{ opacity: 1, height: 'auto' }}
+                    className="grid grid-cols-2 gap-2 pl-4"
+                  >
+                    {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12].map(parcela => {
+                      const valorParcela = (parseFloat(calcularPrecoTotal()) / parcela).toFixed(2);
+                      return (
+                        <button
+                          key={parcela}
+                          type="button"
+                          onClick={() => setParcelasEscolhidas(parcela)}
+                          className={`p-3 rounded-lg border text-left transition-all text-sm ${
+                            parcelasEscolhidas === parcela
+                              ? 'border-[#D4AF37] bg-[#D4AF37]/10 font-semibold'
+                              : 'border-gray-200 hover:border-[#D4AF37]/30'
+                          }`}
+                        >
+                          <div className="flex justify-between items-center">
+                            <span className="text-gray-700">{parcela}x</span>
+                            <span className="text-[#1A1A1A] font-semibold">
+                              R$ {formatarPreco(valorParcela)}
+                            </span>
+                          </div>
+                        </button>
+                      );
+                    })}
+                  </motion.div>
+                )}
+
                 <button
                   type="button"
-                  onClick={() => setFormaPagamento('pix')}
+                  onClick={() => {
+                    setFormaPagamento('pix');
+                    setParcelasEscolhidas(null);
+                  }}
                   className={`p-4 rounded-xl border-2 text-left transition-all ${
                     formaPagamento === 'pix'
                       ? 'border-green-500 bg-green-50'
@@ -382,7 +422,9 @@ export default function Modelo() {
               <p className="text-sm text-red-600 text-center">
                 {!tamanho1 || (quantidade === 2 && !tamanho2)
                   ? 'Por favor, selecione o(s) tamanho(s) antes de continuar'
-                  : 'Por favor, selecione a forma de pagamento'}
+                  : !formaPagamento
+                  ? 'Por favor, selecione a forma de pagamento'
+                  : 'Por favor, selecione a quantidade de parcelas'}
               </p>
             )}
 
