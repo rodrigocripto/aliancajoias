@@ -91,9 +91,10 @@ export default function Modelo() {
   };
 
   const handleWhatsApp = () => {
-    const imagemPrincipal = imagens[imagemAtual];
+    const linkModelo = window.location.href;
     
-    let mensagem = `Olá! Tenho interesse no modelo *${modelo.nome}*\n\n`;
+    let mensagem = `Olá! Tenho interesse no modelo *${modelo.nome}*\n`;
+    mensagem += `🔗 Link: ${linkModelo}\n\n`;
     
     mensagem += `📊 *Detalhes do Pedido:*\n`;
     mensagem += `• Quantidade: ${quantidade} ${quantidade === 1 ? 'aliança' : 'alianças (par)'}\n`;
@@ -127,8 +128,7 @@ export default function Modelo() {
       mensagem += ` (com 5% de desconto)`;
     }
     
-    mensagem += `\n\nGostaria de mais informações e finalizar o pedido!\n\n`;
-    mensagem += `${imagemPrincipal}`;
+    mensagem += `\n\nGostaria de mais informações e finalizar o pedido!`;
     
     const whatsappUrl = `https://wa.me/5565993122777?text=${encodeURIComponent(mensagem)}`;
     window.open(whatsappUrl, '_blank');
