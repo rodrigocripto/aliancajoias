@@ -192,7 +192,7 @@ export default function HeroSection({ onCtaClick }) {
                         </defs>
                         <text className="font-bold" style={{ fontSize: '24px', letterSpacing: '3px', fill: '#FF6B00', stroke: '#FFA500', strokeWidth: '0.5px' }}>
                           <textPath href="#curveTop1" startOffset="50%" textAnchor="middle">
-                            ALIANÇAS A PARTIR DE R$ 697,00 O GRAMA
+                            ALIANÇAS A PARTIR DE 12x R$ 75,00
                           </textPath>
                         </text>
                       </svg>
@@ -291,7 +291,7 @@ export default function HeroSection({ onCtaClick }) {
                         </defs>
                         <text className="font-bold" style={{ fontSize: '24px', letterSpacing: '3px', fill: '#FF6B00', stroke: '#FFA500', strokeWidth: '0.5px' }}>
                           <textPath href="#curveBottom2" startOffset="50%" textAnchor="middle">
-                            ALIANÇAS A PARTIR DE R$ 697,00 O GRAMA
+                            ALIANÇAS A PARTIR DE 12x R$ 75,00
                           </textPath>
                         </text>
                       </svg>
