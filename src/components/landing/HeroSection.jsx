@@ -226,7 +226,7 @@ export default function HeroSection({ onCtaClick }) {
                         </defs>
                         <text className="font-bold" style={{ fontSize: '24px', letterSpacing: '3px', fill: 'url(#darkGradient)' }}>
                           <textPath href="#curveBottom1" startOffset="50%" textAnchor="middle">
-                            EM ATÉ 10X SEM JUROS NOS CARTÕES
+                            EM ATÉ 12X SEM JUROS NOS CARTÕES
                           </textPath>
                         </text>
                       </svg>
@@ -262,7 +262,7 @@ export default function HeroSection({ onCtaClick }) {
                         </defs>
                         <text className="font-bold" style={{ fontSize: '24px', letterSpacing: '3px', fill: 'url(#darkGradient2)' }}>
                           <textPath href="#curveTop2" startOffset="50%" textAnchor="middle">
-                            EM ATÉ 10X SEM JUROS NOS CARTÕES
+                            EM ATÉ 12X SEM JUROS NOS CARTÕES
                           </textPath>
                         </text>
                       </svg>
