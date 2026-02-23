@@ -1,7 +1,7 @@
 import React from 'react';
 import { MapPin, Phone, Mail, Instagram, Facebook, Clock, Youtube } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import { createPageUrl } from '../utils';
+import { createPageUrl } from '../../utils';
 
 export default function FooterSection() {
   return (
