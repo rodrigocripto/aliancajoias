@@ -128,8 +128,8 @@ export default function Modelo() {
     }
     mensagem += `\n`;
     
-    mensagem += `\n📷 *Foto do Modelo:* ${imagemPrincipal}\n`;
-    mensagem += `\nGostaria de mais informações e finalizar o pedido!`;
+    mensagem += `\nGostaria de mais informações e finalizar o pedido!\n\n`;
+    mensagem += `📷 *Veja a foto do modelo:*\n${imagemPrincipal}`;
     
     const whatsappUrl = `https://wa.me/5565993122777?text=${encodeURIComponent(mensagem)}`;
     window.open(whatsappUrl, '_blank');
