@@ -53,6 +53,17 @@ export default function Catalogo() {
     metaDescription.content = 'Explore nosso catálogo completo de alianças em ouro 18k. Modelos clássicos, trabalhados, com pedras e personalizados. Fabricação própria em Várzea Grande MT.';
   }, []);
 
+  useEffect(() => {
+    const handleScroll = () => {
+      if (drawerAberto) {
+        setDrawerAberto(false);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, [drawerAberto]);
+
   const { data: modelos = [], isLoading } = useQuery({
     queryKey: ['modelos-joia'],
     queryFn: () => base44.entities.ModeloJoia.list('-created_date', 200),
