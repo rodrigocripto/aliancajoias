@@ -231,6 +231,12 @@ export default function Catalogo() {
     configuracoes.find(c => c.chave === 'preco_grama_ouro')?.valor || '950'
   );
 
+  const calcularPreco = (modelo) => {
+    const precoBase = modelo.peso_base_gramas * precoGrama;
+    const precoTotal = precoBase + (modelo.custo_producao_adicional || 0);
+    return precoTotal.toFixed(2);
+  };
+
   const modelosFiltrados = modelos.filter(modelo => {
     if (!modelo.disponivel) return false;
     
@@ -238,12 +244,6 @@ export default function Catalogo() {
     
     return matchCategoria;
   });
-
-  const calcularPreco = (modelo) => {
-    const precoBase = modelo.peso_base_gramas * precoGrama;
-    const precoTotal = precoBase + (modelo.custo_producao_adicional || 0);
-    return precoTotal.toFixed(2);
-  };
 
   if (isLoading) {
     return (
