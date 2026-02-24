@@ -19,13 +19,83 @@ import {
 import FooterSection from '../components/landing/FooterSection';
 
 const categorias = [
-  { valor: 'todas', label: 'Todas' },
-  { valor: 'classicas', label: 'Clássicas' },
-  { valor: 'tradicionais', label: 'Tradicionais' },
-  { valor: 'quadradas', label: 'Quadradas' },
-  { valor: 'trabalhadas', label: 'Trabalhadas' },
-  { valor: 'com-pedras', label: 'Com Pedras' },
-  { valor: 'personalizadas', label: 'Personalizadas' }
+  { 
+    valor: 'todas', 
+    label: 'Todas',
+    seo: {
+      title: 'Alianças de Ouro 18k Várzea Grande MT | Catálogo Completo',
+      description: 'Catálogo completo de alianças em ouro 18k com fabricação própria em Várzea Grande MT. Modelos clássicos, trabalhados, com pedras. Atendemos Cuiabá e região. Orçamento grátis!',
+      keywords: 'alianças ouro 18k várzea grande, joalheria várzea grande mt, aliança casamento cuiabá, aliança noivado várzea grande',
+      h1: 'Explore Todos os Modelos',
+      subtitle: 'Conheça nossa coleção completa de alianças em ouro 18k. Cada modelo é único e pode ser totalmente personalizado.'
+    }
+  },
+  { 
+    valor: 'classicas', 
+    label: 'Clássicas',
+    seo: {
+      title: 'Alianças Clássicas Ouro 18k Várzea Grande | Modelos Tradicionais',
+      description: 'Alianças clássicas em ouro 18k com acabamento polido. Modelos atemporais e elegantes para casamento e noivado. Fabricação própria em Várzea Grande MT. Confira!',
+      keywords: 'aliança clássica ouro 18k, aliança lisa ouro, aliança polida várzea grande, aliança tradicional cuiabá',
+      h1: 'Alianças Clássicas em Ouro 18k',
+      subtitle: 'Modelos atemporais e elegantes com acabamento polido. Perfeitas para quem valoriza o design tradicional e sofisticado.'
+    }
+  },
+  { 
+    valor: 'tradicionais', 
+    label: 'Tradicionais',
+    seo: {
+      title: 'Alianças Tradicionais Ouro 18k | Joalheria Várzea Grande MT',
+      description: 'Alianças tradicionais em ouro 18k com design clássico. Ideais para casamentos e noivados em Várzea Grande e Cuiabá MT. Mais de 30 anos fabricando joias!',
+      keywords: 'aliança tradicional ouro 18k várzea grande, aliança casamento tradicional cuiabá, joalheria tradicional mato grosso',
+      h1: 'Alianças Tradicionais Atemporais',
+      subtitle: 'Design tradicional que atravessa gerações. Modelos elegantes e discretos para celebrar o amor eterno.'
+    }
+  },
+  { 
+    valor: 'quadradas', 
+    label: 'Quadradas',
+    seo: {
+      title: 'Alianças Quadradas Ouro 18k Várzea Grande | Design Moderno',
+      description: 'Alianças quadradas em ouro 18k com design contemporâneo. Fabricação artesanal em Várzea Grande MT. Atendemos Cuiabá e toda região. Solicite orçamento!',
+      keywords: 'aliança quadrada ouro 18k, aliança design moderno várzea grande, aliança contemporânea cuiabá',
+      h1: 'Alianças Quadradas Modernas',
+      subtitle: 'Design contemporâneo com linhas retas e elegantes. Para casais que buscam um estilo moderno e diferenciado.'
+    }
+  },
+  { 
+    valor: 'trabalhadas', 
+    label: 'Trabalhadas',
+    seo: {
+      title: 'Alianças Trabalhadas Ouro 18k | Joalheria Artesanal Várzea Grande',
+      description: 'Alianças trabalhadas em ouro 18k com acabamento artesanal exclusivo. Detalhes únicos feitos à mão em Várzea Grande MT. Tradição de 30+ anos em joalheria!',
+      keywords: 'aliança trabalhada ouro 18k, aliança artesanal várzea grande, aliança com detalhes cuiabá, joalheria artesanal mato grosso',
+      h1: 'Alianças Trabalhadas Exclusivas',
+      subtitle: 'Acabamento artesanal com detalhes únicos. Cada aliança é uma obra de arte criada com dedicação e técnica.'
+    }
+  },
+  { 
+    valor: 'com-pedras', 
+    label: 'Com Pedras',
+    seo: {
+      title: 'Alianças com Pedras Ouro 18k Várzea Grande | Diamantes e Brilhantes',
+      description: 'Alianças em ouro 18k com pedras preciosas: diamantes, brilhantes e zircônias. Cravação artesanal em Várzea Grande MT. Atendemos Cuiabá. Confira modelos!',
+      keywords: 'aliança com pedra ouro 18k várzea grande, aliança diamante cuiabá, aliança brilhante várzea grande mt',
+      h1: 'Alianças com Pedras Preciosas',
+      subtitle: 'Beleza e sofisticação com pedras cravadas. Diamantes, brilhantes e zircônias que valorizam ainda mais seu amor.'
+    }
+  },
+  { 
+    valor: 'personalizadas', 
+    label: 'Personalizadas',
+    seo: {
+      title: 'Alianças Personalizadas Ouro 18k Várzea Grande | Sob Medida',
+      description: 'Crie sua aliança personalizada em ouro 18k! Gravação, pedras, acabamentos exclusivos. Fabricação sob medida em Várzea Grande MT. Atendemos Cuiabá e região!',
+      keywords: 'aliança personalizada várzea grande, aliança sob medida cuiabá, gravação aliança ouro 18k, aliança exclusiva mato grosso',
+      h1: 'Alianças Personalizadas Sob Medida',
+      subtitle: 'Crie a aliança perfeita do seu jeito. Escolha acabamento, gravação, pedras e detalhes únicos para tornar seu amor eterno.'
+    }
+  }
 ];
 
 const formatarPreco = (valor) => {
@@ -42,16 +112,97 @@ export default function Catalogo() {
 
   useEffect(() => {
     window.scrollTo(0, 0);
-    document.title = 'Catálogo de Alianças em Ouro 18k - Joalheria Aliança Joias';
-    
-    let metaDescription = document.querySelector('meta[name="description"]');
-    if (!metaDescription) {
-      metaDescription = document.createElement('meta');
-      metaDescription.name = 'description';
-      document.head.appendChild(metaDescription);
-    }
-    metaDescription.content = 'Explore nosso catálogo completo de alianças em ouro 18k. Modelos clássicos, trabalhados, com pedras e personalizados. Fabricação própria em Várzea Grande MT.';
   }, []);
+
+  // SEO dinâmico por categoria
+  useEffect(() => {
+    const categoriaSeo = categorias.find(c => c.valor === categoriaFiltro)?.seo;
+    
+    if (categoriaSeo) {
+      // Title
+      document.title = categoriaSeo.title;
+      
+      // Meta Description
+      let metaDescription = document.querySelector('meta[name="description"]');
+      if (!metaDescription) {
+        metaDescription = document.createElement('meta');
+        metaDescription.name = 'description';
+        document.head.appendChild(metaDescription);
+      }
+      metaDescription.content = categoriaSeo.description;
+      
+      // Meta Keywords
+      let metaKeywords = document.querySelector('meta[name="keywords"]');
+      if (!metaKeywords) {
+        metaKeywords = document.createElement('meta');
+        metaKeywords.name = 'keywords';
+        document.head.appendChild(metaKeywords);
+      }
+      metaKeywords.content = categoriaSeo.keywords;
+      
+      // Open Graph Title
+      let ogTitle = document.querySelector('meta[property="og:title"]');
+      if (!ogTitle) {
+        ogTitle = document.createElement('meta');
+        ogTitle.setAttribute('property', 'og:title');
+        document.head.appendChild(ogTitle);
+      }
+      ogTitle.content = categoriaSeo.title;
+      
+      // Open Graph Description
+      let ogDescription = document.querySelector('meta[property="og:description"]');
+      if (!ogDescription) {
+        ogDescription = document.createElement('meta');
+        ogDescription.setAttribute('property', 'og:description');
+        document.head.appendChild(ogDescription);
+      }
+      ogDescription.content = categoriaSeo.description;
+      
+      // Canonical URL com categoria
+      let canonical = document.querySelector('link[rel="canonical"]');
+      if (!canonical) {
+        canonical = document.createElement('link');
+        canonical.rel = 'canonical';
+        document.head.appendChild(canonical);
+      }
+      canonical.href = window.location.href;
+      
+      // JSON-LD para categoria específica
+      let schemaScript = document.querySelector('script[type="application/ld+json"][data-page="catalog"]');
+      if (!schemaScript) {
+        schemaScript = document.createElement('script');
+        schemaScript.type = 'application/ld+json';
+        schemaScript.setAttribute('data-page', 'catalog');
+        document.head.appendChild(schemaScript);
+      }
+      
+      const schemaData = {
+        "@context": "https://schema.org",
+        "@type": "CollectionPage",
+        "name": categoriaSeo.title,
+        "description": categoriaSeo.description,
+        "url": window.location.href,
+        "provider": {
+          "@type": "JewelryStore",
+          "name": "Joalheria Aliança Joias",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Av. Sen. Filinto Müller, 1900",
+            "addressLocality": "Várzea Grande",
+            "addressRegion": "MT",
+            "postalCode": "78000-000",
+            "addressCountry": "BR"
+          },
+          "telephone": "+55-65-99312-2777",
+          "priceRange": "$$"
+        },
+        "numberOfItems": modelosFiltrados.length,
+        "keywords": categoriaSeo.keywords
+      };
+      
+      schemaScript.textContent = JSON.stringify(schemaData);
+    }
+  }, [categoriaFiltro, modelosFiltrados.length]);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -121,23 +272,28 @@ export default function Catalogo() {
             animate={{ opacity: 1, y: 0 }}
             className="text-xs font-medium text-[#D4AF37] tracking-widest uppercase"
           >
-            Coleção Completa
+            {categoriaFiltro === 'todas' ? 'Coleção Completa' : `Categoria: ${categorias.find(c => c.valor === categoriaFiltro)?.label}`}
           </motion.span>
           <motion.h1
+            key={categoriaFiltro}
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.1 }}
             className="mt-2 text-2xl sm:text-3xl font-light text-white"
           >
-            Explore Todos os <span className="font-semibold text-[#D4AF37]">Modelos</span>
+            {categorias.find(c => c.valor === categoriaFiltro)?.seo.h1.split(' ').slice(0, -2).join(' ')}{' '}
+            <span className="font-semibold text-[#D4AF37]">
+              {categorias.find(c => c.valor === categoriaFiltro)?.seo.h1.split(' ').slice(-2).join(' ')}
+            </span>
           </motion.h1>
           <motion.p
+            key={`${categoriaFiltro}-desc`}
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 }}
             className="mt-3 text-sm text-gray-300 max-w-xl mx-auto"
           >
-            Conheça nossa coleção completa de alianças em ouro 18k. Cada modelo é único e pode ser totalmente personalizado.
+            {categorias.find(c => c.valor === categoriaFiltro)?.seo.subtitle}
           </motion.p>
         </div>
       </section>
