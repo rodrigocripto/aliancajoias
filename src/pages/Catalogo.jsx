@@ -110,6 +110,36 @@ export default function Catalogo() {
   const [categoriaFiltro, setCategoriaFiltro] = useState('todas');
   const [drawerAberto, setDrawerAberto] = useState(false);
 
+  const { data: modelos = [], isLoading } = useQuery({
+    queryKey: ['modelos-joia'],
+    queryFn: () => base44.entities.ModeloJoia.list('-created_date', 200),
+    initialData: [],
+  });
+
+  const { data: configuracoes = [] } = useQuery({
+    queryKey: ['configuracoes'],
+    queryFn: () => base44.entities.Configuracao.list(),
+    initialData: [],
+  });
+
+  const precoGrama = parseFloat(
+    configuracoes.find(c => c.chave === 'preco_grama_ouro')?.valor || '950'
+  );
+
+  const calcularPreco = (modelo) => {
+    const precoBase = modelo.peso_base_gramas * precoGrama;
+    const precoTotal = precoBase + (modelo.custo_producao_adicional || 0);
+    return precoTotal.toFixed(2);
+  };
+
+  const modelosFiltrados = modelos.filter(modelo => {
+    if (!modelo.disponivel) return false;
+    
+    const matchCategoria = categoriaFiltro === 'todas' || modelo.categoria === categoriaFiltro;
+    
+    return matchCategoria;
+  });
+
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
@@ -214,36 +244,6 @@ export default function Catalogo() {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, [drawerAberto]);
-
-  const { data: modelos = [], isLoading } = useQuery({
-    queryKey: ['modelos-joia'],
-    queryFn: () => base44.entities.ModeloJoia.list('-created_date', 200),
-    initialData: [],
-  });
-
-  const { data: configuracoes = [] } = useQuery({
-    queryKey: ['configuracoes'],
-    queryFn: () => base44.entities.Configuracao.list(),
-    initialData: [],
-  });
-
-  const precoGrama = parseFloat(
-    configuracoes.find(c => c.chave === 'preco_grama_ouro')?.valor || '950'
-  );
-
-  const calcularPreco = (modelo) => {
-    const precoBase = modelo.peso_base_gramas * precoGrama;
-    const precoTotal = precoBase + (modelo.custo_producao_adicional || 0);
-    return precoTotal.toFixed(2);
-  };
-
-  const modelosFiltrados = modelos.filter(modelo => {
-    if (!modelo.disponivel) return false;
-    
-    const matchCategoria = categoriaFiltro === 'todas' || modelo.categoria === categoriaFiltro;
-    
-    return matchCategoria;
-  });
 
   if (isLoading) {
     return (
