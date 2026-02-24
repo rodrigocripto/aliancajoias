@@ -4,9 +4,18 @@ import { useQuery } from '@tanstack/react-query';
 import { Link } from 'react-router-dom';
 import { createPageUrl } from '@/utils';
 import { motion } from 'framer-motion';
-import { Search, Filter } from 'lucide-react';
+import { Search, Filter, SlidersHorizontal, X } from 'lucide-react';
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
+import {
+  Drawer,
+  DrawerClose,
+  DrawerContent,
+  DrawerDescription,
+  DrawerHeader,
+  DrawerTitle,
+  DrawerTrigger,
+} from "@/components/ui/drawer";
 import FooterSection from '../components/landing/FooterSection';
 
 const categorias = [
@@ -29,7 +38,7 @@ const formatarPreco = (valor) => {
 export default function Catalogo() {
   const [busca, setBusca] = useState('');
   const [categoriaFiltro, setCategoriaFiltro] = useState('todas');
-  const [filtrosAbertos, setFiltrosAbertos] = useState(false);
+  const [drawerAberto, setDrawerAberto] = useState(false);
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -125,53 +134,80 @@ export default function Catalogo() {
         </div>
       </section>
 
-      {/* Filtros */}
-      <section className="py-3 border-b border-gray-200 sticky top-0 bg-[#FDFBF7] z-30 shadow-sm">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center gap-3">
-            <div className="relative flex-1">
-              <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400" />
-              <Input
-                placeholder="Buscar modelos..."
-                value={busca}
-                onChange={(e) => setBusca(e.target.value)}
-                className="pl-9 h-9 text-sm"
-              />
+      {/* Botão Flutuante de Filtros */}
+      <Drawer open={drawerAberto} onOpenChange={setDrawerAberto}>
+        <DrawerTrigger asChild>
+          <motion.button
+            initial={{ scale: 0 }}
+            animate={{ scale: 1 }}
+            transition={{ delay: 0.3, type: "spring" }}
+            className="fixed top-20 right-4 z-40 bg-gradient-to-br from-[#D4AF37] via-[#F4D03F] to-[#D4AF37] text-white rounded-full shadow-2xl shadow-[#D4AF37]/40 hover:shadow-[#D4AF37]/60 transition-all duration-300 hover:scale-110 group"
+          >
+            <div className="relative px-5 py-3 flex items-center gap-2">
+              <SlidersHorizontal className="w-5 h-5" />
+              <span className="font-semibold text-sm">Escolher Modelo</span>
+              {categoriaFiltro !== 'todas' && (
+                <span className="absolute -top-1 -right-1 w-4 h-4 bg-red-500 rounded-full border-2 border-white flex items-center justify-center text-xs">
+                  1
+                </span>
+              )}
+            </div>
+          </motion.button>
+        </DrawerTrigger>
+
+        <DrawerContent className="max-h-[85vh]">
+          <DrawerHeader className="border-b border-gray-200">
+            <div className="flex items-center justify-between">
+              <div>
+                <DrawerTitle className="text-2xl font-bold text-[#1A1A1A]">
+                  Escolha Seu Modelo
+                </DrawerTitle>
+                <DrawerDescription className="text-gray-600 mt-1">
+                  Busque ou filtre por categoria
+                </DrawerDescription>
+              </div>
+              <DrawerClose asChild>
+                <Button variant="ghost" size="icon" className="rounded-full">
+                  <X className="w-5 h-5" />
+                </Button>
+              </DrawerClose>
+            </div>
+          </DrawerHeader>
+
+          <div className="p-4 overflow-y-auto">
+            {/* Campo de Busca */}
+            <div className="mb-6">
+              <label className="text-sm font-medium text-gray-700 mb-2 block">
+                Buscar por nome
+              </label>
+              <div className="relative">
+                <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400" />
+                <Input
+                  placeholder="Digite o nome do modelo..."
+                  value={busca}
+                  onChange={(e) => setBusca(e.target.value)}
+                  className="pl-10 h-12 text-base"
+                />
+              </div>
             </div>
 
-            <Button
-              onClick={() => setFiltrosAbertos(!filtrosAbertos)}
-              variant="outline"
-              className="h-9 px-3 border-[#D4AF37] text-[#D4AF37] hover:bg-[#D4AF37] hover:text-white"
-            >
-              <Filter className="w-4 h-4 mr-2" />
-              Filtros
-              {categoriaFiltro !== 'todas' && (
-                <span className="ml-2 w-2 h-2 rounded-full bg-[#D4AF37]" />
-              )}
-            </Button>
-          </div>
-
-          {filtrosAbertos && (
-            <motion.div
-              initial={{ height: 0, opacity: 0 }}
-              animate={{ height: 'auto', opacity: 1 }}
-              exit={{ height: 0, opacity: 0 }}
-              transition={{ duration: 0.2 }}
-              className="overflow-hidden"
-            >
-              <div className="flex gap-2 flex-wrap justify-center items-center pt-3 pb-2">
+            {/* Filtros por Categoria */}
+            <div>
+              <label className="text-sm font-medium text-gray-700 mb-3 block">
+                Filtrar por categoria
+              </label>
+              <div className="grid grid-cols-3 gap-3">
                 {categorias.map(cat => (
                   <button
                     key={cat.valor}
                     onClick={() => {
                       setCategoriaFiltro(cat.valor);
-                      setFiltrosAbertos(false);
+                      setDrawerAberto(false);
                     }}
-                    className="flex flex-col items-center gap-1 group"
+                    className="flex flex-col items-center gap-2 group p-3 rounded-xl transition-all duration-300 hover:bg-gray-50"
                   >
                     <div className={`
-                      relative w-14 h-14 rounded-full flex items-center justify-center text-lg
+                      relative w-16 h-16 rounded-full flex items-center justify-center text-2xl
                       transition-all duration-300 transform
                       ${categoriaFiltro === cat.valor 
                         ? 'bg-gradient-to-br from-[#D4AF37] via-[#F4D03F] to-[#D4AF37] shadow-lg shadow-[#D4AF37]/30 scale-105 rotate-180' 
@@ -192,7 +228,7 @@ export default function Catalogo() {
                       </span>
                     </div>
                     <span className={`
-                      text-[10px] font-medium transition-colors duration-300
+                      text-xs font-medium text-center transition-colors duration-300
                       ${categoriaFiltro === cat.valor 
                         ? 'text-[#D4AF37] font-semibold' 
                         : 'text-gray-600 group-hover:text-[#D4AF37]'
@@ -203,14 +239,32 @@ export default function Catalogo() {
                   </button>
                 ))}
               </div>
-            </motion.div>
-          )}
+            </div>
 
-          <div className="text-center text-xs text-gray-500 mt-2">
-            {modelosFiltrados.length} {modelosFiltrados.length === 1 ? 'modelo' : 'modelos'}
+            {/* Contador de Resultados */}
+            <div className="mt-6 p-4 bg-gray-50 rounded-lg text-center">
+              <p className="text-sm text-gray-600">
+                <span className="font-bold text-[#D4AF37] text-lg">{modelosFiltrados.length}</span>
+                {' '}{modelosFiltrados.length === 1 ? 'modelo encontrado' : 'modelos encontrados'}
+              </p>
+            </div>
+
+            {/* Botão para Limpar Filtros */}
+            {(busca || categoriaFiltro !== 'todas') && (
+              <Button
+                onClick={() => {
+                  setBusca('');
+                  setCategoriaFiltro('todas');
+                }}
+                variant="outline"
+                className="w-full mt-4 border-gray-300 text-gray-600 hover:bg-gray-50"
+              >
+                Limpar Filtros
+              </Button>
+            )}
           </div>
-        </div>
-      </section>
+        </DrawerContent>
+      </Drawer>
 
       {/* Grid de Modelos */}
       <section className="py-6">
