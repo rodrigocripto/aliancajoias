@@ -29,6 +29,7 @@ const formatarPreco = (valor) => {
 export default function Catalogo() {
   const [busca, setBusca] = useState('');
   const [categoriaFiltro, setCategoriaFiltro] = useState('todas');
+  const [filtrosAbertos, setFiltrosAbertos] = useState(false);
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -125,10 +126,10 @@ export default function Catalogo() {
       </section>
 
       {/* Filtros */}
-      <section className="py-4 border-b border-gray-200 sticky top-0 bg-[#FDFBF7] z-30">
+      <section className="py-3 border-b border-gray-200 sticky top-0 bg-[#FDFBF7] z-30 shadow-sm">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col gap-3">
-            <div className="relative w-full max-w-md mx-auto">
+          <div className="flex items-center gap-3">
+            <div className="relative flex-1">
               <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400" />
               <Input
                 placeholder="Buscar modelos..."
@@ -138,50 +139,75 @@ export default function Catalogo() {
               />
             </div>
 
-            <div className="flex gap-2 flex-wrap justify-center items-center">
-              {categorias.map(cat => (
-                <button
-                  key={cat.valor}
-                  onClick={() => setCategoriaFiltro(cat.valor)}
-                  className="flex flex-col items-center gap-1 group"
-                >
-                  <div className={`
-                    relative w-14 h-14 rounded-full flex items-center justify-center text-lg
-                    transition-all duration-300 transform
-                    ${categoriaFiltro === cat.valor 
-                      ? 'bg-gradient-to-br from-[#D4AF37] via-[#F4D03F] to-[#D4AF37] shadow-lg shadow-[#D4AF37]/30 scale-105 rotate-180' 
-                      : 'bg-gradient-to-br from-white to-gray-50 border-2 border-gray-200 group-hover:border-[#D4AF37] group-hover:scale-105'
-                    }
-                  `}>
-                    {categoriaFiltro === cat.valor && (
-                      <span className="absolute inset-2 rounded-full border border-white/40 animate-pulse" />
-                    )}
-                    <span className={`relative ${categoriaFiltro === cat.valor ? 'rotate-180' : ''} transition-transform duration-300`}>
-                      {cat.valor === 'todas' && '✨'}
-                      {cat.valor === 'classicas' && '💍'}
-                      {cat.valor === 'tradicionais' && '👑'}
-                      {cat.valor === 'quadradas' && '⬜'}
-                      {cat.valor === 'trabalhadas' && '💎'}
-                      {cat.valor === 'com-pedras' && '💠'}
-                      {cat.valor === 'personalizadas' && '⭐'}
-                    </span>
-                  </div>
-                  <span className={`
-                    text-[10px] font-medium transition-colors duration-300
-                    ${categoriaFiltro === cat.valor 
-                      ? 'text-[#D4AF37] font-semibold' 
-                      : 'text-gray-600 group-hover:text-[#D4AF37]'
-                    }
-                  `}>
-                    {cat.label}
-                  </span>
-                </button>
-              ))}
-            </div>
+            <Button
+              onClick={() => setFiltrosAbertos(!filtrosAbertos)}
+              variant="outline"
+              className="h-9 px-3 border-[#D4AF37] text-[#D4AF37] hover:bg-[#D4AF37] hover:text-white"
+            >
+              <Filter className="w-4 h-4 mr-2" />
+              Filtros
+              {categoriaFiltro !== 'todas' && (
+                <span className="ml-2 w-2 h-2 rounded-full bg-[#D4AF37]" />
+              )}
+            </Button>
+          </div>
 
-            <div className="text-center text-xs text-gray-500">
-              {modelosFiltrados.length} {modelosFiltrados.length === 1 ? 'modelo' : 'modelos'}
-            </div>
+          {filtrosAbertos && (
+            <motion.div
+              initial={{ height: 0, opacity: 0 }}
+              animate={{ height: 'auto', opacity: 1 }}
+              exit={{ height: 0, opacity: 0 }}
+              transition={{ duration: 0.2 }}
+              className="overflow-hidden"
+            >
+              <div className="flex gap-2 flex-wrap justify-center items-center pt-3 pb-2">
+                {categorias.map(cat => (
+                  <button
+                    key={cat.valor}
+                    onClick={() => {
+                      setCategoriaFiltro(cat.valor);
+                      setFiltrosAbertos(false);
+                    }}
+                    className="flex flex-col items-center gap-1 group"
+                  >
+                    <div className={`
+                      relative w-14 h-14 rounded-full flex items-center justify-center text-lg
+                      transition-all duration-300 transform
+                      ${categoriaFiltro === cat.valor 
+                        ? 'bg-gradient-to-br from-[#D4AF37] via-[#F4D03F] to-[#D4AF37] shadow-lg shadow-[#D4AF37]/30 scale-105 rotate-180' 
+                        : 'bg-gradient-to-br from-white to-gray-50 border-2 border-gray-200 group-hover:border-[#D4AF37] group-hover:scale-105'
+                      }
+                    `}>
+                      {categoriaFiltro === cat.valor && (
+                        <span className="absolute inset-2 rounded-full border border-white/40 animate-pulse" />
+                      )}
+                      <span className={`relative ${categoriaFiltro === cat.valor ? 'rotate-180' : ''} transition-transform duration-300`}>
+                        {cat.valor === 'todas' && '✨'}
+                        {cat.valor === 'classicas' && '💍'}
+                        {cat.valor === 'tradicionais' && '👑'}
+                        {cat.valor === 'quadradas' && '⬜'}
+                        {cat.valor === 'trabalhadas' && '💎'}
+                        {cat.valor === 'com-pedras' && '💠'}
+                        {cat.valor === 'personalizadas' && '⭐'}
+                      </span>
+                    </div>
+                    <span className={`
+                      text-[10px] font-medium transition-colors duration-300
+                      ${categoriaFiltro === cat.valor 
+                        ? 'text-[#D4AF37] font-semibold' 
+                        : 'text-gray-600 group-hover:text-[#D4AF37]'
+                      }
+                    `}>
+                      {cat.label}
+                    </span>
+                  </button>
+                ))}
+              </div>
+            </motion.div>
+          )}
+
+          <div className="text-center text-xs text-gray-500 mt-2">
+            {modelosFiltrados.length} {modelosFiltrados.length === 1 ? 'modelo' : 'modelos'}
           </div>
         </div>
       </section>
