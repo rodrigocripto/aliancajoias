@@ -17,6 +17,7 @@ import {
   DrawerTrigger,
 } from "@/components/ui/drawer";
 import FooterSection from '../components/landing/FooterSection';
+import SEODebugPanel from '../components/SEODebugPanel';
 
 const categorias = [
   { 
@@ -471,6 +472,7 @@ export default function Catalogo() {
       </section>
 
       <FooterSection />
+      <SEODebugPanel />
     </div>
   );
 }
