@@ -218,10 +218,10 @@ export default function Catalogo() {
           "name": "Joalheria Aliança Joias",
           "address": {
             "@type": "PostalAddress",
-            "streetAddress": "Av. Sen. Filinto Müller, 1900",
+            "streetAddress": "Rua Governador Pedro Pedrossian, 139",
             "addressLocality": "Várzea Grande",
             "addressRegion": "MT",
-            "postalCode": "78000-000",
+            "postalCode": "78110-354",
             "addressCountry": "BR"
           },
           "telephone": "+55-65-99312-2777",

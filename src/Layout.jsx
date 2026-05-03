@@ -129,10 +129,10 @@ export default function Layout({ children, currentPageName }) {
       "description": "Joalheria em Várzea Grande e Cuiabá MT especializada em alianças de ouro 18k com fabricação própria. Mais de 30 anos de tradição.",
       "address": {
         "@type": "PostalAddress",
-        "streetAddress": "Av. Sen. Filinto Müller, 1900",
+        "streetAddress": "Rua Governador Pedro Pedrossian, 139",
         "addressLocality": "Várzea Grande",
         "addressRegion": "MT",
-        "postalCode": "78000-000",
+        "postalCode": "78110-354",
         "addressCountry": "BR"
       },
       "geo": {

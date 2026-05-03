@@ -101,8 +101,8 @@ export default function FooterSection() {
                 <span>aliancajoiasmarket@gmail.com</span>
               </a>
               <div className="flex items-start gap-3 text-gray-400">
-                <MapPin className="w-5 h-5 flex-shrink-0 mt-0.5" />
-                <span>Av. Sen. Filinto Müller, 1900 - Centro Norte, Várzea Grande - MT, 78110-302</span>
+              <MapPin className="w-5 h-5 flex-shrink-0 mt-0.5" />
+              <span>Rua Governador Pedro Pedrossian, 139 - Centro Norte, Várzea Grande - MT, 78110-354</span>
               </div>
             </div>
           </div>
