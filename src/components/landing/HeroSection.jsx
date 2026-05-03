@@ -196,13 +196,13 @@ export default function HeroSection({ onCtaClick }) {
                         </defs>
                         <text className="font-bold" style={{ fontSize: '24px', letterSpacing: '3px', fill: '#FF6B00', stroke: '#FFA500', strokeWidth: '0.5px' }}>
                           <textPath href="#curveTop1" startOffset="50%" textAnchor="middle">
-                            ALIANÇAS A PARTIR DE 12x R$ 75,00
-                          </textPath>
-                        </text>
-                      </svg>
-                    </motion.div>
+                            ALIANÇAS TRADICIONAIS E PERSONALIZADAS
+                            </textPath>
+                            </text>
+                            </svg>
+                            </motion.div>
 
-                    {/* Texto Curvado Inferior - Parcelamento */}
+                            {/* Texto Curvado Inferior - Parcelamento */}
                     <motion.div 
                       className="absolute -inset-20 sm:-inset-28 md:-inset-32 pointer-events-none z-20"
                       initial={{ opacity: 0, y: 30 }}
@@ -295,14 +295,14 @@ export default function HeroSection({ onCtaClick }) {
                         </defs>
                         <text className="font-bold" style={{ fontSize: '24px', letterSpacing: '3px', fill: '#FF6B00', stroke: '#FFA500', strokeWidth: '0.5px' }}>
                           <textPath href="#curveBottom2" startOffset="50%" textAnchor="middle">
-                            ALIANÇAS A PARTIR DE 12x R$ 75,00
-                          </textPath>
-                        </text>
-                      </svg>
-                    </motion.div>
-                  </React.Fragment>
-                )}
-              </AnimatePresence>
+                            ALIANÇAS TRADICIONAIS E PERSONALIZADAS
+                            </textPath>
+                            </text>
+                            </svg>
+                            </motion.div>
+                            </React.Fragment>
+                            )}
+                            </AnimatePresence>
 
               {/* Decorative Ring */}
               <div className="absolute inset-0 rounded-full border-2 border-[#D4AF37]/20 animate-pulse" />
