@@ -2,6 +2,8 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Button } from '@/components/ui/button';
 import { ArrowRight, Sparkles } from 'lucide-react';
+import { Link } from 'react-router-dom';
+import { createPageUrl } from '@/utils';
 
 export default function ModeloDestaque({ modelo, invertido = false }) {
   const handleWhatsAppClick = () => {
@@ -68,11 +70,11 @@ export default function ModeloDestaque({ modelo, invertido = false }) {
                 <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform duration-300" />
               </Button>
               <Button
+                asChild
                 variant="outline"
                 className="border-2 border-[#D4AF37]/30 text-[#1A1A1A] px-8 py-6 text-lg font-medium rounded-full hover:bg-[#D4AF37]/5 hover:border-[#D4AF37]/50 transition-all duration-300"
-                onClick={() => document.getElementById('modelos')?.scrollIntoView({ behavior: 'smooth' })}
               >
-                Ver Todos os Modelos
+                <Link to={createPageUrl('Catalogo')}>Ver Catálogo Completo</Link>
               </Button>
             </div>
           </motion.div>
