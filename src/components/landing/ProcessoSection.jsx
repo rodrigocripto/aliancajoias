@@ -108,12 +108,19 @@ export default function ProcessoSection() {
           transition={{ duration: 0.6, delay: 0.4 }}
           className="mt-16 text-center"
         >
-          <p className="text-lg text-[#4A4A4A] mb-2">
+          <p className="text-lg text-[#4A4A4A] mb-4">
             Prazo médio de produção:
           </p>
-          <p className="text-2xl font-semibold text-[#D4AF37]">
-            2 a 5 dias úteis
-          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <div className="bg-[#D4AF37]/10 border border-[#D4AF37]/30 rounded-2xl px-6 py-4">
+              <p className="text-sm text-[#4A4A4A] mb-1">Alianças Tradicionais</p>
+              <p className="text-2xl font-semibold text-[#D4AF37]">2 a 5 dias úteis</p>
+            </div>
+            <div className="bg-[#1A1A1A]/5 border border-[#1A1A1A]/15 rounded-2xl px-6 py-4">
+              <p className="text-sm text-[#4A4A4A] mb-1">Alianças Personalizadas</p>
+              <p className="text-xl font-semibold text-[#1A1A1A]">Prazo conforme modelo</p>
+            </div>
+          </div>
         </motion.div>
       </div>
     </section>
