@@ -1,0 +1,65 @@
+{
+  "name": "BlogPost",
+  "type": "object",
+  "properties": {
+    "titulo": {
+      "type": "string",
+      "description": "T\u00edtulo do post"
+    },
+    "slug": {
+      "type": "string",
+      "description": "URL amig\u00e1vel do post"
+    },
+    "resumo": {
+      "type": "string",
+      "description": "Resumo curto do post"
+    },
+    "conteudo": {
+      "type": "string",
+      "description": "Conte\u00fado completo do post em HTML"
+    },
+    "imagem_capa": {
+      "type": "string",
+      "description": "URL da imagem de capa"
+    },
+    "categoria": {
+      "type": "string",
+      "enum": [
+        "namoro",
+        "noivado",
+        "casamento",
+        "aliancas",
+        "anel-solitario",
+        "aparadores"
+      ],
+      "description": "Categoria do post"
+    },
+    "tags": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Tags do post"
+    },
+    "meta_description": {
+      "type": "string",
+      "description": "Meta description para SEO"
+    },
+    "publicado": {
+      "type": "boolean",
+      "default": true,
+      "description": "Se o post est\u00e1 publicado"
+    },
+    "visualizacoes": {
+      "type": "number",
+      "default": 0,
+      "description": "N\u00famero de visualiza\u00e7\u00f5es"
+    }
+  },
+  "required": [
+    "titulo",
+    "slug",
+    "conteudo",
+    "categoria"
+  ]
+}

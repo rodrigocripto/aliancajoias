@@ -1,0 +1,73 @@
+{
+  "name": "ModeloJoia",
+  "type": "object",
+  "properties": {
+    "nome": {
+      "type": "string",
+      "description": "Nome do modelo"
+    },
+    "slug": {
+      "type": "string",
+      "description": "URL amig\u00e1vel do modelo"
+    },
+    "descricao": {
+      "type": "string",
+      "description": "Descri\u00e7\u00e3o detalhada do modelo"
+    },
+    "imagens": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "URLs das imagens do modelo"
+    },
+    "categoria": {
+      "type": "string",
+      "enum": [
+        "classicas",
+        "tradicionais",
+        "quadradas",
+        "trabalhadas",
+        "com-pedras",
+        "personalizadas"
+      ],
+      "description": "Categoria do modelo"
+    },
+    "peso_base_gramas": {
+      "type": "number",
+      "description": "Peso base m\u00e1ximo para c\u00e1lculo (em gramas)"
+    },
+    "custo_producao_adicional": {
+      "type": "number",
+      "default": 0,
+      "description": "Custo fixo adicional de produ\u00e7\u00e3o"
+    },
+    "destaque": {
+      "type": "boolean",
+      "default": false,
+      "description": "Se o modelo \u00e9 destaque"
+    },
+    "disponivel": {
+      "type": "boolean",
+      "default": true,
+      "description": "Se o modelo est\u00e1 dispon\u00edvel"
+    },
+    "meta_description": {
+      "type": "string",
+      "description": "Meta description para SEO"
+    },
+    "tags": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Tags do modelo"
+    }
+  },
+  "required": [
+    "nome",
+    "slug",
+    "categoria",
+    "peso_base_gramas"
+  ]
+}
